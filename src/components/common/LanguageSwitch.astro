@@ -1,0 +1,63 @@
+---
+const currentLang = Astro.url.pathname.split("/")[1] || "en";
+const languages = {
+	en: "English",
+	ja: "日本語",
+	fr: "Français",
+};
+---
+
+<div class="relative">
+	<button
+		id="langToggle"
+		class="flex items-center px-3 py-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+	>
+		<span class="font-medium">{currentLang.toUpperCase()}</span>
+		<svg
+			class="w-4 h-4 ml-1"
+			fill="none"
+			stroke="currentColor"
+			viewBox="0 0 24 24"
+		>
+			<path d="M19 9l-7 7-7-7"></path>
+		</svg>
+	</button>
+
+	<div
+		id="langMenu"
+		class="hidden absolute mt-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg"
+	>
+		{
+			Object.entries(languages).map(([code, name]) => (
+				<a
+					href={`/${code}`}
+					class={`block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 ${currentLang === code ? "text-blue-500" : ""}`}
+				>
+					{name}
+				</a>
+			))
+		}
+	</div>
+</div>
+
+<script>
+	const toggle = document.getElementById("langToggle");
+	const menu = document.getElementById("langMenu");
+
+	if (toggle && menu) {
+		toggle.addEventListener("click", () => {
+			menu.classList.toggle("hidden");
+		});
+
+		// Close menu when clicking outside
+		document.addEventListener("click", (e) => {
+			if (
+				!toggle.contains(e.target as Node) &&
+				!menu.contains(e.target as Node)
+			) {
+				menu.classList.add("hidden");
+			}
+		});
+	}
+</script>
+
