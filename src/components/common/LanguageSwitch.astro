@@ -10,7 +10,7 @@ const languages = {
 <div class="relative">
 	<button
 		id="langToggle"
-		class="flex items-center px-3 py-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+		class="flex items-center px-3 py-1 rounded-lg text-light-text-primary dark:text-dark-text-primary hover:bg-light-hover-light dark:hover:bg-dark-hover-light transition-colors"
 	>
 		<span class="font-medium">{currentLang.toUpperCase()}</span>
 		<svg
@@ -25,13 +25,18 @@ const languages = {
 
 	<div
 		id="langMenu"
-		class="hidden absolute mt-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg"
+		class="hidden absolute right-0 mt-2 bg-light-surface-main dark:bg-dark-surface-main rounded-lg shadow-lg border border-light-border-light dark:border-dark-border-light min-w-[120px]"
 	>
 		{
 			Object.entries(languages).map(([code, name]) => (
 				<a
 					href={`/${code}`}
-					class={`block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 ${currentLang === code ? "text-blue-500" : ""}`}
+					class={`block px-4 py-2 hover:bg-light-hover-light dark:hover:bg-dark-hover-light transition-colors
+                    ${
+											currentLang === code
+												? "text-light-text-accent dark:text-dark-text-accent"
+												: "text-light-text-primary dark:text-dark-text-primary"
+										}`}
 				>
 					{name}
 				</a>
@@ -41,23 +46,26 @@ const languages = {
 </div>
 
 <script>
-	const toggle = document.getElementById("langToggle");
-	const menu = document.getElementById("langMenu");
+	const toggles = document.querySelectorAll("#langToggle");
+	const menus = document.querySelectorAll("#langMenu");
 
-	if (toggle && menu) {
-		toggle.addEventListener("click", () => {
-			menu.classList.toggle("hidden");
+	toggles.forEach((toggle, index) => {
+		toggle.addEventListener("click", (e) => {
+			e.stopPropagation();
+			menus[index].classList.toggle("hidden");
 		});
+	});
 
-		// Close menu when clicking outside
-		document.addEventListener("click", (e) => {
+	// Close language menu when clicking outside
+	document.addEventListener("click", (e) => {
+		menus.forEach((menu, index) => {
 			if (
-				!toggle.contains(e.target as Node) &&
+				!toggles[index].contains(e.target as Node) &&
 				!menu.contains(e.target as Node)
 			) {
 				menu.classList.add("hidden");
 			}
 		});
-	}
+	});
 </script>
 

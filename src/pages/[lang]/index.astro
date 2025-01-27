@@ -1,8 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/layout/Header.astro";
 import Footer from "../../components/layout/Footer.astro";
 import translations from "../../i18n";
+import ProjectCard from "../../components/sections/ProjectCard.astro";
 
 export function getStaticPaths() {
 	return [
@@ -19,24 +21,66 @@ const t = translations[lang as keyof typeof translations];
 
 <Layout title="Kevin-Tim - Portfolio">
 	<Header />
-	<main class="container mx-auto px-4">
-		<section class="flex items-center gap-12 py-16">
-			<div class="flex-1">
-				<h2 class="text-4xl font-bold mb-4">
-					{t.hero.title}
-				</h2>
-				<p class="text-lg text-gray-600">
-					{t.hero.description}
-				</p>
+
+	<section
+		class="bg-light-surface-hero dark:bg-dark-surface-hero min-h-[90vh] flex items-center"
+	>
+		<div class="container mx-auto px-4">
+			<div class="flex flex-col md:flex-row items-center gap-12">
+				<div class="flex-1">
+					<h1
+						class="text-5xl font-bold text-light-text-primary dark:text-dark-text-primary mb-6"
+					>
+						{t.hero.title}
+					</h1>
+					<p
+						class="text-xl text-light-text-secondary dark:text-dark-text-secondary"
+					>
+						{t.hero.description}
+					</p>
+				</div>
+				<div class="flex-1">
+					<Image
+						src="/portfolio-logo.png"
+						alt="Profile"
+						width={500}
+						height={500}
+						class="rounded-lg shadow-lg w-full"
+						format="webp"
+						quality={80}
+					/>
+				</div>
 			</div>
-			<div class="flex-1">
-				<img
-					src="/your-image.jpg"
-					alt="Profile"
-					class="rounded-lg shadow-lg w-full"
+		</div>
+	</section>
+
+	<!-- Projects Section -->
+	<section
+		class="bg-light-surface-main dark:bg-dark-surface-main py-20"
+		id="projects"
+	>
+		<div class="container mx-auto px-4">
+			<h2
+				class="text-3xl font-bold mb-12 text-center text-light-text-primary dark:text-dark-text-primary"
+			>
+				Latest Projects
+			</h2>
+			<div class="flex flex-wrap justify-center gap-8">
+				<ProjectCard
+					description="Beauty salon in Tokyo"
+					imageUrl="/portfolio-logo.png"
+					tags={["SvelteKit", "MicroCMS", "TypeScript"]}
+					projectUrl="https://project1.com"
+				/>
+				<ProjectCard
+					description="E-commerce platform"
+					imageUrl="/portfolio-logo.png"
+					tags={["Vue.js", "Express", "PostgreSQL"]}
+					projectUrl="https://project2.com"
 				/>
 			</div>
-		</section>
-	</main>
+		</div>
+	</section>
+
 	<Footer />
 </Layout>

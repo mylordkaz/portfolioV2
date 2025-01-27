@@ -1,7 +1,10 @@
-<button id="theme-toggle" class="p-2">
+<button
+	id="theme-toggle"
+	class="p-2 text-light-text-primary dark:text-dark-text-primary hover:bg-light-hover-light dark:hover:bg-dark-hover-light rounded-lg transition-colors flex items-center justify-center"
+>
 	<svg
 		id="moon-icon"
-		class="hidden dark:block"
+		class="hidden dark:block w-5 h-5"
 		xmlns="http://www.w3.org/2000/svg"
 		width="24"
 		height="24"
@@ -40,8 +43,19 @@
 </button>
 
 <script>
-	const toggle = document.getElementById("theme-toggle");
-	if (toggle) {
+	// Initialize theme on page load
+	document.addEventListener("DOMContentLoaded", () => {
+		const theme =
+			localStorage.getItem("theme") ||
+			(window.matchMedia("(prefers-color-scheme: dark)").matches
+				? "dark"
+				: "light");
+		document.documentElement.classList.toggle("dark", theme === "dark");
+	});
+
+	// Theme toggle functionality
+	const toggleButtons = document.querySelectorAll("#theme-toggle");
+	toggleButtons.forEach((toggle) => {
 		toggle.addEventListener("click", () => {
 			document.documentElement.classList.toggle("dark");
 			localStorage.setItem(
@@ -49,6 +63,6 @@
 				document.documentElement.classList.contains("dark") ? "dark" : "light",
 			);
 		});
-	}
+	});
 </script>
 
