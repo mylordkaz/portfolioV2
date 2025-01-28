@@ -12,4 +12,9 @@ export interface Translation {
   footer: {
     softwareEngineer: string;
   };
+  projects: {
+    title: string;
+    subtitle: string;
+    description: string;
+  };
 }

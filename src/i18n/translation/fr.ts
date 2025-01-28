@@ -15,6 +15,12 @@ const fr: Translation = {
   footer: {
     softwareEngineer: "Ingénieur Logiciel",
   },
+  projects: {
+    title: "Mes Projets",
+    subtitle: "Vitrine du Portfolio",
+    description:
+      "Découvrez mes derniers travaux et projets techniques. Chaque projet représente un défi unique et une solution innovante.",
+  },
 };
 
 export default fr;

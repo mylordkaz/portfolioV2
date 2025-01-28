@@ -1,0 +1,124 @@
+---
+import { Image } from "astro:assets";
+import imgProject from "../../assets/project.png";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/layout/Header.astro";
+import Footer from "../../components/layout/Footer.astro";
+import translations from "../../i18n";
+import { projects } from "../../data/projects";
+
+export function getStaticPaths() {
+	return [
+		{ params: { lang: "en" } },
+		{ params: { lang: "ja" } },
+		{ params: { lang: "fr" } },
+	];
+}
+
+const currentPath = Astro.url.pathname;
+const lang = currentPath.split("/")[1] || "en";
+const t = translations[lang as keyof typeof translations];
+
+type ProjectSize = "large" | "square";
+
+const getSizeClasses = (size: ProjectSize) => {
+	const classes: Record<ProjectSize, string> = {
+		large: "col-span-2 row-span-2",
+		square: "col-span-1 row-span-1",
+	};
+	return classes[size];
+};
+---
+
+<Layout title={`${t.projects.title} - Kevin-Tim Portfolio`}>
+	<Header />
+
+	<!-- Hero Section -->
+	<section
+		class="bg-light-surface-hero dark:bg-dark-surface-hero min-h-[60vh] flex items-center"
+	>
+		<div class="container mx-auto p-12">
+			<div class="flex items-center gap-12">
+				<div class="flex-1">
+					<h1
+						class="text-5xl font-bold text-light-text-primary dark:text-dark-text-primary mb-4"
+					>
+						{t.projects.title}
+					</h1>
+					<h2
+						class="text-3xl text-light-text-secondary dark:text-dark-text-secondary mb-4"
+					>
+						{t.projects.subtitle}
+					</h2>
+					<p
+						class="text-xl text-light-text-secondary dark:text-dark-text-secondary"
+					>
+						{t.projects.description}
+					</p>
+				</div>
+				<div class="flex-1">
+					<Image
+						src={imgProject}
+						alt="Projects Overview"
+						width={500}
+						height={500}
+						class="rounded-lg shadow-lg w-full"
+						format="webp"
+						quality={80}
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Projects Bento Grid Section -->
+	<section class="bg-light-surface-main dark:bg-dark-surface-main py-20">
+		<div class="container mx-auto px-24">
+			<div
+				class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[300px] gap-6"
+			>
+				{
+					projects.map((project) => (
+						<div
+							class={`
+        bg-white dark:bg-dark-surface-header 
+        rounded-xl shadow-lg overflow-hidden 
+        transition-transform hover:scale-[1.02]
+        col-span-1
+        ${project.size === "large" ? "lg:col-span-2" : ""}
+      `}
+						>
+							<div class="relative h-full">
+								<Image
+									src={project.image}
+									alt={project.title}
+									width={600}
+									height={400}
+									class="w-full h-1/2 object-cover"
+									format="webp"
+									quality={80}
+								/>
+								<div class="p-4">
+									<h3 class="text-xl font-bold text-light-text-primary dark:text-dark-text-primary mb-2">
+										{project.title}
+									</h3>
+									<p class="text-light-text-secondary dark:text-dark-text-secondary mb-4">
+										{project.description}
+									</p>
+									<div class="flex flex-wrap gap-2">
+										{project.tags.map((tag) => (
+											<span class="px-2 py-0.5 bg-light-hover-light dark:bg-dark-hover-light rounded-full text-sm text-light-text-secondary dark:text-dark-text-secondary">
+												{tag}
+											</span>
+										))}
+									</div>
+								</div>
+							</div>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+	<Footer />
+</Layout>

@@ -15,6 +15,12 @@ const en: Translation = {
   footer: {
     softwareEngineer: "Software Engineer",
   },
+  projects: {
+    title: "My Projects",
+    subtitle: "Portfolio Showcase",
+    description:
+      "Explore my latest works and technical projects. Each project represents a unique challenge and innovative solution.",
+  },
 };
 
 export default en;

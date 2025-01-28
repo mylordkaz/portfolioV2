@@ -3,14 +3,18 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      fontFamily: {
+        japanese: ['"Klee One"', "sans-serif"],
+        outfit: ["Outfit", "sans-serif"],
+      },
       colors: {
         // Light Theme Colors
         light: {
           surface: {
-            header: "#FFFFFF", // Pure white header
+            header: "#E5E7EB", // Pure white header
             hero: "#F8F9FC", // Very light blue-gray
             main: "#F3F4F8", // Slightly darker background
-            footer: "#FFFFFF", // Pure white footer
+            footer: "#E5E7EB", // Pure white footer
           },
           text: {
             primary: "#1A1A1A", // Near black for main text

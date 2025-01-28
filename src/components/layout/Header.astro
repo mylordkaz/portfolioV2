@@ -1,5 +1,7 @@
 ---
 import { Image } from "astro:assets";
+import logoLight from "../../assets/logo-light.svg";
+import logoDark from "../../assets/logo-dark.svg";
 import ThemeToggle from "../common/ThemeToggle.astro";
 import LanguageSwitch from "../common/LanguageSwitch.astro";
 import translations from "../../i18n";
@@ -13,58 +15,63 @@ const t = translations[lang as keyof typeof translations];
 	class="bg-light-surface-header dark:bg-dark-surface-header w-full shadow-sm"
 >
 	<div class="mx-auto px-2">
-		<div class="flex justify-between items-center h-20">
+		<div class="flex justify-between items-center h-24">
 			<!-- Logo - Left -->
-			<div class="flex-shrink-0">
+			<div class="flex-shrink-0 pl-8">
 				<a href={`/${lang}`} class="flex items-center gap-2">
 					<Image
-						src="/portfolio-logo.png"
+						src={logoLight}
 						alt="Portfolio Logo"
-						width={48}
-						height={48}
-						class="h-12 w-auto"
-						format="webp"
-						quality={80}
+						width={80}
+						height={80}
+						class="w-20 h-20 block dark:hidden"
+					/>
+					<Image
+						src={logoDark}
+						alt="Portfolio Logo"
+						width={80}
+						height={80}
+						class="w-20 h-20 hidden dark:block"
 					/>
 					<span
-						class="text-xl font-bold text-light-text-primary dark:text-dark-text-primary"
+						class="text-2xl hidden md:block md:text-4xl font-semibold text-light-text-primary dark:text-dark-text-primary"
 						>Kevin Tim.</span
 					>
 				</a>
 			</div>
 			<!-- Desktop Navigation -->
 			<nav class="hidden md:flex flex-1 justify-center">
-				<ul class="flex gap-6">
+				<ul class="flex gap-8">
 					<li>
 						<a
-							href="#projects"
-							class="text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-accent dark:hover:text-dark-text-accent transition-colors"
+							href={`/${lang}/projects`}
+							class="text-lg text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-accent dark:hover:text-dark-text-accent transition-colors"
 						>
-							|| {t.nav.projects}
+							{t.nav.projects} .
 						</a>
 					</li>
 					<li>
 						<a
 							href="#expertise"
-							class="text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-accent dark:hover:text-dark-text-accent transition-colors"
+							class="text-lg text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-accent dark:hover:text-dark-text-accent transition-colors"
 						>
-							|| {t.nav.expertise}
+							{t.nav.expertise} .
 						</a>
 					</li>
 					<li>
 						<a
 							href="#about"
-							class="text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-accent dark:hover:text-dark-text-accent transition-colors"
+							class="text-lg text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-accent dark:hover:text-dark-text-accent transition-colors"
 						>
-							|| {t.nav.about}
+							{t.nav.about} .
 						</a>
 					</li>
 					<li>
 						<a
 							href="#contact"
-							class="text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-accent dark:hover:text-dark-text-accent transition-colors"
+							class="text-lg text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-accent dark:hover:text-dark-text-accent transition-colors"
 						>
-							|| {t.nav.contact}
+							{t.nav.contact} .
 						</a>
 					</li>
 				</ul>
@@ -126,7 +133,7 @@ const t = translations[lang as keyof typeof translations];
 				<ul class="space-y-6">
 					<li>
 						<a
-							href="#projects"
+							href={`/${lang}/projects`}
 							class="block text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-accent dark:hover:text-dark-text-accent"
 						>
 							{t.nav.projects}

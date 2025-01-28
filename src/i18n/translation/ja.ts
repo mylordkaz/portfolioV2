@@ -15,6 +15,12 @@ const jp: Translation = {
   footer: {
     softwareEngineer: "Software Engineer",
   },
+  projects: {
+    title: "プロジェクト",
+    subtitle: "ポートフォリオショーケース",
+    description:
+      "最新の作品や技術プロジェクトをご覧ください。各プロジェクトはユニークな課題と革新的なソリューションを表しています。",
+  },
 };
 
 export default jp;
