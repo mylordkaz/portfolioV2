@@ -1,5 +1,6 @@
 ---
 const currentLang = Astro.url.pathname.split("/")[1] || "en";
+const currentPath = Astro.url.pathname.split("/").slice(2).join("/");
 const languages = {
 	en: { name: "English", flag: "🇬🇧" },
 	ja: { name: "日本語", flag: "🇯🇵" },
@@ -32,7 +33,7 @@ const languages = {
 		{
 			Object.entries(languages).map(([code, { name }]) => (
 				<a
-					href={`/${code}`}
+					href={`/${code}${currentPath ? `/${currentPath}` : ""}`}
 					class={`block px-4 py-2 hover:bg-light-hover-light dark:hover:bg-dark-hover-light transition-colors
                     ${
 											currentLang === code
