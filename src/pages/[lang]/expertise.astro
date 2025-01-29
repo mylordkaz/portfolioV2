@@ -1,0 +1,111 @@
+---
+import { Image } from "astro:assets";
+import heroImage from "../../assets/codeImg.png";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/layout/Header.astro";
+import Footer from "../../components/layout/Footer.astro";
+import translations from "../../i18n";
+import { expertise } from "../../data/expertise";
+import type { ExpertiseKey } from "../../i18n/types.ts";
+
+export function getStaticPaths() {
+	return [
+		{ params: { lang: "en" } },
+		{ params: { lang: "ja" } },
+		{ params: { lang: "fr" } },
+	];
+}
+
+const currentPath = Astro.url.pathname;
+const lang = currentPath.split("/")[1] || "en";
+const t = translations[lang as keyof typeof translations];
+
+const expertiseEntries = Object.entries(expertise) as [
+	ExpertiseKey,
+	(typeof expertise)[ExpertiseKey],
+][];
+---
+
+<Layout title={`${t.expertise.title} - Kevin-Tim Portfolio`}>
+	<Header />
+
+	<!-- Hero Section -->
+	<section
+		class="bg-light-surface-hero dark:bg-dark-surface-hero min-h-[60vh] flex items-center"
+	>
+		<div class="container mx-auto p-8 md:px-24">
+			<div class="flex flex-col md:flex-row items-center gap-12">
+				<div class="flex-1">
+					<div class="max-w-2xl">
+						<h1
+							class="text-5xl font-bold text-light-text-primary dark:text-dark-text-primary mb-8"
+						>
+							{t.expertise.title}
+						</h1>
+						<p
+							class="text-xl text-light-text-secondary dark:text-dark-text-secondary leading-relaxed"
+						>
+							{t.expertise.description}
+						</p>
+					</div>
+				</div>
+				<div class="flex-1 max-w-md">
+					<div class="aspect-[4/3] overflow-hidden rounded-[30px]">
+						<Image
+							src={heroImage}
+							alt="Expertise Overview"
+							width={500}
+							height={375}
+							class="w-full h-full object-cover"
+							format="webp"
+							quality={95}
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Expertise Sections -->
+	<section class="bg-light-surface-main dark:bg-dark-surface-main py-20">
+		<div class="container mx-auto px-8 md:px24">
+			<div class="flex flex-col gap-32">
+				{
+					expertiseEntries.map(([key, category], index) => (
+						<div
+							class={`flex flex-col md:flex-row gap-16 items-center ${index % 2 ? "md:flex-row-reverse" : ""}`}
+						>
+							<div class="aspect-[4/3] overflow-hidden rounded-[50px]">
+								<Image
+									src={category.image}
+									alt={t.expertise.categories[key].title}
+									width={400}
+									height={300}
+									class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+									format="webp"
+									quality={95}
+								/>
+							</div>
+							<div class="flex-1">
+								<h2 class="text-3xl font-bold text-light-text-primary dark:text-dark-text-primary mb-6">
+									{t.expertise.categories[key].title}
+								</h2>
+								<p class="text-lg text-light-text-secondary dark:text-dark-text-secondary mb-6">
+									{t.expertise.categories[key].description}
+								</p>
+								<div class="flex flex-wrap gap-2">
+									{category.skills.map((skill) => (
+										<span class="px-2 py-1 border border-light-text-accent dark:border-dark-text-accent rounded-full text-light-text-primary dark:text-dark-text-primary hover:bg-light-text-accent/5 dark:hover:bg-dark-text-accent/10 transition-colors">
+											{skill}
+										</span>
+									))}
+								</div>
+							</div>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+	<Footer />
+</Layout>

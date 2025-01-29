@@ -1,3 +1,5 @@
+export type ExpertiseKey = "frontend" | "backend" | "devops";
+
 export interface Translation {
   nav: {
     projects: string;
@@ -16,5 +18,16 @@ export interface Translation {
     title: string;
     subtitle: string;
     description: string;
+  };
+  expertise: {
+    title: string;
+    description: string;
+    categories: Record<
+      ExpertiseKey,
+      {
+        title: string;
+        description: string;
+      }
+    >;
   };
 }
