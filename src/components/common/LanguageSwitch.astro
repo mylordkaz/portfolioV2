@@ -1,4 +1,8 @@
 ---
+interface Props {
+	position?: "top" | "bottom";
+}
+const { position = "top" } = Astro.props;
 const currentLang = Astro.url.pathname.split("/")[1] || "en";
 const currentPath = Astro.url.pathname.split("/").slice(2).join("/");
 const languages = {
@@ -28,7 +32,7 @@ const languages = {
 
 	<div
 		id="langMenu"
-		class="hidden absolute right-0 mt-2 bg-light-surface-main dark:bg-dark-surface-main rounded-lg shadow-lg border border-light-border-light dark:border-dark-border-light min-w-[120px]"
+		class={`hidden absolute ${position === "bottom" ? "bottom-full mb-2" : "top-full mt-2"} right-0 bg-light-surface-main dark:bg-dark-surface-main rounded-lg shadow-lg border border-light-border-light dark:border-dark-border-light min-w-[120px]`}
 	>
 		{
 			Object.entries(languages).map(([code, { name }]) => (

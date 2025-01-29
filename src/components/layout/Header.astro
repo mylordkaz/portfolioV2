@@ -52,7 +52,7 @@ const t = translations[lang as keyof typeof translations];
 					</li>
 					<li>
 						<a
-							href="#expertise"
+							href={`/${lang}/expertise`}
 							class="text-lg text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-accent dark:hover:text-dark-text-accent transition-colors"
 						>
 							{t.nav.expertise} .
@@ -126,7 +126,7 @@ const t = translations[lang as keyof typeof translations];
 	<!-- Mobile Menu -->
 	<div
 		id="mobile-menu"
-		class="fixed top-20 right-0 bottom-0 w-[150px] md:hidden transform translate-x-full transition-transform duration-300 ease-in-out bg-light-surface-header dark:bg-dark-surface-header shadow-lg z-50 overflow-y-auto"
+		class="fixed top-24 right-0 bottom-0 w-[150px] md:hidden transform translate-x-full transition-transform duration-300 ease-in-out bg-light-surface-header dark:bg-dark-surface-header shadow-lg z-50 overflow-y-auto"
 	>
 		<div class="min-h-full flex flex-col">
 			<nav class="px-6 py-2">
@@ -141,7 +141,7 @@ const t = translations[lang as keyof typeof translations];
 					</li>
 					<li>
 						<a
-							href="#expertise"
+							href={`/${lang}/expertise`}
 							class="block text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-accent dark:hover:text-dark-text-accent"
 						>
 							{t.nav.expertise}
@@ -169,12 +169,12 @@ const t = translations[lang as keyof typeof translations];
 			<div
 				class="border-t border-light-border-light dark:border-dark-border-light px-6 py-6 mt-auto"
 			>
-				<div class="flex flex-col gap-4">
-					<div class="mobile-theme-toggle">
+				<div class="flex items-center justify-around gap-4">
+					<div class="mobile-theme-toggle flex-1 flex justify-center">
 						<ThemeToggle />
 					</div>
-					<div class="mobile-lang-switch">
-						<LanguageSwitch />
+					<div class="mobile-lang-switch flex-1 flex justify-center">
+						<LanguageSwitch position="bottom" />
 					</div>
 				</div>
 			</div>
