@@ -13,6 +13,30 @@ const lang = currentPath.split("/")[1] || "en";
 	class:list={[lang === "ja" ? "font-japanese" : "font-outfit"]}
 >
 	<head>
+		<script is:inline>
+			// Immediately set the theme before page renders
+			const theme = (() => {
+				if (
+					typeof localStorage !== "undefined" &&
+					localStorage.getItem("theme")
+				) {
+					return localStorage.getItem("theme");
+				}
+				if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+					return "dark";
+				}
+				return "light";
+			})();
+
+			if (theme === "light") {
+				document.documentElement.classList.remove("dark");
+			} else {
+				document.documentElement.classList.add("dark");
+			}
+
+			// Set a data attribute to indicate theme is initialized
+			document.documentElement.setAttribute("data-theme-initialized", "");
+		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="png" href="../../public/portfolio-logo.png" />
