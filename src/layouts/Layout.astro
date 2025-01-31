@@ -75,3 +75,14 @@ const lang = currentPath.split("/")[1] || "en";
 		font-family: "Klee One", sans-serif;
 	}
 </style>
+<style is:global>
+	html {
+		/* Prevent flash during theme toggle */
+		transition: background-color 0.3s ease;
+	}
+
+	/* Hide content until theme is initialized */
+	html:not([data-theme-initialized]) {
+		visibility: hidden;
+	}
+</style>
