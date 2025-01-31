@@ -1,3 +1,5 @@
+import { string } from "astro:schema";
+
 export type ExpertiseKey = "frontend" | "backend" | "devops";
 
 export interface Translation {
@@ -29,5 +31,30 @@ export interface Translation {
         description: string;
       }
     >;
+  };
+  about: {
+    title: string;
+    description: string;
+    intro: {
+      title: string;
+      content: string;
+    };
+    services: {
+      title: string;
+      items: [
+        {
+          title: string;
+          description: string;
+        },
+        {
+          title: string;
+          description: string;
+        },
+        {
+          title: string;
+          description: string;
+        },
+      ];
+    };
   };
 }

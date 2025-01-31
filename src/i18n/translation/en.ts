@@ -43,6 +43,35 @@ const en: Translation = {
       },
     },
   },
+  about: {
+    title: "About Me",
+    description:
+      "A French Software Engineer passionate about Blockchain & emerging Tech. Whether it's a sleek user interface or a powerful backend system, I focus on delivering solutions that truly work.",
+    intro: {
+      title: "Who I Am",
+      content: `Born in France, living in Japan, I've always been curious and driven by challenges. My journey has taken me from managing luxury hospitality across continents to immersing myself in the world of technology.\nWhen I’m not coding, you’ll probably find me working on my cars or exploring the beautiful landscapes of Japan.`,
+    },
+    services: {
+      title: "What I Offer",
+      items: [
+        {
+          title: "Web Application Development",
+          description:
+            "Full-stack solutions for responsive and secure web applications with intuive and beautiful design.",
+        },
+        {
+          title: "Mobile & Desktop App Development",
+          description:
+            "Creating custom cross-platform applications tailored to your specific needs.",
+        },
+        {
+          title: "Performance & Optimization",
+          description:
+            "Crafting reliable server-side systems while enhancing speed and efficiency for seamless operations.",
+        },
+      ],
+    },
+  },
 };
 
 export default en;

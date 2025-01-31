@@ -60,7 +60,7 @@ const t = translations[lang as keyof typeof translations];
 					</li>
 					<li>
 						<a
-							href="#about"
+							href={`/${lang}/about`}
 							class="text-lg text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-accent dark:hover:text-dark-text-accent transition-colors"
 						>
 							{t.nav.about} .
@@ -149,7 +149,7 @@ const t = translations[lang as keyof typeof translations];
 					</li>
 					<li>
 						<a
-							href="#about"
+							href={`/${lang}/about`}
 							class="block text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-accent dark:hover:text-dark-text-accent"
 						>
 							{t.nav.about}
