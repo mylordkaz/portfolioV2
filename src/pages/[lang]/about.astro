@@ -4,7 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/layout/Header.astro";
 import Footer from "../../components/layout/Footer.astro";
 import translations from "../../i18n";
-import aboutImg from "../../assets/codeImg.png";
+import aboutImg from "../../assets/aboutMe.png";
 
 export function getStaticPaths() {
 	return [
@@ -26,9 +26,9 @@ const t = translations[lang as keyof typeof translations];
 	<section
 		class="bg-light-surface-hero dark:bg-dark-surface-hero min-h-[60vh] flex items-center"
 	>
-		<div class="container mx-auto px-4">
-			<div class="flex items-center gap-12">
-				<div class="flex-1">
+		<div class="container mx-auto px-8 md:px-24">
+			<div class="flex flex-col md:flex-row items-center gap-12">
+				<div class="w-full md:w-1/2">
 					<h1
 						class="text-5xl font-bold text-light-text-primary dark:text-dark-text-primary mb-4"
 					>
@@ -40,16 +40,19 @@ const t = translations[lang as keyof typeof translations];
 						{t.about.description}
 					</p>
 				</div>
-				<div class="flex-1">
-					<Image
-						src={aboutImg}
-						alt="About Me"
-						width={500}
-						height={500}
-						class="rounded-lg shadow-lg w-full"
-						format="webp"
-						quality={80}
-					/>
+				<div class="w-full md:w-1/2 flex justify-center">
+					<div class="w-1/2 min-w-[200px]">
+						<Image
+							src={aboutImg}
+							alt="About Me"
+							width={250}
+							height={250}
+							class="rounded-full shadow-lg w-full object-cover aspect-square"
+							format="webp"
+							quality={95}
+							loading="eager"
+						/>
+					</div>
 				</div>
 			</div>
 		</div>

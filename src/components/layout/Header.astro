@@ -25,6 +25,7 @@ const t = translations[lang as keyof typeof translations];
 						width={80}
 						height={80}
 						class="w-20 h-20 block dark:hidden"
+						loading="eager"
 					/>
 					<Image
 						src={logoDark}
@@ -32,6 +33,7 @@ const t = translations[lang as keyof typeof translations];
 						width={80}
 						height={80}
 						class="w-20 h-20 hidden dark:block"
+						loading="eager"
 					/>
 					<span
 						class="text-2xl hidden md:block md:text-4xl font-semibold text-light-text-primary dark:text-dark-text-primary"
@@ -68,7 +70,7 @@ const t = translations[lang as keyof typeof translations];
 					</li>
 					<li>
 						<a
-							href="#contact"
+							href={`/${lang}/contact`}
 							class="text-lg text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-accent dark:hover:text-dark-text-accent transition-colors"
 						>
 							{t.nav.contact} .
@@ -157,7 +159,7 @@ const t = translations[lang as keyof typeof translations];
 					</li>
 					<li>
 						<a
-							href="#contact"
+							href={`/${lang}/contact`}
 							class="block text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-accent dark:hover:text-dark-text-accent"
 						>
 							{t.nav.contact}

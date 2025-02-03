@@ -1,5 +1,6 @@
 import type { ImageMetadata } from "astro";
 import projectImg from "../assets/project.png";
+import naps from "../assets/naps.png";
 
 type ProjectSize = "large" | "square";
 
@@ -17,11 +18,11 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "1",
-    title: "E-commerce Platform",
-    description: "A full-featured online shopping platform",
-    image: projectImg,
-    tags: ["Next.js", "TypeScript", "Tailwind"],
-    link: "https://project1.com",
+    title: "Naps shaving",
+    description: "A full-featured Beauty salon website, with integrated blog.",
+    image: naps,
+    tags: ["SvelteKit", "TypeScript", "MicroCMS"],
+    link: "https://napssv.com",
     size: "large",
   },
   {

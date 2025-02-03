@@ -5,6 +5,10 @@ import Header from "../../components/layout/Header.astro";
 import Footer from "../../components/layout/Footer.astro";
 import translations from "../../i18n";
 import ProjectCard from "../../components/sections/ProjectCard.astro";
+import homeLight from "../../assets/home-light.png";
+import homeDark from "../../assets/home-dark.png";
+import naps from "../../assets/naps.png";
+import cryptrack from "../../assets/cryptrackHome.png";
 
 export function getStaticPaths() {
 	return [
@@ -25,8 +29,8 @@ const t = translations[lang as keyof typeof translations];
 	<section
 		class="bg-light-surface-hero dark:bg-dark-surface-hero min-h-[90vh] flex items-center"
 	>
-		<div class="container mx-auto px-4">
-			<div class="flex flex-col md:flex-row items-center gap-12">
+		<div class="container mx-auto px-8 md:px-24">
+			<div class="flex flex-col md:flex-row items-center">
 				<div class="flex-1">
 					<h1
 						class="text-5xl font-bold text-light-text-primary dark:text-dark-text-primary mb-6"
@@ -41,13 +45,24 @@ const t = translations[lang as keyof typeof translations];
 				</div>
 				<div class="flex-1">
 					<Image
-						src="/portfolio-logo.png"
+						src={homeLight}
 						alt="Profile"
 						width={500}
 						height={500}
-						class="rounded-lg shadow-lg w-full"
+						class="rounded-lg w-full block dark:hidden"
 						format="webp"
-						quality={80}
+						quality={100}
+						loading="eager"
+					/>
+					<Image
+						src={homeDark}
+						alt="Profile"
+						width={500}
+						height={500}
+						class="rounded-lg w-full hidden dark:block"
+						format="webp"
+						quality={100}
+						loading="eager"
 					/>
 				</div>
 			</div>
@@ -68,14 +83,14 @@ const t = translations[lang as keyof typeof translations];
 			<div class="flex flex-wrap justify-center gap-8">
 				<ProjectCard
 					description="Beauty salon in Tokyo"
-					imageUrl="/portfolio-logo.png"
+					imageUrl={naps}
 					tags={["SvelteKit", "MicroCMS", "TypeScript"]}
 					projectUrl="https://project1.com"
 				/>
 				<ProjectCard
-					description="E-commerce platform"
-					imageUrl="/portfolio-logo.png"
-					tags={["Vue.js", "Express", "PostgreSQL"]}
+					description="Desktop Crypto-portfolio"
+					imageUrl={cryptrack}
+					tags={["Golang", "Wails", "React"]}
 					projectUrl="https://project2.com"
 				/>
 			</div>
