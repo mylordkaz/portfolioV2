@@ -58,4 +58,18 @@ export interface Translation {
     };
     button: string;
   };
+  contact: {
+    title: string;
+    description: string;
+    form: {
+      name: string;
+      email: string;
+      message: string;
+      submit: string;
+    };
+    socials: {
+      title: string;
+      description: string;
+    };
+  };
 }

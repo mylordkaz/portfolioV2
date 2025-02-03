@@ -73,6 +73,21 @@ const jp: Translation = {
     },
     button: "相談のためにお問い合わせください",
   },
+  contact: {
+    title: "お問い合わせ",
+    description:
+      "プロジェクトのアイデアをお持ちですか？ご連絡をお待ちしています。メッセージを送信するか、ソーシャルメディアでつながりましょう。",
+    form: {
+      name: "お名前",
+      email: "メールアドレス",
+      message: "メッセージ",
+      submit: "送信",
+    },
+    socials: {
+      title: "ソーシャルメディア",
+      description: "ソーシャルメディアやメールでお気軽にお問い合わせください。",
+    },
+  },
 };
 
 export default jp;

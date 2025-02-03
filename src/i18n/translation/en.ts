@@ -73,6 +73,22 @@ const en: Translation = {
     },
     button: "Get in touch...",
   },
+  contact: {
+    title: "Let's Connect",
+    description:
+      "Have a project in mind? I'd love to hear about it. Drop me a message or connect through social media.",
+    form: {
+      name: "Name",
+      email: "Email",
+      message: "Message",
+      submit: "Send Message",
+    },
+    socials: {
+      title: "Find me on",
+      description:
+        "Feel free to connect with me on social media or send me an email.",
+    },
+  },
 };
 
 export default en;

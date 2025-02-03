@@ -73,6 +73,22 @@ const fr: Translation = {
     },
     button: "Contactez-moi!",
   },
+  contact: {
+    title: "Restons en Contact",
+    description:
+      "Vous avez un projet en tête ? Envoyez-moi un message ou connectez-vous via les réseaux sociaux.",
+    form: {
+      name: "Nom",
+      email: "Email",
+      message: "Message",
+      submit: "Envoyer",
+    },
+    socials: {
+      title: "Retrouvez-moi sur",
+      description:
+        "N'hésitez pas à me contacter sur les réseaux sociaux ou par email.",
+    },
+  },
 };
 
 export default fr;
