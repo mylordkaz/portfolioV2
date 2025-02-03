@@ -71,6 +71,7 @@ const en: Translation = {
         },
       ],
     },
+    button: "Get in touch...",
   },
 };
 

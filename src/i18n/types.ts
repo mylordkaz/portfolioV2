@@ -56,5 +56,6 @@ export interface Translation {
         },
       ];
     };
+    button: string;
   };
 }

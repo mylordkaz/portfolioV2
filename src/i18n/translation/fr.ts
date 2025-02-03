@@ -43,6 +43,36 @@ const fr: Translation = {
       },
     },
   },
+  about: {
+    title: "À propos de moi",
+    description:
+      "Ingénieur logiciel français passionné par la Blockchain et les technologies émergentes. Qu'il s'agisse d'une interface utilisateur élégante ou d'un système backend puissant, je me concentre sur la livraison de solutions efficaces.",
+    intro: {
+      title: "Qui je suis ?",
+      content: `Originaire de France et vivant au Japon, j'ai toujours été curieux et motivé par les défis. Mon parcours m'a conduit de la gestion hôtelière de luxe à travers le monde à une immersion dans le domaine de la technologie.\nQuand je ne code pas, vous me trouverez probablement à bricoler sur ma voiture ou à explorer les magnifiques paysages du Japon.`,
+    },
+    services: {
+      title: "Ce que je propose",
+      items: [
+        {
+          title: "Développement d'applications Web",
+          description:
+            "Solutions full-stack pour des applications Web réactives et sécurisées avec un design intuitif et esthétique.",
+        },
+        {
+          title: "Développement d'applications mobiles et de bureau",
+          description:
+            "Création d'applications personnalisées multiplateformes adaptées à vos besoins spécifiques.",
+        },
+        {
+          title: "Performance et optimisation",
+          description:
+            "Conception de systèmes backend fiables tout en améliorant la vitesse et l'efficacité pour une utilisation fluide.",
+        },
+      ],
+    },
+    button: "Contactez-moi!",
+  },
 };
 
 export default fr;
