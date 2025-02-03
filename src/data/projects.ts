@@ -1,6 +1,7 @@
 import type { ImageMetadata } from "astro";
 import projectImg from "../assets/project.png";
 import naps from "../assets/naps.png";
+import cryptrack from "../assets/cryptrackHome.png";
 
 type ProjectSize = "large" | "square";
 
@@ -27,48 +28,11 @@ export const projects: Project[] = [
   },
   {
     id: "2",
-    title: "Mobile App",
-    description: "iOS and Android application",
-    image: projectImg,
-    tags: ["React Native", "Firebase"],
+    title: "Cryptrack",
+    description: "A MacOs desktop app, Cryptocurrencies portfolio tracker.",
+    image: cryptrack,
+    tags: ["Golang", "Wails", "React"],
     link: "https://project2.com",
-    size: "square",
-  },
-  {
-    id: "6",
-    title: "AI Task Manager",
-    description: "Smart task management app with AI-powered prioritization",
-    image: projectImg,
-    tags: ["React", "Python", "TensorFlow"],
-    link: "https://project2.com",
-    size: "square",
-  },
-  {
-    id: "3",
-    title: "Real-time Chat App",
-    description: "Instant messaging platform with end-to-end encryption",
-    image: projectImg,
-    tags: ["Vue.js", "Socket.io", "Node.js"],
-    link: "https://project3.com",
-    size: "large",
-  },
-  {
-    id: "4",
-    title: "Weather Dashboard",
-    description: "Dynamic weather visualization with 7-day forecasts",
-    image: projectImg,
-    tags: ["React", "D3.js", "OpenWeather API"],
-    link: "https://project4.com",
-    size: "square",
-  },
-  {
-    id: "5",
-    title: "Recipe Finder",
-    description:
-      "Personalized recipe recommendations based on available ingredients",
-    image: projectImg,
-    tags: ["Svelte", "Firebase", "Spoonacular API"],
-    link: "https://project5.com",
     size: "square",
   },
 ];
