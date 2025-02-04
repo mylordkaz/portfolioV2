@@ -23,6 +23,15 @@ const fr: Translation = {
     subtitle: "Vitrine du Portfolio",
     description:
       "Découvrez mes derniers travaux et projets techniques. Chaque projet représente un défi unique et une solution innovante.",
+    napsDescription:
+      "Un site web complet de salon de beauté avec blog intégré.",
+    cryptrackDescription:
+      "Une application desktop MacOS pour suivre votre portefeuille de cryptomonnaies.",
+    detailedNapsDescription:
+      "Naps est un site web moderne et multilingue de salon de beauté, soigneusement conçu pour un public anglophone et japonais. Le site présente de manière transparente les services du salon, les détails des soins et une section blog organisée pour guider les visiteurs dans leur parcours beauté. Grâce à la fonctionnalité de réservation intégrée, les clients peuvent facilement explorer les services et prendre rendez-vous dans leur langue préférée.",
+    technicalNapsDescription:
+      "Construit avec SvelteKit et TypeScript, et stylisé avec TailwindCSS, le site dispose d'une internationalisation robuste via Paraglide supportant le contenu en anglais et en japonais. L'architecture comprend le routage côté client et le chargement dynamique du contenu, avec l'intégration de MicroCMS pour la gestion du contenu du blog. Déployé sur Netlify, le site met en œuvre une optimisation SEO complète pour les deux langues, assurant une forte visibilité dans les recherches sur les deux marchés. Le design responsive et l'optimisation des performances créent une expérience utilisateur fluide sur tous les appareils.",
+    viewBtn: "Voir détails",
   },
   expertise: {
     title: "Expertise Technique",

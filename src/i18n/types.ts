@@ -23,7 +23,13 @@ export interface Translation {
     title: string;
     subtitle: string;
     description: string;
+    napsDescription: string;
+    cryptrackDescription: string;
+    detailedNapsDescription: string;
+    technicalNapsDescription: string;
+    viewBtn: string;
   };
+
   expertise: {
     title: string;
     description: string;
@@ -76,3 +82,4 @@ export interface Translation {
     };
   };
 }
+export type ProjectDescriptionKey = keyof Translation["projects"];

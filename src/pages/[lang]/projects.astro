@@ -6,6 +6,7 @@ import Header from "../../components/layout/Header.astro";
 import Footer from "../../components/layout/Footer.astro";
 import translations from "../../i18n";
 import { projects } from "../../data/projects";
+import ProjectModal from "../../components/sections/ProjectModal.astro";
 
 export function getStaticPaths() {
 	return [
@@ -64,50 +65,77 @@ const t = translations[lang as keyof typeof translations];
 		</div>
 	</section>
 
-	<!-- Projects Bento Grid Section -->
+	<!-- Projects Grid Section -->
+	<!-- Projects Grid Section -->
 	<section class="bg-light-surface-main dark:bg-dark-surface-main py-20">
 		<div class="container mx-auto p-12 md:px-24">
 			<div
-				class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[350px] gap-6"
+				class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto"
 			>
 				{
 					projects.map((project) => (
-						<div
-							class={`
-        bg-white dark:bg-dark-surface-header 
-        rounded-xl shadow-lg overflow-hidden 
-        transition-transform hover:scale-[1.02]
-        col-span-1
-        ${project.size === "large" ? "lg:col-span-2" : ""}
-      `}
-						>
-							<div class="flex flex-col h-full">
-								<Image
-									src={project.image}
-									alt={project.title}
-									width={600}
-									height={400}
-									class="w-full h-[180px] object-cover"
-									format="webp"
-									quality={100}
-								/>
-								<div class="p-4 flex-1">
-									<h3 class="text-xl font-bold text-light-text-primary dark:text-dark-text-primary mb-2">
-										{project.title}
-									</h3>
-									<p class="text-light-text-secondary dark:text-dark-text-secondary mb-4">
-										{project.description}
-									</p>
-									<div class="flex flex-wrap gap-2">
-										{project.tags.map((tag) => (
-											<span class="px-2 py-0.5 bg-light-hover-light dark:bg-dark-hover-light rounded-full text-sm text-light-text-secondary dark:text-dark-text-secondary">
-												{tag}
-											</span>
-										))}
+						<>
+							<div class="group bg-white dark:bg-dark-surface-header rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-[1.02] h-full flex flex-col">
+								<div class="w-full h-[180px]">
+									<Image
+										src={project.image}
+										alt={project.title}
+										width={600}
+										height={338}
+										class="w-full h-full object-cover"
+										format="webp"
+										quality={100}
+										loading="eager"
+									/>
+								</div>
+								<div class="p-6 flex flex-col flex-grow min-h-[250px]">
+									{" "}
+									{/* Add min-height */}
+									{/* Content section */}
+									<div class="mb-4">
+										<h3 class="text-xl font-bold text-light-text-primary dark:text-dark-text-primary mb-2">
+											{project.title}
+										</h3>
+										<p class="text-light-text-secondary dark:text-dark-text-secondary">
+											{t.projects[project.descriptionKey]}
+										</p>
+									</div>
+									{/* Spacer that grows/shrinks based on content */}
+									<div class="flex-grow" />
+									{/* Bottom section with tags and button */}
+									<div>
+										<div class="flex flex-wrap gap-2 mb-4">
+											{project.tags.map((tag) => (
+												<span class="px-3 py-1 text-sm font-medium border border-light-text-accent dark:border-dark-text-accent rounded-full text-light-text-primary dark:text-dark-text-primary">
+													{tag}
+												</span>
+											))}
+										</div>
+										<div class="flex justify-end">
+											<button
+												id={`modal-open-${project.id}`}
+												type="button"
+												class="inline-block px-4 py-2 bg-light-text-accent dark:bg-dark-text-accent text-white rounded-lg hover:opacity-90 transition-opacity"
+											>
+												View Details
+											</button>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+
+							<ProjectModal
+								id={project.id}
+								title={project.title}
+								description={t.projects[project.descriptionKey]}
+								detailedDescription={project.detailedDescription}
+								technicalDescription={project.technicalDescription}
+								image={project.image}
+								galleryImages={project.galleryImages}
+								tags={project.tags}
+								link={project.link}
+							/>
+						</>
 					))
 				}
 			</div>
