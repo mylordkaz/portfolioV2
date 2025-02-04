@@ -44,6 +44,14 @@ export const expertise: Record<ExpertiseKey, ExpertiseCategory> = {
   devops: {
     id: "devops",
     image: devopsImg,
-    skills: ["Docker", "AWS", "CI/CD", "React Native", "Git", "GitHub"],
+    skills: [
+      "Docker",
+      "AWS",
+      "CI/CD",
+      "React Native",
+      "Wails",
+      "Git",
+      "GitHub",
+    ],
   },
 };
