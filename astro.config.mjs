@@ -8,7 +8,9 @@ import netlify from "@astrojs/netlify";
 
 export default defineConfig({
   integrations: [tailwind(), react()],
-
+  redirects: {
+    "/": "/en",
+  },
   i18n: {
     defaultLocale: "en",
     locales: ["en", "ja", "fr"],
