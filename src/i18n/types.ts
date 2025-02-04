@@ -13,6 +13,9 @@ export interface Translation {
     title: string;
     description: string;
   };
+  section: {
+    title: string;
+  };
   footer: {
     softwareEngineer: string;
   };

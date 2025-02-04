@@ -12,6 +12,9 @@ const en: Translation = {
     description:
       "Digital craftsman who Deliver high-performance web solutions. Based in Tokyo, Japan.",
   },
+  section: {
+    title: "Latest Projects",
+  },
   footer: {
     softwareEngineer: "Software Engineer",
   },

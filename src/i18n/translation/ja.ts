@@ -12,6 +12,9 @@ const jp: Translation = {
     description:
       "東京を拠点とするデジタルクラフトマン。高性能なウェブソリューションを提供します。",
   },
+  section: {
+    title: "最新のプロジェクト",
+  },
   footer: {
     softwareEngineer: "Software Engineer",
   },
