@@ -1,5 +1,4 @@
 import type { ImageMetadata } from "astro";
-import projectImg from "../assets/project.png";
 import naps from "../assets/naps.png";
 import cryptrack from "../assets/cryptrackHome.png";
 
@@ -23,7 +22,7 @@ export const projects: Project[] = [
     description: "A full-featured Beauty salon website, with integrated blog.",
     image: naps,
     tags: ["SvelteKit", "TypeScript", "MicroCMS"],
-    link: "https://napssv.com",
+    link: "",
     size: "large",
   },
   {
@@ -32,7 +31,7 @@ export const projects: Project[] = [
     description: "A MacOs desktop app, Cryptocurrencies portfolio tracker.",
     image: cryptrack,
     tags: ["Golang", "Wails", "React"],
-    link: "https://project2.com",
+    link: "",
     size: "square",
   },
 ];

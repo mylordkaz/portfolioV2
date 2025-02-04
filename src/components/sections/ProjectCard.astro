@@ -13,18 +13,18 @@ const { description, imageUrl, tags, projectUrl } = Astro.props;
 ---
 
 <div
-	class="relative bg-light-surface-main dark:bg-dark-surface-main rounded-xl shadow-lg overflow-hidden w-[300px] border border-light-border-light dark:border-dark-border-light"
+	class="relative bg-light-surface-main dark:bg-dark-surface-main rounded-xl shadow-lg overflow-hidden h-[340px] w-[300px] border border-light-border-light dark:border-dark-border-light"
 >
 	<Image
 		src={imageUrl}
 		alt={description}
 		width={300}
 		height={160}
-		class="w-full h-40 object-cover"
+		class="w-full h-44 object-cover"
 		format="webp"
-		quality={95}
+		quality={100}
 	/>
-	<div class="p-4">
+	<div class="p-8">
 		<p class="text-light-text-secondary dark:text-dark-text-secondary mb-4">
 			{description}
 		</p>
