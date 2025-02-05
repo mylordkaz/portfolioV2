@@ -54,6 +54,8 @@ const t = translations[lang as keyof typeof translations];
 						method="POST"
 						data-netlify="true"
 					>
+						<!-- Add required hidden input for Netlify -->
+						<input type="hidden" name="form-name" value="contact" />
 						<div>
 							<label
 								for="name"
@@ -99,8 +101,24 @@ const t = translations[lang as keyof typeof translations];
 								class="w-full px-4 py-2 rounded-lg border border-light-border-light dark:border-dark-border-light bg-light-surface-main dark:bg-dark-surface-main text-light-text-primary dark:text-dark-text-primary focus:outline-none focus:ring-2 focus:ring-light-text-accent dark:focus:ring-dark-text-accent"
 							></textarea>
 						</div>
+						<!-- Add success/error message display -->
+						<div id="form-status" class="hidden">
+							<p
+								id="success-message"
+								class="text-green-600 dark:text-green-400 hidden"
+							>
+								{t.contact.form.success}
+							</p>
+							<p
+								id="error-message"
+								class="text-red-600 dark:text-red-400 hidden"
+							>
+								{t.contact.form.error}
+							</p>
+						</div>
 						<button
 							type="submit"
+							id="submit-button"
 							class="w-full px-6 py-3 bg-light-text-accent dark:bg-dark-text-accent text-white rounded-lg hover:opacity-90 transition-opacity"
 						>
 							{t.contact.form.submit}
@@ -190,3 +208,68 @@ const t = translations[lang as keyof typeof translations];
 
 	<Footer />
 </Layout>
+
+<script>
+	const handleSubmit = async (event: Event) => {
+		event.preventDefault();
+
+		const form = event.target as HTMLFormElement;
+		const submitButton = form.querySelector(
+			"#submit-button",
+		) as HTMLButtonElement;
+		const formStatus = document.getElementById("form-status");
+		const successMessage = document.getElementById("success-message");
+		const errorMessage = document.getElementById("error-message");
+
+		// Store original button text
+		const originalButtonText = submitButton.innerHTML;
+
+		try {
+			// Disable button and show loading state
+			submitButton.disabled = true;
+			submitButton.innerHTML = "Sending...";
+
+			// Submit the form data
+			const response = await fetch(form.action, {
+				method: "POST",
+				body: new FormData(form),
+			});
+
+			if (response.ok) {
+				// Show success message
+				form.reset();
+				formStatus?.classList.remove("hidden");
+				successMessage?.classList.remove("hidden");
+				errorMessage?.classList.add("hidden");
+
+				// Hide success message after 5 seconds
+				setTimeout(() => {
+					formStatus?.classList.add("hidden");
+					successMessage?.classList.add("hidden");
+				}, 5000);
+			} else {
+				throw new Error("Form submission failed");
+			}
+		} catch (error) {
+			// Show error message
+			formStatus?.classList.remove("hidden");
+			errorMessage?.classList.remove("hidden");
+			successMessage?.classList.add("hidden");
+
+			// Hide error message after 5 seconds
+			setTimeout(() => {
+				formStatus?.classList.add("hidden");
+				errorMessage?.classList.add("hidden");
+			}, 5000);
+		} finally {
+			// Reset button state
+			submitButton.disabled = false;
+			submitButton.innerHTML = originalButtonText;
+		}
+	};
+
+	// Add form submission handler
+	document
+		.querySelector('form[name="contact"]')
+		?.addEventListener("submit", handleSubmit);
+</script>

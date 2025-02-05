@@ -83,6 +83,9 @@ export interface Translation {
       email: string;
       message: string;
       submit: string;
+      success: string;
+      error: string;
+      sending: string;
     };
     socials: {
       title: string;
