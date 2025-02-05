@@ -31,7 +31,17 @@ const fr: Translation = {
       "Naps est un site web moderne et multilingue de salon de beauté, soigneusement conçu pour un public anglophone et japonais. Le site présente de manière transparente les services du salon, les détails des soins et une section blog organisée pour guider les visiteurs dans leur parcours beauté. Grâce à la fonctionnalité de réservation intégrée, les clients peuvent facilement explorer les services et prendre rendez-vous dans leur langue préférée.",
     technicalNapsDescription:
       "Construit avec SvelteKit et TypeScript, et stylisé avec TailwindCSS, le site dispose d'une internationalisation robuste via Paraglide supportant le contenu en anglais et en japonais. L'architecture comprend le routage côté client et le chargement dynamique du contenu, avec l'intégration de MicroCMS pour la gestion du contenu du blog. Déployé sur Netlify, le site met en œuvre une optimisation SEO complète pour les deux langues, assurant une forte visibilité dans les recherches sur les deux marchés. Le design responsive et l'optimisation des performances créent une expérience utilisateur fluide sur tous les appareils.",
+    detailedCryptDescription:
+      "Cryptrack est une application native pour macOS permettant aux utilisateurs de suivre leurs investissements en cryptomonnaies. Elle propose des mises à jour de prix en temps réel, une gestion de portefeuille avec suivi des transactions d'achat/vente, des analyses de performance et une interface moderne et épurée avec prise en charge des modes clair et sombre. Les utilisateurs peuvent gérer en toute sécurité plusieurs cryptomonnaies et analyser leurs gains et pertes sur le long terme. ",
+    technicalCryptDescription:
+      "Développée avec Wails v2.9 (Go/React), cette application de bureau combine un backend en Go pour la logique métier et la gestion des données, et un frontend en React TypeScript utilisant Tailwind CSS pour le design. L'application intègre l'API de CoinMarketCap pour fournir des données cryptographiques en temps réel, utilise SQLite avec GORM pour le stockage persistant, implémente une authentification sécurisée avec hachage bcrypt et exploite le trousseau macOS pour la gestion des sessions. L'architecture suit un modèle basé sur les services, avec une séparation claire entre l'interface utilisateur, la logique métier et les couches de données. ",
     viewBtn: "Voir détails",
+    modal: {
+      about: "À propos du projet",
+      technical: "Aperçu technique",
+      gallery: "Galerie",
+      visitbtn: "Visiter le site",
+    },
   },
   expertise: {
     title: "Expertise Technique",

@@ -1,6 +1,7 @@
 import { string } from "astro:schema";
 
 export type ExpertiseKey = "frontend" | "backend" | "devops";
+export type ProjectDescriptionKey = keyof Translation["projects"];
 
 export interface Translation {
   nav: {
@@ -27,9 +28,16 @@ export interface Translation {
     cryptrackDescription: string;
     detailedNapsDescription: string;
     technicalNapsDescription: string;
+    detailedCryptDescription: string;
+    technicalCryptDescription: string;
     viewBtn: string;
+    modal: {
+      about: string;
+      technical: string;
+      gallery: string;
+      visitbtn: string;
+    };
   };
-
   expertise: {
     title: string;
     description: string;
@@ -82,4 +90,3 @@ export interface Translation {
     };
   };
 }
-export type ProjectDescriptionKey = keyof Translation["projects"];

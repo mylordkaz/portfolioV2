@@ -5,7 +5,14 @@ import naps from "../assets/naps/naps.webp";
 import cryptrack from "../assets/cryptrack/cryptrack.webp";
 
 const napsGalleryImages = import.meta.glob<ImageMetadata>(
-  "../assets/naps/*.{png,jpg,jpeg,webp}",
+  "../assets/naps/gallery/*.{png,jpg,jpeg,webp}",
+  {
+    import: "default",
+    eager: true,
+  },
+);
+const cryptGalleryImages = import.meta.glob<ImageMetadata>(
+  "../assets/cryptrack/gallery/*.{png,jpg,jpeg,webp}",
   {
     import: "default",
     eager: true,
@@ -40,10 +47,10 @@ export const projects: Project[] = [
     id: "2",
     title: "Cryptrack",
     descriptionKey: "cryptrackDescription",
-    detailedDescription: "",
-    technicalDescription: "",
+    detailedDescription: "detailedCryptDescription",
+    technicalDescription: "technicalCryptDescription",
     image: cryptrack,
-    galleryImages: [],
+    galleryImages: Object.values(cryptGalleryImages),
     tags: ["Golang", "Wails", "React"],
     link: "",
   },

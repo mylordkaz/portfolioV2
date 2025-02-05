@@ -31,8 +31,17 @@ const en: Translation = {
       "Naps is a modern, multilingual beauty salon website thoughtfully designed for an English and Japanese audience. The site seamlessly presents salon services, treatment details, and a curated blog section to guide visitors through their beauty journey. With integrated booking functionality, customers can easily explore services and make appointments in their preferred language.",
     technicalNapsDescription:
       "Built on SvelteKit with TypeScript and styled using TailwindCSS, the site features robust internationalization through Paraglide supporting English and Japanese content. The architecture includes client-side routing and dynamic content loading, with MicroCMS integration handling blog content management. Deployed on Netlify, the site implements comprehensive SEO optimization for both languages, ensuring strong search visibility in both markets. The responsive design and performance optimization create a smooth user experience across all devices.",
-
+    detailedCryptDescription:
+      "Cryptrack is a native macOS desktop application that helps users track their cryptocurrency investments. It features real-time price updates, portfolio management with buy/sell transaction tracking, performance analytics, and a clean, modern interface with dark/light mode support. Users can securely manage multiple cryptocurrencies, and analyze their investment gains and losses over time.",
+    technicalCryptDescription:
+      "Built with Wails v2.9 (Go/React), this desktop application combines a Go backend for business logic and data management with a React TypeScript frontend using Tailwind CSS for styling. The app integrates with CoinMarketCap's API for real-time crypto data, uses SQLite with GORM for persistent storage, implements secure user authentication with bcrypt hashing, and leverages the macOS keychain for session management. The architecture follows a service-based pattern with clean separation between the UI, business logic, and data layers.",
     viewBtn: "View Details",
+    modal: {
+      about: "About the Project",
+      technical: "Technical Overview",
+      gallery: "Gallery",
+      visitbtn: "Visit Website",
+    },
   },
 
   expertise: {
