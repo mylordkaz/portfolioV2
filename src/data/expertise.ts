@@ -1,8 +1,8 @@
 import type { ImageMetadata } from "astro";
 import type { ExpertiseKey } from "../i18n/types.ts";
-import frontendImg from "../assets/frontend.png";
-import backendImg from "../assets/backend.png";
-import devopsImg from "../assets/devops.png";
+import frontendImg from "../assets/frontend.webp";
+import backendImg from "../assets/backend.webp";
+import devopsImg from "../assets/devops.webp";
 
 export interface ExpertiseCategory {
   id: string;

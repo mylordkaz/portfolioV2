@@ -1,8 +1,8 @@
 import type { ImageMetadata } from "astro";
 import type { ProjectDescriptionKey } from "../i18n/types";
 
-import naps from "../assets/naps.png";
-import cryptrack from "../assets/cryptrackHome.png";
+import naps from "../assets/naps/naps.webp";
+import cryptrack from "../assets/cryptrack/cryptrack.webp";
 
 const napsGalleryImages = import.meta.glob<ImageMetadata>(
   "../assets/naps/*.{png,jpg,jpeg,webp}",
