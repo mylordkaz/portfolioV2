@@ -103,6 +103,10 @@ const jp: Translation = {
       email: "メールアドレス",
       message: "メッセージ",
       submit: "送信",
+      success: "メッセージを送信しました！追ってご連絡させていただきます。",
+      error:
+        "メッセージの送信中にエラーが発生しました。もう一度お試しください。",
+      sending: "送信中...",
     },
     socials: {
       title: "ソーシャルメディア",

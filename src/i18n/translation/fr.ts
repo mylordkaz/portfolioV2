@@ -104,6 +104,10 @@ const fr: Translation = {
       email: "Email",
       message: "Message",
       submit: "Envoyer",
+      success: "Message envoyé avec succès ! Nous vous répondrons bientôt.",
+      error:
+        "Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer.",
+      sending: "Envoi en cours...",
     },
     socials: {
       title: "Retrouvez-moi sur",
