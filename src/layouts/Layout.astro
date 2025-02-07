@@ -1,10 +1,23 @@
 ---
+import logoLight from "../../assets/logo-light.svg";
+
 interface Props {
 	title: string;
+	description?: string;
 }
-const { title } = Astro.props;
+
+const {
+	title,
+	description = "Digital craftsman delivering high-performance web solutions. Based in Tokyo, Japan.",
+} = Astro.props;
+const baseUrl = "https://kevintim.com";
 const currentPath = Astro.url.pathname;
 const lang = currentPath.split("/")[1] || "en";
+
+const localizedDescription = {
+	en: description,
+	ja: "高性能なウェブソリューションを提供するデジタルクフトマン。東京在住。",
+};
 ---
 
 <!doctype html>
@@ -14,7 +27,6 @@ const lang = currentPath.split("/")[1] || "en";
 >
 	<head>
 		<script is:inline>
-			// Immediately set the theme before page renders
 			const theme = (() => {
 				if (
 					typeof localStorage !== "undefined" &&
@@ -34,11 +46,51 @@ const lang = currentPath.split("/")[1] || "en";
 				document.documentElement.classList.add("dark");
 			}
 
-			// Set a data attribute to indicate theme is initialized
 			document.documentElement.setAttribute("data-theme-initialized", "");
 		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="author" content="Kevin Tim" />
+		<meta name="theme-color" content="#2563EB" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={title} />
+		<meta
+			name="twitter:description"
+			content={localizedDescription[lang as keyof typeof localizedDescription]}
+		/>
+		<meta name="twitter:image" content={logoLight.src} />
+
+		<!-- SEO Meta Tags -->
+		<meta
+			name="description"
+			content={localizedDescription[lang as keyof typeof localizedDescription]}
+		/>
+		<meta name="robots" content="index, follow" />
+		<!-- Open Graph -->
+		<meta property="og:title" content={title} />
+		<meta
+			property="og:description"
+			content={localizedDescription[lang as keyof typeof localizedDescription]}
+		/>
+		<meta property="og:image" content={logoLight.src} />
+		<meta property="og:image:width" content="80" />
+		<meta property="og:image:height" content="80" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={`${baseUrl}${currentPath}`} />
+		<meta property="og:locale" content={lang === "ja" ? "ja_JP" : "en_US"} />
+
+		<!-- Language alternates -->
+		<link
+			rel="alternate"
+			hreflang="en"
+			href={`${baseUrl}/en${currentPath.slice(3)}`}
+		/>
+		<link
+			rel="alternate"
+			hreflang="ja"
+			href={`${baseUrl}/ja${currentPath.slice(3)}`}
+		/>
+
 		<link rel="icon" type="png" href="../../public/portfolio-logo.png" />
 		<meta name="generator" content={Astro.generator} />
 		<!-- Add Google Fonts -->
