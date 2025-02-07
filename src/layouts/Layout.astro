@@ -101,6 +101,131 @@ const localizedDescription = {
 			rel="stylesheet"
 		/>
 		<title>{title}</title>
+
+		<!-- Global Person JSON-LD -->
+		<script
+			type="application/ld+json"
+			set:html={JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "Person",
+				name: "Kevin Tim",
+				jobTitle: "Software Engineer",
+				description:
+					"Digital craftsman delivering high-performance web solutions",
+				url: "https://kevintim.com",
+				sameAs: [
+					"https://github.com/mylordkaz",
+					"https://linkedin.com/in/kevin-timsiline",
+				],
+				address: {
+					"@type": "PostalAddress",
+					addressLocality: "Tokyo",
+					addressCountry: "Japan",
+				},
+			})}
+		/>
+
+		<!-- Page-specific JSON-LD -->
+		{
+			currentPath.includes("/projects") && (
+				<script
+					type="application/ld+json"
+					set:html={JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "ItemList",
+						itemListElement: [
+							{
+								"@type": "SoftwareApplication",
+								name: "Naps shaving",
+								applicationCategory: "WebApplication",
+								description:
+									"A full-featured Beauty salon website with integrated blog",
+								url: "https://napsv.com/",
+								operatingSystem: "Any",
+								author: {
+									"@type": "Person",
+									name: "Kevin Tim",
+								},
+								programmingLanguage: ["SvelteKit", "TypeScript", "MicroCMS"],
+							},
+							{
+								"@type": "SoftwareApplication",
+								name: "Cryptrack",
+								applicationCategory: "DesktopApplication",
+								description:
+									"A MacOs desktop app, Cryptocurrencies portfolio tracker",
+								operatingSystem: "MacOS",
+								author: {
+									"@type": "Person",
+									name: "Kevin Tim",
+								},
+								programmingLanguage: ["Golang", "Wails", "React"],
+							},
+						],
+					})}
+				/>
+			)
+		}
+
+		{
+			currentPath.includes("/expertise") && (
+				<script
+					type="application/ld+json"
+					set:html={JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "ItemList",
+						itemListElement: [
+							{
+								"@type": "Skill",
+								name: "Frontend Development",
+								description: "Building fast and user-friendly interfaces",
+								keywords: [
+									"React",
+									"Svelte",
+									"TypeScript",
+									"Tailwind CSS",
+									"Remix",
+									"Astro",
+									"HTML/CSS",
+									"JavaScript",
+								],
+							},
+							{
+								"@type": "Skill",
+								name: "Backend Development",
+								description:
+									"Creating reliable and efficient server-side applications",
+								keywords: [
+									"Node.js",
+									"Golang",
+									"Laravel",
+									"PostgreSQL",
+									"SQLite",
+									"Prisma",
+									"REST APIs",
+									"GraphQL",
+								],
+							},
+							{
+								"@type": "Skill",
+								name: "DevOps & App Development",
+								description:
+									"Managing cloud environments and creating applications",
+								keywords: [
+									"Docker",
+									"AWS",
+									"CI/CD",
+									"React Native",
+									"Wails",
+									"Git",
+									"GitHub",
+								],
+							},
+						],
+					})}
+				/>
+			)
+		}
 	</head>
 	<body>
 		<slot />
