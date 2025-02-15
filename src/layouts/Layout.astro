@@ -1,5 +1,6 @@
 ---
 import logoLight from "../assets/logo-light.svg";
+import logoDark from "../assets/logo-dark.svg";
 
 interface Props {
 	title: string;
@@ -91,7 +92,7 @@ const localizedDescription = {
 			href={`${baseUrl}/ja${currentPath.slice(3)}`}
 		/>
 
-		<link rel="icon" type="png" href="../../public/portfolio-logo.png" />
+		<link rel="icon" type="image/svg+xml" href={logoDark.src} />
 		<meta name="generator" content={Astro.generator} />
 		<!-- Add Google Fonts -->
 		<link rel="preload" href="https://fonts.googleapis.com" />
