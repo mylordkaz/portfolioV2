@@ -209,7 +209,7 @@ const t = translations[lang as keyof typeof translations];
 
 <div
 	id="fullscreen-viewer"
-	class="fixed inset-0 z-[100] hidden bg-black/95"
+	class="fixed inset-0 z-[100] hidden bg-black/65"
 	role="dialog"
 	aria-modal="true"
 >
@@ -237,7 +237,9 @@ const t = translations[lang as keyof typeof translations];
 </div>
 
 <script>
+	// Store references to active elements
 	let activeModal: HTMLElement | null = null;
+	let activeFullscreenViewer: HTMLElement | null = null;
 
 	function openModal(modalId: string) {
 		const modal = document.getElementById(modalId);
@@ -245,14 +247,12 @@ const t = translations[lang as keyof typeof translations];
 
 		activeModal = modal;
 		modal.classList.remove("hidden");
-		// Ensure mobile scrolling is locked
 		document.body.style.overflow = "hidden";
-		// Use setTimeout to ensure opacity transition works
 		setTimeout(() => modal.classList.remove("opacity-0"), 10);
 	}
 
 	function closeModal(modal: HTMLElement) {
-		if (!modal) return;
+		if (!modal || activeFullscreenViewer) return; // Prevent modal close if fullscreen is active
 
 		modal.classList.add("opacity-0");
 		setTimeout(() => {
@@ -260,6 +260,29 @@ const t = translations[lang as keyof typeof translations];
 			document.body.style.overflow = "";
 		}, 300);
 		activeModal = null;
+	}
+
+	function openFullscreen(imageSrc: string, imageAlt: string) {
+		const viewer = document.getElementById("fullscreen-viewer");
+		const viewerImage = document.getElementById(
+			"fullscreen-image",
+		) as HTMLImageElement;
+
+		if (!viewer || !viewerImage) return;
+
+		activeFullscreenViewer = viewer;
+		viewerImage.src = imageSrc;
+		viewerImage.alt = imageAlt;
+		viewer.classList.remove("hidden");
+		document.body.style.overflow = "hidden";
+	}
+
+	function closeFullscreen() {
+		if (!activeFullscreenViewer) return;
+
+		activeFullscreenViewer.classList.add("hidden");
+		document.body.style.overflow = "hidden"; // Keep hidden because modal is still open
+		activeFullscreenViewer = null;
 	}
 
 	function initializeModals() {
@@ -276,6 +299,7 @@ const t = translations[lang as keyof typeof translations];
 		document.querySelectorAll(".modal-close").forEach((button) => {
 			button.addEventListener("click", (e) => {
 				e.stopPropagation();
+				if (activeFullscreenViewer) return; // Prevent modal close if fullscreen is active
 				const modal = (e.target as HTMLElement).closest('[id^="modal-"]');
 				if (modal) closeModal(modal as HTMLElement);
 			});
@@ -283,64 +307,41 @@ const t = translations[lang as keyof typeof translations];
 
 		// Close on outside click (only for desktop)
 		document.addEventListener("click", (e) => {
+			if (activeFullscreenViewer) return; // Prevent modal close if fullscreen is active
 			if (
 				activeModal &&
 				!(e.target as HTMLElement).closest(".modal-content") &&
-				window.innerWidth >= 640 // 640px is sm breakpoint
+				window.innerWidth >= 640
 			) {
 				closeModal(activeModal);
 			}
 		});
 
-		// Close on escape key
+		// Handle ESC key
 		document.addEventListener("keydown", (e) => {
-			if (e.key === "Escape" && activeModal) {
-				closeModal(activeModal);
+			if (e.key === "Escape") {
+				if (activeFullscreenViewer) {
+					closeFullscreen();
+				} else if (activeModal) {
+					closeModal(activeModal);
+				}
 			}
 		});
 	}
 
-	// Initialize on page load
-	initializeModals();
-
-	// Handle resize events
-	window.addEventListener("resize", () => {
-		if (activeModal) {
-			// Adjust modal positioning if needed
-			const content = activeModal.querySelector(".modal-content");
-			if (content) {
-				content.classList.toggle("h-full", window.innerWidth < 640);
-			}
-		}
-	});
 	function initializeFullscreenViewer() {
 		const viewer = document.getElementById("fullscreen-viewer");
 		const viewerImage = document.getElementById(
 			"fullscreen-image",
 		) as HTMLImageElement;
 		const closeButton = document.getElementById("close-fullscreen");
-		// This was wrong - looking for wrong selector
 		const expandButtons = document.querySelectorAll(".expand-image");
 
 		if (!viewer || !viewerImage || !closeButton) return;
 
-		function openFullscreen(imageSrc: string, imageAlt: string) {
-			if (!viewer || !viewerImage) return;
-			viewerImage.src = imageSrc;
-			viewerImage.alt = imageAlt;
-			viewer.classList.remove("hidden");
-			document.body.style.overflow = "hidden";
-		}
-
-		function closeFullscreen() {
-			if (!viewer) return;
-			viewer.classList.add("hidden");
-			document.body.style.overflow = "";
-		}
-
-		// Use the expand buttons instead of directly clicking images
 		expandButtons.forEach((button) => {
-			button.addEventListener("click", () => {
+			button.addEventListener("click", (e) => {
+				e.stopPropagation(); // Prevent modal close
 				const imageSrc = button.getAttribute("data-image-src");
 				const imageAlt = button.getAttribute("data-image-alt");
 				if (imageSrc) {
@@ -349,21 +350,23 @@ const t = translations[lang as keyof typeof translations];
 			});
 		});
 
-		closeButton?.addEventListener("click", closeFullscreen);
-		viewer?.addEventListener("click", (e) => {
-			if (e.target === viewer) {
-				closeFullscreen();
-			}
+		closeButton.addEventListener("click", (e) => {
+			e.stopPropagation(); // Prevent event bubbling
+			closeFullscreen();
 		});
 
-		document.addEventListener("keydown", (e) => {
-			if (e.key === "Escape" && !viewer?.classList.contains("hidden")) {
+		viewer.addEventListener("click", (e) => {
+			if (e.target === viewer) {
 				closeFullscreen();
 			}
 		});
 	}
 
+	// Initialize both systems
+	initializeModals();
 	initializeFullscreenViewer();
+
+	// Re-initialize on page navigation
 	document.addEventListener("astro:page-load", () => {
 		initializeModals();
 		initializeFullscreenViewer();
