@@ -122,16 +122,40 @@ const t = translations[lang as keyof typeof translations];
 									<h4 class="text-xl font-bold text-light-text-primary dark:text-dark-text-primary">
 										{t.projects.modal.gallery}
 									</h4>
-									<div class="grid grid-cols-1 sm:grid-cols-2 gap-1">
+									<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 										{galleryImages.map((img, index) => (
-											<div class="border rounded-lg border-light-border-light dark:border-dark-border-light overflow-hidden">
-												<Image
-													src={img}
-													alt={`${title} gallery image ${index + 1}`}
-													width={600}
-													height={400}
-													class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-												/>
+											<div class="group relative overflow-hidden rounded-lg border border-light-border-light dark:border-dark-border-light">
+												<div class="aspect-video">
+													<Image
+														src={img}
+														alt={`${title} gallery image ${index + 1}`}
+														width={600}
+														height={400}
+														class="w-full h-full object-contain"
+														format="webp"
+														quality={90}
+													/>
+												</div>
+												<button
+													class="expand-image absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all group-hover:bg-black/40 group-hover:opacity-100"
+													aria-label="View full image"
+													data-image-src={img.src}
+													data-image-alt={`${title} gallery image ${index + 1}`}
+												>
+													<svg
+														class="w-8 h-8 text-white"
+														fill="none"
+														stroke="currentColor"
+														viewBox="0 0 24 24"
+													>
+														<path
+															stroke-linecap="round"
+															stroke-linejoin="round"
+															stroke-width="2"
+															d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m4-3H6"
+														/>
+													</svg>
+												</button>
 											</div>
 										))}
 									</div>
@@ -180,6 +204,35 @@ const t = translations[lang as keyof typeof translations];
 				</div>
 			</div>
 		</div>
+	</div>
+</div>
+
+<div
+	id="fullscreen-viewer"
+	class="fixed inset-0 z-[100] hidden bg-black/95"
+	role="dialog"
+	aria-modal="true"
+>
+	<button
+		id="close-fullscreen"
+		class="absolute right-4 top-4 z-[110] rounded-full p-2 text-white hover:bg-white/10"
+	>
+		<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				stroke-width="2"
+				d="M6 18L18 6M6 6l12 12"></path>
+		</svg>
+	</button>
+
+	<div class="h-full w-full flex items-center justify-center p-4">
+		<img
+			id="fullscreen-image"
+			src=""
+			alt=""
+			class="max-h-[90vh] max-w-[90vw] object-contain"
+		/>
 	</div>
 </div>
 
@@ -250,9 +303,6 @@ const t = translations[lang as keyof typeof translations];
 	// Initialize on page load
 	initializeModals();
 
-	// Re-initialize when navigating between pages
-	document.addEventListener("astro:page-load", initializeModals);
-
 	// Handle resize events
 	window.addEventListener("resize", () => {
 		if (activeModal) {
@@ -262,5 +312,60 @@ const t = translations[lang as keyof typeof translations];
 				content.classList.toggle("h-full", window.innerWidth < 640);
 			}
 		}
+	});
+	function initializeFullscreenViewer() {
+		const viewer = document.getElementById("fullscreen-viewer");
+		const viewerImage = document.getElementById(
+			"fullscreen-image",
+		) as HTMLImageElement;
+		const closeButton = document.getElementById("close-fullscreen");
+		// This was wrong - looking for wrong selector
+		const expandButtons = document.querySelectorAll(".expand-image");
+
+		if (!viewer || !viewerImage || !closeButton) return;
+
+		function openFullscreen(imageSrc: string, imageAlt: string) {
+			if (!viewer || !viewerImage) return;
+			viewerImage.src = imageSrc;
+			viewerImage.alt = imageAlt;
+			viewer.classList.remove("hidden");
+			document.body.style.overflow = "hidden";
+		}
+
+		function closeFullscreen() {
+			if (!viewer) return;
+			viewer.classList.add("hidden");
+			document.body.style.overflow = "";
+		}
+
+		// Use the expand buttons instead of directly clicking images
+		expandButtons.forEach((button) => {
+			button.addEventListener("click", () => {
+				const imageSrc = button.getAttribute("data-image-src");
+				const imageAlt = button.getAttribute("data-image-alt");
+				if (imageSrc) {
+					openFullscreen(imageSrc, imageAlt || "");
+				}
+			});
+		});
+
+		closeButton?.addEventListener("click", closeFullscreen);
+		viewer?.addEventListener("click", (e) => {
+			if (e.target === viewer) {
+				closeFullscreen();
+			}
+		});
+
+		document.addEventListener("keydown", (e) => {
+			if (e.key === "Escape" && !viewer?.classList.contains("hidden")) {
+				closeFullscreen();
+			}
+		});
+	}
+
+	initializeFullscreenViewer();
+	document.addEventListener("astro:page-load", () => {
+		initializeModals();
+		initializeFullscreenViewer();
 	});
 </script>
