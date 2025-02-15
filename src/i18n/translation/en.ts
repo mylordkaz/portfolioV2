@@ -27,6 +27,8 @@ const en: Translation = {
       "A full-featured Beauty salon website, with integrated blog.",
     cryptrackDescription:
       "A MacOs desktop app, Cryptocurrencies portfolio tracker.",
+    moneySwapDescription:
+      "Cross-platform mobile app, giving the money exchange rate in real-time of Fiat and Cryptocurrency.",
     detailedNapsDescription:
       "Naps is a modern, multilingual beauty salon website thoughtfully designed for an English and Japanese audience. The site seamlessly presents salon services, treatment details, and a curated blog section to guide visitors through their beauty journey. With integrated booking functionality, customers can easily explore services and make appointments in their preferred language.",
     technicalNapsDescription:
@@ -35,6 +37,10 @@ const en: Translation = {
       "Cryptrack is a native macOS desktop application that helps users track their cryptocurrency investments. It features real-time price updates, portfolio management with buy/sell transaction tracking, performance analytics, and a clean, modern interface with dark/light mode support. Users can securely manage multiple cryptocurrencies, and analyze their investment gains and losses over time.",
     technicalCryptDescription:
       "Built with Wails v2.9 (Go/React), this desktop application combines a Go backend for business logic and data management with a React TypeScript frontend using Tailwind CSS for styling. The app integrates with CoinMarketCap's API for real-time crypto data, uses SQLite with GORM for persistent storage, implements secure user authentication with bcrypt hashing, and leverages the macOS keychain for session management. The architecture follows a service-based pattern with clean separation between the UI, business logic, and data layers.",
+    detailedMoneySwapDescription:
+      "MoneySwap is a comprehensive currency conversion application that bridges the gap between traditional fiat currencies and cryptocurrencies. The app provides real-time exchange rates for major fiat currencies and a wide range of cryptocurrencies, enabling users to make informed decisions about their currency exchanges. With an intuitive interface, users can easily track multiple currency pairs simultaneously. The app focuses on delivering accurate, up-to-the-minute conversion rates while maintaining a smooth, responsive user experience across both iOS and Android platforms.",
+    technicalMoneySwapDescription:
+      "Built with React Native for cross-platform compatibility, the app features a clean, component-based architecture with TypeScript for enhanced type safety. The backend is powered by a robust Golang API service, utilizing goroutines for efficient concurrent processing of multiple exchange rate feeds. The system integrates with various financial APIs for fiat currency rates and cryptocurrency data, implementing WebSocket connections for real-time price updates. The backend implements a caching layer, while the mobile app uses local storage for offline functionality and user preferences. The application follows clean architecture principles, with clear separation of concerns between the UI, business logic, and data layers, ensuring maintainability and scalability. A webapp version is also under development.",
     viewBtn: "View Details",
     modal: {
       about: "About the Project",

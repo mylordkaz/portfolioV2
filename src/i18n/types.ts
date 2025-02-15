@@ -26,10 +26,13 @@ export interface Translation {
     description: string;
     napsDescription: string;
     cryptrackDescription: string;
+    moneySwapDescription: string;
     detailedNapsDescription: string;
     technicalNapsDescription: string;
     detailedCryptDescription: string;
     technicalCryptDescription: string;
+    detailedMoneySwapDescription: string;
+    technicalMoneySwapDescription: string;
     viewBtn: string;
     modal: {
       about: string;

@@ -3,6 +3,7 @@ import type { ProjectDescriptionKey } from "../i18n/types";
 
 import naps from "../assets/naps/naps.webp";
 import cryptrack from "../assets/cryptrack/cryptrack.webp";
+import moneySwap from "../assets/moneySwap/moneySwap.webp";
 
 const napsGalleryImages = import.meta.glob<ImageMetadata>(
   "../assets/naps/gallery/*.{png,jpg,jpeg,webp}",
@@ -13,6 +14,13 @@ const napsGalleryImages = import.meta.glob<ImageMetadata>(
 );
 const cryptGalleryImages = import.meta.glob<ImageMetadata>(
   "../assets/cryptrack/gallery/*.{png,jpg,jpeg,webp}",
+  {
+    import: "default",
+    eager: true,
+  },
+);
+const moneySwapGalleryImages = import.meta.glob<ImageMetadata>(
+  "../assets/moneySwap/gallery/*.{png,jpg,jpeg,webp}",
   {
     import: "default",
     eager: true,
@@ -52,6 +60,17 @@ export const projects: Project[] = [
     image: cryptrack,
     galleryImages: Object.values(cryptGalleryImages),
     tags: ["Golang", "Wails", "React"],
+    link: "",
+  },
+  {
+    id: "3",
+    title: "MoneySwap",
+    descriptionKey: "moneySwapDescription",
+    detailedDescription: "detailedMoneySwapDescription",
+    technicalDescription: "technicalMoneySwapDescription",
+    image: moneySwap,
+    galleryImages: Object.values(moneySwapGalleryImages),
+    tags: ["React-native", "TypeScript", "Golang"],
     link: "",
   },
 ];
