@@ -1,20 +1,7 @@
 ---
-import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 import translations from "../../i18n";
-import type { ProjectDescriptionKey } from "../../i18n/types";
-
-interface Props {
-	id: string;
-	title: string;
-	description: string;
-	detailedDescription: ProjectDescriptionKey;
-	technicalDescription: ProjectDescriptionKey;
-	image: ImageMetadata;
-	galleryImages?: ImageMetadata[];
-	tags: string[];
-	link?: string;
-}
+import type { ProjectModalProps } from "../../types/project";
 
 const {
 	id,
@@ -25,7 +12,7 @@ const {
 	galleryImages = [],
 	tags,
 	link,
-} = Astro.props;
+} = Astro.props as ProjectModalProps;
 
 const currentPath = Astro.url.pathname;
 const lang = currentPath.split("/")[1] || "en";
@@ -244,138 +231,11 @@ const t = translations[lang as keyof typeof translations];
 </div>
 
 <script>
-	// Store references to active elements
-	let activeModal: HTMLElement | null = null;
-	let activeFullscreenViewer: HTMLElement | null = null;
+	import { modalManager } from "../../scripts/modal";
 
-	function openModal(modalId: string) {
-		const modal = document.getElementById(modalId);
-		if (!modal) return;
-
-		activeModal = modal;
-		modal.classList.remove("hidden");
-		document.body.style.overflow = "hidden";
-		setTimeout(() => modal.classList.remove("opacity-0"), 10);
-	}
-
-	function closeModal(modal: HTMLElement) {
-		if (!modal || activeFullscreenViewer) return; // Prevent modal close if fullscreen is active
-
-		modal.classList.add("opacity-0");
-		setTimeout(() => {
-			modal.classList.add("hidden");
-			document.body.style.overflow = "";
-		}, 300);
-		activeModal = null;
-	}
-
-	function openFullscreen(imageSrc: string, imageAlt: string) {
-		const viewer = document.getElementById("fullscreen-viewer");
-		const viewerImage = document.getElementById(
-			"fullscreen-image",
-		) as HTMLImageElement;
-
-		if (!viewer || !viewerImage) return;
-
-		activeFullscreenViewer = viewer;
-		viewerImage.src = imageSrc;
-		viewerImage.alt = imageAlt;
-		viewer.classList.remove("hidden");
-		document.body.style.overflow = "hidden";
-	}
-
-	function closeFullscreen() {
-		if (!activeFullscreenViewer) return;
-
-		activeFullscreenViewer.classList.add("hidden");
-		document.body.style.overflow = "hidden"; // Keep hidden because modal is still open
-		activeFullscreenViewer = null;
-	}
-
-	function initializeModals() {
-		// Open modal buttons
-		document.querySelectorAll('[id^="modal-open-"]').forEach((button) => {
-			const id = button.id.replace("modal-open-", "");
-			button.addEventListener("click", (e) => {
-				e.stopPropagation();
-				openModal(`modal-${id}`);
-			});
-		});
-
-		// Close modal buttons
-		document.querySelectorAll(".modal-close").forEach((button) => {
-			button.addEventListener("click", (e) => {
-				e.stopPropagation();
-				if (activeFullscreenViewer) return; // Prevent modal close if fullscreen is active
-				const modal = (e.target as HTMLElement).closest('[id^="modal-"]');
-				if (modal) closeModal(modal as HTMLElement);
-			});
-		});
-
-		// Close on outside click (only for desktop)
-		document.addEventListener("click", (e) => {
-			if (activeFullscreenViewer) return; // Prevent modal close if fullscreen is active
-			if (
-				activeModal &&
-				!(e.target as HTMLElement).closest(".modal-content") &&
-				window.innerWidth >= 640
-			) {
-				closeModal(activeModal);
-			}
-		});
-
-		// Handle ESC key
-		document.addEventListener("keydown", (e) => {
-			if (e.key === "Escape") {
-				if (activeFullscreenViewer) {
-					closeFullscreen();
-				} else if (activeModal) {
-					closeModal(activeModal);
-				}
-			}
-		});
-	}
-
-	function initializeFullscreenViewer() {
-		const viewer = document.getElementById("fullscreen-viewer");
-		const viewerImage = document.getElementById(
-			"fullscreen-image",
-		) as HTMLImageElement;
-		const closeButton = document.getElementById("close-fullscreen");
-		const expandButtons = document.querySelectorAll(".expand-image");
-
-		if (!viewer || !viewerImage || !closeButton) return;
-
-		expandButtons.forEach((button) => {
-			button.addEventListener("click", (e) => {
-				e.stopPropagation(); // Prevent modal close
-				const imageSrc = button.getAttribute("data-image-src");
-				const imageAlt = button.getAttribute("data-image-alt");
-				if (imageSrc) {
-					openFullscreen(imageSrc, imageAlt || "");
-				}
-			});
-		});
-
-		closeButton.addEventListener("click", (e) => {
-			e.stopPropagation(); // Prevent event bubbling
-			closeFullscreen();
-		});
-
-		viewer.addEventListener("click", (e) => {
-			if (e.target === viewer) {
-				closeFullscreen();
-			}
-		});
-	}
-
-	// Initialize both systems
-	initializeModals();
-	initializeFullscreenViewer();
-
-	// Re-initialize on page navigation
+	// Initialize on mount and page navigation
+	modalManager.init();
 	document.addEventListener("astro:page-load", () => {
-		initializeModals();
-		initializeFullscreenViewer();
+		modalManager.init();
 	});
 </script>
