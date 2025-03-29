@@ -1,11 +1,9 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
-
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
-
-import netlify from "@astrojs/netlify";
+import cloudflare from "@astrojs/cloudflare";
 
 export default defineConfig({
   site: "https://kevintim.com",
@@ -21,5 +19,5 @@ export default defineConfig({
     },
   },
 
-  adapter: netlify(),
+  adapter: cloudflare(),
 });
