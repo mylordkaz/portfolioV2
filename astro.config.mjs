@@ -7,6 +7,7 @@ import cloudflare from "@astrojs/cloudflare";
 
 export default defineConfig({
   site: "https://kevintim.com",
+  output: "server",
   integrations: [tailwind(), react(), sitemap()],
   redirects: {
     "/": "/en",
