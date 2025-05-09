@@ -1,7 +1,7 @@
-import { string } from "astro:schema";
+import { string } from 'astro:schema';
 
-export type ExpertiseKey = "frontend" | "backend" | "devops";
-export type ProjectDescriptionKey = keyof Translation["projects"];
+export type ExpertiseKey = 'frontend' | 'backend' | 'devops';
+export type ProjectDescriptionKey = keyof Translation['projects'];
 
 export interface Translation {
   nav: {
@@ -27,12 +27,15 @@ export interface Translation {
     napsDescription: string;
     cryptrackDescription: string;
     moneySwapDescription: string;
+    siriusGarageDescription: string;
     detailedNapsDescription: string;
     technicalNapsDescription: string;
     detailedCryptDescription: string;
     technicalCryptDescription: string;
     detailedMoneySwapDescription: string;
     technicalMoneySwapDescription: string;
+    detailedSiriusGarageDescription: string;
+    technicalSiriusGarageDescription: string;
     viewBtn: string;
     modal: {
       about: string;
