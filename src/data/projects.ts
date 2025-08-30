@@ -5,6 +5,7 @@ import naps from '../assets/naps/naps.webp';
 import cryptrack from '../assets/cryptrack/cryptrack.webp';
 import moneySwap from '../assets/moneySwap/moneySwap.webp';
 import sirius from '../assets/siriusGarage/sirius.webp';
+import kakurega from '../assets/kakurega/kakurega.webp';
 
 const napsGalleryImages = import.meta.glob<ImageMetadata>(
   '../assets/naps/gallery/*.{png,jpg,jpeg,webp}',
@@ -29,6 +30,13 @@ const moneySwapGalleryImages = import.meta.glob<ImageMetadata>(
 );
 const siriusGarageGalleryImages = import.meta.glob<ImageMetadata>(
   '../assets/siriusGarage/gallery/*.{png,jpg,jpeg,webp}',
+  {
+    import: 'default',
+    eager: true,
+  }
+);
+const kakuregaGalleryImages = import.meta.glob<ImageMetadata>(
+  '../assets/kakurega/gallery/*.{png,jpg,jpeg,webp}',
   {
     import: 'default',
     eager: true,
@@ -91,5 +99,16 @@ export const projects: Project[] = [
     galleryImages: Object.values(siriusGarageGalleryImages),
     tags: ['SvelteKit', 'TypeScript', 'Cloudflare'],
     link: 'https://siriusgarage.fr',
+  },
+  {
+    id: '5',
+    title: 'Kakurega',
+    descriptionKey: 'kakuregaDescription',
+    detailedDescription: 'detailedKakuregaDescription',
+    technicalDescription: 'technicalKakuregaDescription',
+    image: kakurega,
+    galleryImages: Object.values(kakuregaGalleryImages),
+    tags: ['SvelteKit', 'MicroCMS', 'TailwindCSS'],
+    link: 'https://kakurega-men.com',
   },
 ];

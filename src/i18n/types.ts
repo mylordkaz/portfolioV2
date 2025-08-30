@@ -28,6 +28,7 @@ export interface Translation {
     cryptrackDescription: string;
     moneySwapDescription: string;
     siriusGarageDescription: string;
+    kakuregaDescription: string;
     detailedNapsDescription: string;
     technicalNapsDescription: string;
     detailedCryptDescription: string;
@@ -36,6 +37,8 @@ export interface Translation {
     technicalMoneySwapDescription: string;
     detailedSiriusGarageDescription: string;
     technicalSiriusGarageDescription: string;
+    detailedKakuregaDescription: string;
+    technicalKakuregaDescription: string;
     viewBtn: string;
     modal: {
       about: string;

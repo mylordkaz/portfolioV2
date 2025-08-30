@@ -31,6 +31,8 @@ const en: Translation = {
       'Cross-platform mobile app, giving the money exchange rate in real-time of Fiat and Cryptocurrency.',
     siriusGarageDescription:
       'A modern website renewal for a French car mechanic garage, showcasing services and contact information.',
+    kakuregaDescription:
+      'A mobile-first designed website with integrated blog for a newly opened barber salon for men in Tokyo.',
     detailedNapsDescription:
       'Naps is a modern, multilingual beauty salon website thoughtfully designed for an English and Japanese audience. The site seamlessly presents salon services, treatment details, and a curated blog section to guide visitors through their beauty journey. With integrated booking functionality, customers can easily explore services and make appointments in their preferred language.',
     technicalNapsDescription:
@@ -47,6 +49,10 @@ const en: Translation = {
       'SiriusGarage is a comprehensive website redesign for a professional automotive repair shop in France. The site serves as a digital storefront, elegantly showcasing their specialized mechanical services, repair capabilities, and automotive expertise. With a streamlined interface, potential customers can easily explore service offerings, and access contact information. The design emphasizes trust and professionalism while maintaining visual elements that reflect the hands-on nature of automotive work.',
     technicalSiriusGarageDescription:
       'Built with SvelteKit and TypeScript, the SiriusGarage website delivers great performance and user experience. The architecture implements advanced SEO optimization, including semantic HTML structure, structured data for local business, and optimized metadata for search engine visibility. The responsive design was crafted using a mobile-first approach with custom breakpoints for perfect display across all device sizes. Deployed on Cloudflare, the site benefits from global CDN distribution, ensuring fast loading times and high availability for visitors from any location.',
+    detailedKakuregaDescription:
+      'Kakurega is a modern, mobile-first website designed for a newly opened barber salon in Tokyo that specializes in traditional and contemporary men\'s grooming services. The site showcases the salon\'s unique atmosphere, service offerings, and skilled barbers while featuring an integrated blog to share grooming tips, style trends, and salon updates. With a focus on the Tokyo market, the website emphasizes the salon\'s commitment to quality craftsmanship and creating a comfortable space for men to relax and enjoy professional grooming services.',
+    technicalKakuregaDescription:
+      'Built with SvelteKit and TypeScript for optimal performance and maintainability, the website utilizes TailwindCSS for responsive, mobile-first design that ensures perfect display across all devices. The architecture integrates MicroCMS as a headless content management system, enabling easy blog content creation and management while maintaining fast loading speeds. The site implements comprehensive SEO optimization with structured data for local business visibility and optimized metadata for Tokyo-based search queries. The mobile-first approach prioritizes smartphone users, which constitute the majority of the target audience, while the clean, modern design reflects the salon\'s blend of traditional Japanese aesthetics with contemporary styling.',
     viewBtn: 'View Details',
     modal: {
       about: 'About the Project',

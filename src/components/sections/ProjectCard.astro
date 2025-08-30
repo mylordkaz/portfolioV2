@@ -10,6 +10,9 @@ interface Props {
 }
 
 const { description, imageUrl, tags, projectUrl } = Astro.props;
+
+// Trim description to max 4-5 words for latest projects section
+const trimmedDescription = description.split(' ').slice(0, 4).join(' ');
 ---
 
 <a
@@ -29,7 +32,7 @@ const { description, imageUrl, tags, projectUrl } = Astro.props;
 		<p
 			class="text-lg text-light-text-secondary dark:text-dark-text-secondary mb-8"
 		>
-			{description}
+			{trimmedDescription}
 		</p>
 
 		<div class="flex flex-wrap gap-2">
