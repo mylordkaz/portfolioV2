@@ -1,6 +1,8 @@
 ---
 import logoLight from "../assets/logo-light.svg";
 import logoDark from "../assets/logo-dark.svg";
+import homeLight from "../assets/home-light.png";
+import homeDark from "../assets/home-dark.png";
 import "../styles/base.css";
 import "../styles/fonts.css";
 import "../styles/theme.css";
@@ -22,6 +24,9 @@ const localizedDescription = {
 	en: description,
 	ja: "高性能なウェブソリューションを提供するデジタルクフトマン。東京在住。",
 };
+
+// Check if this is the homepage for preloading critical images
+const isHomepage = currentPath === `/${lang}` || currentPath === "/en" || currentPath === "/";
 ---
 
 <!doctype html>
@@ -97,6 +102,15 @@ const localizedDescription = {
 
 		<link rel="icon" type="image/svg+xml" href={logoDark.src} />
 		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Preload critical images for homepage -->
+		{isHomepage && (
+			<>
+				<link rel="preload" as="image" href={homeLight.src} />
+				<link rel="preload" as="image" href={homeDark.src} />
+			</>
+		)}
+		
 		<!-- Add Google Fonts -->
 		<link rel="preload" href="https://fonts.googleapis.com" />
 		<link rel="preload" href="https://fonts.gstatic.com" crossorigin />
