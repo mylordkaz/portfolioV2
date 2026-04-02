@@ -5,24 +5,38 @@ const fr: Translation = {
     projects: 'Projets',
     expertise: 'Expertise',
     about: 'À propos',
-    contact: 'Contact',
   },
   hero: {
     title: 'Ingénieur Logiciel & Designer Web',
     description:
-      'Un artisan numérique qui propose des solutions web haute performance. Basé à Tokyo, au Japon, collaborant harmonieusement à travers les fuseaux horaires mondiaux pour transformer votre vision en réalité.',
+      'Artisan numérique proposant des solutions web haute performance. Des interfaces élégantes aux systèmes robustes — conçus pour durer.',
+    eyebrow: 'Disponible · Tokyo, Japon',
+    ctaProjects: 'Voir les projets',
+    ctaContact: 'Me contacter',
+    statProjects: 'PROJETS',
+    statStack: 'STACK',
+    statStackValue: 'SvelteKit · Go · React',
+    statBased: 'BASÉ À',
+    statBasedValue: 'Tokyo',
   },
   section: {
-    title: 'Derniers Projets',
+    title: 'Dernier Projet',
+    viewAll: 'Tous les projets',
+  },
+  featured: {
+    label: 'EN VEDETTE · WEB DESIGN',
+    viewProject: 'Voir le projet',
   },
   footer: {
     softwareEngineer: 'Ingénieur Logiciel',
   },
   projects: {
     title: 'Mes Projets',
-    subtitle: 'Vitrine du Portfolio',
+    subtitle: 'Portfolio',
+    eyebrow: 'Portfolio',
     description:
-      'Découvrez mes derniers travaux et projets techniques. Chaque projet représente un défi unique et une solution innovante.',
+      'Chaque projet représente un défi unique et une solution innovante.',
+    viewCta: 'Voir',
     napsDescription:
       'Un site web complet de salon de beauté avec blog intégré.',
     cryptrackDescription:
@@ -62,9 +76,10 @@ const fr: Translation = {
     },
   },
   expertise: {
-    title: 'Expertise Technique',
+    title: 'Ce que je construis',
+    eyebrow: 'Services',
     description:
-      "Spécialisé dans le développement full-stack avec un fort accent sur la rapidité, l'efficacité et la précision en utilisant des technologies modernes. Passionné par l'optimisation des performances et la création de solutions fiables et évolutives pour améliorer l'expérience utilisateur.",
+      'Solutions digitales de bout en bout — du concept au déploiement.',
     categories: {
       frontend: {
         title: 'Développement Frontend',
@@ -82,55 +97,68 @@ const fr: Translation = {
           "Création d'applications mobiles et desktop tout en gérant des environnements cloud pour des opérations fiables et efficaces. Axé sur des déploiements fluides, la scalabilité des systèmes et l'optimisation des performances.",
       },
     },
+    offers: [
+      {
+        title: "Développement d'applications Web",
+        description:
+          'Solutions full-stack pour des applications web réactives et sécurisées avec un design intuitif et esthétique.',
+        bullets: [
+          'Frontend avec SvelteKit & React',
+          'Intégration CMS & architecture headless',
+          'Déploiement Cloudflare & optimisation edge',
+        ],
+      },
+      {
+        title: 'Applications mobiles & desktop',
+        description:
+          "Applications multiplateformes sur mesure, axées sur la performance et l'expérience utilisateur.",
+        bullets: [
+          'React Native pour iOS & Android',
+          'Applications desktop via Wails (Go + Web)',
+          "Données en temps réel & intégration d'API",
+        ],
+      },
+      {
+        title: 'Performance & optimisation',
+        description:
+          'Systèmes côté serveur fiables construits avec Go, axés sur la vitesse et la maintenabilité à long terme.',
+        bullets: [
+          'APIs backend en Golang',
+          'Audit de performance & améliorations',
+          'Infrastructure évolutive & mise en cache',
+        ],
+      },
+    ],
   },
   about: {
-    title: 'À propos de moi',
-    description:
-      "Ingénieur logiciel français passionné par la Blockchain et les technologies émergentes. Qu'il s'agisse d'une interface utilisateur élégante ou d'un système backend puissant, je me concentre sur la livraison de solutions efficaces.",
-    intro: {
-      title: 'Qui je suis ?',
-      content: `Originaire de France et vivant au Japon, j'ai toujours été curieux et motivé par les défis. Mon parcours m'a conduit de la gestion hôtelière de luxe à travers le monde à une immersion dans le domaine de la technologie.\nQuand je ne code pas, vous me trouverez probablement à bricoler sur ma voiture ou à explorer les magnifiques paysages du Japon.`,
-    },
-    services: {
-      title: 'Ce que je propose',
-      items: [
-        {
-          title: "Développement d'applications Web",
-          description:
-            'Solutions full-stack pour des applications Web réactives et sécurisées avec un design intuitif et esthétique.',
-        },
-        {
-          title: "Développement d'applications mobiles et de bureau",
-          description:
-            "Création d'applications personnalisées multiplateformes adaptées à vos besoins spécifiques.",
-        },
-        {
-          title: 'Performance et optimisation',
-          description:
-            "Conception de systèmes backend fiables tout en améliorant la vitesse et l'efficacité pour une utilisation fluide.",
-        },
-      ],
-    },
-    button: 'Contactez-moi!',
-  },
-  contact: {
-    title: 'Restons en Contact',
-    description:
-      'Vous avez un projet en tête ? Envoyez-moi un message ou connectez-vous via les réseaux sociaux.',
-    form: {
-      name: 'Nom',
-      email: 'Email',
-      message: 'Message',
-      submit: 'Envoyer',
-      success: 'Message envoyé avec succès ! Nous vous répondrons bientôt.',
-      error:
-        "Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer.",
-      sending: 'Envoi en cours...',
-    },
-    socials: {
-      title: 'Retrouvez-moi sur',
-      description:
-        "N'hésitez pas à me contacter sur les réseaux sociaux ou par email.",
+    eyebrow: 'À propos',
+    heading: 'Ingénieur français,\npassionné basé à Tokyo.',
+    bio: [
+      "Passionné par la Blockchain et les technologies émergentes. Qu'il s'agisse d'une interface utilisateur élégante ou d'un système backend puissant, je me concentre sur des solutions qui fonctionnent vraiment.",
+      "Né en France, vivant au Japon — j'ai toujours été curieux et motivé par les défis, constamment immergé dans le monde de la technologie.",
+      'Quand je ne code pas, vous me trouverez à bricoler sur mes voitures ou à explorer les magnifiques paysages du Japon.',
+    ],
+    facts: [
+      { label: 'Localisation', value: 'Tokyo, Japon' },
+      { label: 'Spécialité', value: 'Web · Mobile · Blockchain' },
+      { label: 'Langues', value: 'FR · EN · JP' },
+      { label: 'Intérêts', value: 'Voitures · Japon · Open Source' },
+    ],
+    contact: {
+      eyebrow: 'Contact',
+      title: 'Un projet en tête ?',
+      description: "N'hésitez pas à me contacter via les réseaux sociaux ou à m'envoyer un message directement.",
+      socialLabel: 'RETROUVEZ-MOI SUR',
+      formLabel: 'OU ENVOYEZ UN MESSAGE',
+      form: {
+        name: 'NOM',
+        email: 'EMAIL',
+        message: 'MESSAGE',
+        submit: 'Envoyer',
+        success: 'Message envoyé avec succès ! Je vous répondrai bientôt.',
+        error: "Une erreur s'est produite lors de l'envoi. Veuillez réessayer.",
+        sending: 'Envoi en cours...',
+      },
     },
   },
 };

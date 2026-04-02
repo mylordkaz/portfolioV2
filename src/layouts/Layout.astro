@@ -1,8 +1,6 @@
 ---
 import logoLight from "../assets/logo-light.svg";
 import logoDark from "../assets/logo-dark.svg";
-import homeLight from "../assets/home-light.png";
-import homeDark from "../assets/home-dark.png";
 import "../styles/base.css";
 import "../styles/fonts.css";
 import "../styles/theme.css";
@@ -25,15 +23,12 @@ const localizedDescription = {
 	ja: "高性能なウェブソリューションを提供するデジタルクフトマン。東京在住。",
 	fr: "Artisan numérique proposant des solutions web haute performance. Basé à Tokyo, Japon.",
 };
-
-// Check if this is the homepage for preloading critical images
-const isHomepage = currentPath === `/${lang}` || currentPath === "/en" || currentPath === "/";
 ---
 
 <!doctype html>
 <html
 	lang={lang}
-	class:list={[lang === "ja" ? "font-japanese" : "font-outfit"]}
+	class:list={[lang === "ja" ? "font-japanese" : "font-sans"]}
 >
 	<head>
 		<script is:inline>
@@ -61,7 +56,7 @@ const isHomepage = currentPath === `/${lang}` || currentPath === "/en" || curren
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="author" content="Kevin Tim" />
-		<meta name="theme-color" content="#2563EB" />
+		<meta name="theme-color" content="#C4622D" />
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:title" content={title} />
 		<meta
@@ -87,7 +82,7 @@ const isHomepage = currentPath === `/${lang}` || currentPath === "/en" || curren
 		<meta property="og:image:height" content="80" />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={`${baseUrl}${currentPath}`} />
-		<meta property="og:locale" content={lang === "ja" ? "ja_JP" : "en_US"} />
+		<meta property="og:locale" content={lang === "ja" ? "ja_JP" : lang === "fr" ? "fr_FR" : "en_US"} />
 
 		<!-- Language alternates -->
 		<link
@@ -100,23 +95,20 @@ const isHomepage = currentPath === `/${lang}` || currentPath === "/en" || curren
 			hreflang="ja"
 			href={`${baseUrl}/ja${currentPath.slice(3)}`}
 		/>
+		<link
+			rel="alternate"
+			hreflang="fr"
+			href={`${baseUrl}/fr${currentPath.slice(3)}`}
+		/>
 
 		<link rel="icon" type="image/svg+xml" href={logoDark.src} />
 		<meta name="generator" content={Astro.generator} />
-		
-		<!-- Preload critical images for homepage -->
-		{isHomepage && (
-			<>
-				<link rel="preload" as="image" href={homeLight.src} />
-				<link rel="preload" as="image" href={homeDark.src} />
-			</>
-		)}
-		
-		<!-- Add Google Fonts -->
-		<link rel="preload" href="https://fonts.googleapis.com" />
-		<link rel="preload" href="https://fonts.gstatic.com" crossorigin />
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Klee+One&family=Outfit:wght@100..900&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=DM+Sans:wght@300;400;500&family=Klee+One&display=swap"
 			rel="stylesheet"
 		/>
 		<title>{title}</title>

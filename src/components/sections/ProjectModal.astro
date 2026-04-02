@@ -29,51 +29,38 @@ const t = translations[lang as keyof typeof translations];
 	<div class="fixed inset-0 bg-black/50 transition-opacity"></div>
 
 	<div class="fixed inset-0 z-10 overflow-y-auto">
-		<div
-			class="flex min-h-full items-center justify-center p-4 text-center sm:p-0"
-		>
+		<div class="flex min-h-full items-center justify-center p-4 sm:p-0">
 			<div
-				class="modal-content relative w-full transform overflow-hidden bg-white dark:bg-dark-surface-header text-left shadow-xl transition-all sm:my-8 sm:max-w-4xl h-full sm:h-auto max-h-[100vh] sm:max-h-[90vh] sm:rounded-lg"
+				class="modal-content relative w-full transform overflow-hidden bg-surface text-left shadow-xl transition-all sm:my-8 sm:max-w-4xl h-full sm:h-auto max-h-[100vh] sm:max-h-[90vh] sm:rounded-lg"
 			>
 				<!-- Close button -->
 				<button
 					type="button"
-					class="modal-close fixed sm:absolute right-4 top-4 z-20 rounded-full bg-gray-100 dark:bg-gray-800 p-2.5 transition-colors hover:bg-gray-200 dark:hover:bg-gray-700 shadow-lg"
+					class="modal-close fixed sm:absolute right-4 top-4 z-20 rounded-full bg-card p-2.5 transition-colors hover:opacity-70 shadow-lg"
 					aria-label="Close modal"
 				>
 					<svg
-						class="h-6 w-6 text-gray-600 dark:text-gray-300"
+						class="h-5 w-5 text-muted"
 						fill="none"
 						viewBox="0 0 24 24"
 						stroke-width="2"
 						stroke="currentColor"
 					>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							d="M6 18L18 6M6 6l12 12"></path>
+						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
 					</svg>
 				</button>
 
 				<!-- Content wrapper -->
 				<div class="max-h-[100vh] sm:max-h-[90vh] overflow-y-auto">
-					<div
-						class="sticky top-0 bg-white dark:bg-dark-surface-header z-10 p-6 border-b border-gray-200 dark:border-gray-700"
-					>
-						<h3
-							class="text-3xl font-bold text-light-text-primary dark:text-dark-text-primary"
-						>
+					<div class="sticky top-0 bg-surface z-10 p-6 border-b border-line">
+						<h3 class="font-serif text-2xl font-medium text-ink tracking-tight">
 							{title}
 						</h3>
 					</div>
 
-					<!-- Main content -->
 					<div class="space-y-6 p-6">
 						<div class="max-w-2xl mx-auto">
-							<!-- Added container with max-width and center alignment -->
-							<div
-								class="relative max-h-[300px] w-full flex items-center justify-center rounded-lg p-4"
-							>
+							<div class="relative max-h-[300px] w-full flex items-center justify-center rounded-lg p-4">
 								<Image
 									src={image}
 									alt={title}
@@ -84,117 +71,77 @@ const t = translations[lang as keyof typeof translations];
 							</div>
 						</div>
 
-						<div class="space-y-4">
-							<h4
-								class="text-xl font-bold text-light-text-primary dark:text-dark-text-primary"
-							>
-								{t.projects.modal.about}
-							</h4>
-							<p
-								class="text-light-text-secondary dark:text-dark-text-secondary"
-							>
+						<div class="space-y-3">
+							<h4 class="text-sm font-medium text-ink tracking-wide">{t.projects.modal.about}</h4>
+							<p class="text-sm text-muted font-light leading-relaxed">
 								{t.projects[detailedDescription]}
 							</p>
 						</div>
 
-						<div class="space-y-4">
-							<h4
-								class="text-xl font-bold text-light-text-primary dark:text-dark-text-primary"
-							>
-								{t.projects.modal.technical}
-							</h4>
-							<p
-								class="text-light-text-secondary dark:text-dark-text-secondary"
-							>
+						<div class="space-y-3">
+							<h4 class="text-sm font-medium text-ink tracking-wide">{t.projects.modal.technical}</h4>
+							<p class="text-sm text-muted font-light leading-relaxed">
 								{t.projects[technicalDescription]}
 							</p>
 						</div>
 
-						{
-							galleryImages.length > 0 && (
-								<div class="space-y-4">
-									<h4 class="text-xl font-bold text-light-text-primary dark:text-dark-text-primary">
-										{t.projects.modal.gallery}
-									</h4>
-									<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-										{galleryImages.map((img, index) => (
-											<div class="group relative overflow-hidden rounded-lg border border-light-border-light dark:border-dark-border-light">
-												<div class="aspect-video">
-													<Image
-														src={img}
-														alt={`${title} gallery image ${index + 1}`}
-														width={600}
-														height={400}
-														class="w-full h-full object-contain"
-														format="webp"
-														quality={90}
-														loading="lazy"
-													/>
-												</div>
-												<button
-													class="expand-image absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all group-hover:bg-black/40 group-hover:opacity-100"
-													aria-label="View full image"
-													data-image-src={img.src}
-													data-image-alt={`${title} gallery image ${index + 1}`}
-												>
-													<svg
-														class="w-8 h-8 text-white"
-														fill="none"
-														stroke="currentColor"
-														viewBox="0 0 24 24"
-													>
-														<path
-															stroke-linecap="round"
-															stroke-linejoin="round"
-															stroke-width="2"
-															d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m4-3H6"
-														/>
-													</svg>
-												</button>
+						{galleryImages.length > 0 && (
+							<div class="space-y-3">
+								<h4 class="text-sm font-medium text-ink tracking-wide">{t.projects.modal.gallery}</h4>
+								<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+									{galleryImages.map((img, index) => (
+										<div class="group relative overflow-hidden rounded-md border border-line">
+											<div class="aspect-video">
+												<Image
+													src={img}
+													alt={`${title} gallery image ${index + 1}`}
+													width={600}
+													height={400}
+													class="w-full h-full object-contain"
+													format="webp"
+													quality={90}
+													loading="lazy"
+												/>
 											</div>
-										))}
-									</div>
+											<button
+												class="expand-image absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all group-hover:bg-black/40 group-hover:opacity-100"
+												aria-label="View full image"
+												data-image-src={img.src}
+												data-image-alt={`${title} gallery image ${index + 1}`}
+											>
+												<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+													<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m4-3H6" />
+												</svg>
+											</button>
+										</div>
+									))}
 								</div>
-							)
-						}
+							</div>
+						)}
 
-						<div class="flex flex-wrap gap-2">
-							{
-								tags.map((tag) => (
-									<span class="px-3 py-1 text-sm font-medium border border-light-text-accent dark:border-dark-text-accent rounded-full text-light-text-primary dark:text-dark-text-primary">
-										{tag}
-									</span>
-								))
-							}
+						<div class="flex flex-wrap gap-1.5">
+							{tags.map((tag) => (
+								<span class="text-[0.7rem] px-2.5 py-1 rounded bg-card text-muted">
+									{tag}
+								</span>
+							))}
 						</div>
 
-						{
-							link && (
-								<div class="flex justify-end">
-									<a
-										href={link}
-										target="_blank"
-										rel="noopener noreferrer"
-										class="inline-flex items-center gap-2 px-6 py-3 bg-light-text-accent dark:bg-dark-text-accent text-white rounded-lg hover:opacity-90 transition-opacity"
-									>
-										{t.projects.modal.visitbtn}
-										<svg
-											class="w-4 h-4"
-											viewBox="0 0 24 24"
-											fill="none"
-											stroke="currentColor"
-										>
-											<path
-												stroke-linecap="round"
-												stroke-linejoin="round"
-												stroke-width="2"
-												d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-											/>
-										</svg>
-									</a>
-								</div>
-							)
-						}
+						{link && (
+							<div class="flex justify-end">
+								<a
+									href={link}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="inline-flex items-center gap-2 text-sm text-ink border-b border-ink pb-0.5 hover:opacity-60 transition-opacity"
+								>
+									{t.projects.modal.visitbtn}
+									<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+									</svg>
+								</a>
+							</div>
+						)}
 					</div>
 				</div>
 			</div>
@@ -213,11 +160,7 @@ const t = translations[lang as keyof typeof translations];
 		class="absolute right-4 top-4 z-[110] rounded-full p-2 text-white hover:bg-white/10"
 	>
 		<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-			<path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2"
-				d="M6 18L18 6M6 6l12 12"></path>
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
 		</svg>
 	</button>
 
@@ -234,7 +177,6 @@ const t = translations[lang as keyof typeof translations];
 <script>
 	import { modalManager } from "../../scripts/modal";
 
-	// Initialize on mount and page navigation
 	modalManager.init();
 	document.addEventListener("astro:page-load", () => {
 		modalManager.init();

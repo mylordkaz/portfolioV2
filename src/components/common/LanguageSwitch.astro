@@ -1,77 +1,26 @@
 ---
-interface Props {
-	position?: "top" | "bottom";
-}
-const { position = "top" } = Astro.props;
 const currentLang = Astro.url.pathname.split("/")[1] || "en";
 const currentPath = Astro.url.pathname.split("/").slice(2).join("/");
-const languages = {
-	en: { name: "English", flag: "🇬🇧" },
-	ja: { name: "日本語", flag: "🇯🇵" },
-	fr: { name: "Français", flag: "🇫🇷" },
-};
+const languages = ["en", "ja", "fr"] as const;
 ---
 
-<div class="relative">
-	<button
-		id="langToggle"
-		class="flex items-center px-3 py-1 rounded-lg text-light-text-primary dark:text-dark-text-primary hover:bg-light-hover-light dark:hover:bg-dark-hover-light transition-colors"
-	>
-		<span class="text-xl"
-			>{languages[currentLang as keyof typeof languages].flag}</span
-		>
-		<svg
-			class="w-4 h-4 ml-1"
-			fill="none"
-			stroke="currentColor"
-			viewBox="0 0 24 24"
-		>
-			<path d="M19 9l-7 7-7-7"></path>
-		</svg>
-	</button>
-
-	<div
-		id="langMenu"
-		class={`hidden absolute ${position === "bottom" ? "bottom-full mb-2" : "top-full mt-2"} right-0 bg-light-surface-main dark:bg-dark-surface-main rounded-lg shadow-lg border border-light-border-light dark:border-dark-border-light min-w-[120px]`}
-	>
-		{
-			Object.entries(languages).map(([code, { name }]) => (
-				<a
-					href={`/${code}${currentPath ? `/${currentPath}` : ""}`}
-					class={`block px-4 py-2 hover:bg-light-hover-light dark:hover:bg-dark-hover-light transition-colors
-                    ${
-											currentLang === code
-												? "text-light-text-accent dark:text-dark-text-accent"
-												: "text-light-text-primary dark:text-dark-text-primary"
-										}`}
-				>
-					{name}
-				</a>
-			))
-		}
-	</div>
+<div class="flex items-center gap-1 text-xs tracking-wide">
+	{languages.map((code, i) => (
+		<>
+			<a
+				href={`/${code}${currentPath ? `/${currentPath}` : ""}`}
+				class:list={[
+					"uppercase transition-colors duration-150",
+					currentLang === code
+						? "text-ink font-medium"
+						: "text-faint hover:text-muted",
+				]}
+			>
+				{code}
+			</a>
+			{i < languages.length - 1 && (
+				<span class="text-faint">/</span>
+			)}
+		</>
+	))}
 </div>
-
-<script>
-	const toggles = document.querySelectorAll("#langToggle");
-	const menus = document.querySelectorAll("#langMenu");
-
-	toggles.forEach((toggle, index) => {
-		toggle.addEventListener("click", (e) => {
-			e.stopPropagation();
-			menus[index].classList.toggle("hidden");
-		});
-	});
-
-	// Close language menu when clicking outside
-	document.addEventListener("click", (e) => {
-		menus.forEach((menu, index) => {
-			if (
-				!toggles[index].contains(e.target as Node) &&
-				!menu.contains(e.target as Node)
-			) {
-				menu.classList.add("hidden");
-			}
-		});
-	});
-</script>

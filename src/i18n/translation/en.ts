@@ -5,15 +5,27 @@ const en: Translation = {
     projects: 'Projects',
     expertise: 'Expertise',
     about: 'About',
-    contact: 'Contact',
   },
   hero: {
     title: 'Software Engineer & Web Designer',
     description:
-      'Digital craftsman who Deliver high-performance web solutions. Based in Tokyo, Japan.',
+      'Digital craftsman delivering high-performance web solutions. From sleek interfaces to powerful systems — built to last.',
+    eyebrow: 'Available for work · Tokyo, Japan',
+    ctaProjects: 'View Projects',
+    ctaContact: 'Get in touch',
+    statProjects: 'PROJECTS',
+    statStack: 'STACK',
+    statStackValue: 'SvelteKit · Go · React',
+    statBased: 'BASED IN',
+    statBasedValue: 'Tokyo',
   },
   section: {
-    title: 'Latest Projects',
+    title: 'Latest Project',
+    viewAll: 'All projects',
+  },
+  featured: {
+    label: 'FEATURED · WEB DESIGN',
+    viewProject: 'View project',
   },
   footer: {
     softwareEngineer: 'Software Engineer',
@@ -21,8 +33,10 @@ const en: Translation = {
   projects: {
     title: 'My Projects',
     subtitle: 'Portfolio Showcase',
+    eyebrow: 'Portfolio',
     description:
-      'Explore my latest works and technical projects. Each project represents a unique challenge and innovative solution.',
+      'Each project represents a unique challenge and an innovative solution.',
+    viewCta: 'View',
     napsDescription:
       'A full-featured Beauty salon website, with integrated blog.',
     cryptrackDescription:
@@ -50,9 +64,9 @@ const en: Translation = {
     technicalSiriusGarageDescription:
       'Built with SvelteKit and TypeScript, the SiriusGarage website delivers great performance and user experience. The architecture implements advanced SEO optimization, including semantic HTML structure, structured data for local business, and optimized metadata for search engine visibility. The responsive design was crafted using a mobile-first approach with custom breakpoints for perfect display across all device sizes. Deployed on Cloudflare, the site benefits from global CDN distribution, ensuring fast loading times and high availability for visitors from any location.',
     detailedKakuregaDescription:
-      'Kakurega is a modern, mobile-first website designed for a newly opened barber salon in Tokyo that specializes in traditional and contemporary men\'s grooming services. The site showcases the salon\'s unique atmosphere, service offerings, and skilled barbers while featuring an integrated blog to share grooming tips, style trends, and salon updates. With a focus on the Tokyo market, the website emphasizes the salon\'s commitment to quality craftsmanship and creating a comfortable space for men to relax and enjoy professional grooming services.',
+      "Kakurega is a modern, mobile-first website designed for a newly opened barber salon in Tokyo that specializes in traditional and contemporary men's grooming services. The site showcases the salon's unique atmosphere, service offerings, and skilled barbers while featuring an integrated blog to share grooming tips, style trends, and salon updates. With a focus on the Tokyo market, the website emphasizes the salon's commitment to quality craftsmanship and creating a comfortable space for men to relax and enjoy professional grooming services.",
     technicalKakuregaDescription:
-      'Built with SvelteKit and TypeScript for optimal performance and maintainability, the website utilizes TailwindCSS for responsive, mobile-first design that ensures perfect display across all devices. The architecture integrates MicroCMS as a headless content management system, enabling easy blog content creation and management while maintaining fast loading speeds. The site implements comprehensive SEO optimization with structured data for local business visibility and optimized metadata for Tokyo-based search queries. The mobile-first approach prioritizes smartphone users, which constitute the majority of the target audience, while the clean, modern design reflects the salon\'s blend of traditional Japanese aesthetics with contemporary styling.',
+      "Built with SvelteKit and TypeScript for optimal performance and maintainability, the website utilizes TailwindCSS for responsive, mobile-first design that ensures perfect display across all devices. The architecture integrates MicroCMS as a headless content management system, enabling easy blog content creation and management while maintaining fast loading speeds. The site implements comprehensive SEO optimization with structured data for local business visibility and optimized metadata for Tokyo-based search queries. The mobile-first approach prioritizes smartphone users, which constitute the majority of the target audience, while the clean, modern design reflects the salon's blend of traditional Japanese aesthetics with contemporary styling.",
     viewBtn: 'View Details',
     modal: {
       about: 'About the Project',
@@ -63,9 +77,10 @@ const en: Translation = {
   },
 
   expertise: {
-    title: 'Technical Expertise',
+    title: 'What I Build',
+    eyebrow: 'Services',
     description:
-      'Specialized in full-stack development with a strong focus on speed, efficiency, and precision using modern technologies. Passionate about optimizing performance, reliable and scalable solutions that enhance user experiences.',
+      'End-to-end digital solutions — from concept to deployment.',
     categories: {
       frontend: {
         title: 'Frontend Development',
@@ -83,54 +98,68 @@ const en: Translation = {
           'Creating mobile and desktop applications while managing cloud environments for reliable and efficient operations. Focused on seamless deployment, system scalability, and performance optimization.',
       },
     },
+    offers: [
+      {
+        title: 'Web Application Development',
+        description:
+          'Full-stack solutions for responsive, secure web applications with intuitive and beautiful design.',
+        bullets: [
+          'Frontend with SvelteKit & React',
+          'CMS integration & headless architecture',
+          'Cloudflare deployment & edge optimization',
+        ],
+      },
+      {
+        title: 'Mobile & Desktop Apps',
+        description:
+          'Custom cross-platform applications built for performance and seamless user experience.',
+        bullets: [
+          'React Native for iOS & Android',
+          'Desktop apps via Wails (Go + Web)',
+          'Real-time data and API integration',
+        ],
+      },
+      {
+        title: 'Performance & Optimization',
+        description:
+          'Reliable server-side systems built with Go, focused on speed and long-term maintainability.',
+        bullets: [
+          'Backend APIs in Golang',
+          'Performance auditing & improvements',
+          'Scalable infrastructure & caching',
+        ],
+      },
+    ],
   },
   about: {
-    title: 'About Me',
-    description:
-      "A French Software Engineer passionate about Blockchain & emerging Tech. Whether it's a sleek user interface or a powerful backend system, I focus on delivering solutions that truly work.",
-    intro: {
-      title: 'Who I Am',
-      content: `Born in France, living in Japan, I've always been curious and driven by challenges. My journey has taken me from managing luxury hospitality across continents to immersing myself in the world of technology.\nWhen I’m not coding, you’ll probably find me working on my cars or exploring the beautiful landscapes of Japan.`,
-    },
-    services: {
-      title: 'What I Offer',
-      items: [
-        {
-          title: 'Web Application Development',
-          description:
-            'Full-stack solutions for responsive and secure web applications with intuitive and beautiful design.',
-        },
-        {
-          title: 'Mobile & Desktop App Development',
-          description:
-            'Creating custom cross-platform applications tailored to your specific needs.',
-        },
-        {
-          title: 'Performance & Optimization',
-          description:
-            'Crafting reliable server-side systems while enhancing speed and efficiency for seamless operations.',
-        },
-      ],
-    },
-    button: 'Get in touch...',
-  },
-  contact: {
-    title: "Let's Connect",
-    description:
-      "Have a project in mind? I'd love to hear about it. Drop me a message or connect through social media.",
-    form: {
-      name: 'Name',
-      email: 'Email',
-      message: 'Message',
-      submit: 'Send Message',
-      success: "Message sent successfully! We'll get back to you soon.",
-      error: 'There was an error sending your message. Please try again.',
-      sending: 'Sending...',
-    },
-    socials: {
-      title: 'Find me on',
-      description:
-        'Feel free to connect with me on social media or send me an email.',
+    eyebrow: 'About Me',
+    heading: 'French engineer,\nTokyo-based craftsman.',
+    bio: [
+      "Passionate about Blockchain & emerging technology. Whether it's a sleek user interface or a powerful backend system, I focus on delivering solutions that truly work.",
+      "Born in France, living in Japan - I've always been curious and driven by challenges, constantly immersing myself in the world of technology.",
+      "When I'm not coding, you'll find me working on my cars or exploring the beautiful landscapes of Japan.",
+    ],
+    facts: [
+      { label: 'Location', value: 'Tokyo, Japan' },
+      { label: 'Focus', value: 'Web · Mobile · Blockchain' },
+      { label: 'Languages', value: 'FR · EN · JP' },
+      { label: 'Interests', value: 'Cars · Japan · Open Source' },
+    ],
+    contact: {
+      eyebrow: 'Get in Touch',
+      title: 'Have a project in mind?',
+      description: "I'd love to hear about it. Reach out through social media or send a message directly.",
+      socialLabel: 'FIND ME ON',
+      formLabel: 'OR SEND A MESSAGE',
+      form: {
+        name: 'NAME',
+        email: 'EMAIL',
+        message: 'MESSAGE',
+        submit: 'Send Message',
+        success: "Message sent successfully! We'll get back to you soon.",
+        error: 'There was an error sending your message. Please try again.',
+        sending: 'Sending...',
+      },
     },
   },
 };

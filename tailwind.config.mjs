@@ -5,45 +5,52 @@ export default {
     extend: {
       fontFamily: {
         japanese: ['"Klee One"', "sans-serif"],
-        outfit: ["Outfit", "sans-serif"],
+        sans: ['"DM Sans"', "system-ui", "sans-serif"],
+        serif: ['"Cormorant"', '"Klee One"', "Georgia", "serif"],
       },
       colors: {
-        // Light Theme Colors
+        accent: "var(--accent)",
+        surface: "var(--bg)",
+        ink: "var(--ink)",
+        muted: "var(--muted)",
+        faint: "var(--faint)",
+        line: "var(--border-color)",
+        card: "var(--card)",
+        // Legacy colors (pages not yet redesigned)
         light: {
           surface: {
-            header: "#E5E7EB", // Pure white header
-            hero: "#F8F9FC", // Very light blue-gray
-            main: "#F3F4F8", // Slightly darker background
-            footer: "#E5E7EB", // Pure white footer
+            header: "#E5E7EB",
+            hero: "#F8F9FC",
+            main: "#F3F4F8",
+            footer: "#E5E7EB",
           },
           text: {
-            primary: "#1A1A1A", // Near black for main text
-            secondary: "#4B5563", // Medium gray for secondary text
-            muted: "#9CA3AF", // Light gray for muted text
-            accent: "#FF0054", // Keeping the red accent
+            primary: "#1A1A1A",
+            secondary: "#4B5563",
+            muted: "#9CA3AF",
+            accent: "#FF0054",
           },
           border: {
-            light: "#E5E7EB", // Very light gray
-            medium: "#D1D5DB", // Light gray
+            light: "#E5E7EB",
+            medium: "#D1D5DB",
           },
           hover: {
-            light: "#F3F4F6", // Very subtle hover
-            medium: "#E5E7EB", // Light gray hover
+            light: "#F3F4F6",
+            medium: "#E5E7EB",
           },
         },
-        // Dark Theme Colors
         dark: {
           surface: {
-            header: "#141414", // Slightly lighter than hero for distinction
-            hero: "#1A1D20", // Main dark background color
-            main: "#1C1F22", // Subtle variation for content areas
+            header: "#141414",
+            hero: "#1A1D20",
+            main: "#1C1F22",
             footer: "#141414",
           },
           text: {
-            primary: "#E5E7EB", // Soft white
-            secondary: "#9CA3AF", // Muted gray
+            primary: "#E5E7EB",
+            secondary: "#9CA3AF",
             muted: "#6B7280",
-            accent: "#FF0054", // Red accent from the reference
+            accent: "#FF0054",
           },
           border: {
             light: "#2A2D30",
