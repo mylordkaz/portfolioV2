@@ -98,7 +98,7 @@ const en: Translation = {
         {
           title: 'Web Application Development',
           description:
-            'Full-stack solutions for responsive and secure web applications with intuive and beautiful design.',
+            'Full-stack solutions for responsive and secure web applications with intuitive and beautiful design.',
         },
         {
           title: 'Mobile & Desktop App Development',

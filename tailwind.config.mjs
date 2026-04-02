@@ -54,18 +54,18 @@ export default {
             medium: "#2A2E32",
           },
         },
-        backgroundImage: {
-          "card-gradient":
-            "linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)",
-          "hero-gradient":
-            "linear-gradient(180deg, rgba(248, 249, 252, 0) 0%, rgba(248, 249, 252, 0.8) 100%)",
-          "dark-card-gradient":
-            "linear-gradient(180deg, rgba(26, 29, 32, 0.8) 0%, rgba(26, 29, 32, 0.4) 100%)",
-        },
-        boxShadow: {
-          card: "0 4px 24px -1px rgba(0, 0, 0, 0.05)",
-          "card-dark": "0 4px 24px -1px rgba(0, 0, 0, 0.2)",
-        },
+      },
+      backgroundImage: {
+        "card-gradient":
+          "linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)",
+        "hero-gradient":
+          "linear-gradient(180deg, rgba(248, 249, 252, 0) 0%, rgba(248, 249, 252, 0.8) 100%)",
+        "dark-card-gradient":
+          "linear-gradient(180deg, rgba(26, 29, 32, 0.8) 0%, rgba(26, 29, 32, 0.4) 100%)",
+      },
+      boxShadow: {
+        card: "0 4px 24px -1px rgba(0, 0, 0, 0.05)",
+        "card-dark": "0 4px 24px -1px rgba(0, 0, 0, 0.2)",
       },
     },
   },
