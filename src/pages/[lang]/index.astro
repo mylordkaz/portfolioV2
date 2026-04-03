@@ -5,6 +5,7 @@ import Header from "../../components/layout/Header.astro";
 import Footer from "../../components/layout/Footer.astro";
 import translations from "../../i18n";
 import { projects } from "../../data/projects";
+import HeroLogo from "../../components/common/HeroLogo.astro";
 
 export function getStaticPaths() {
 	return [
@@ -26,13 +27,14 @@ const latestProject = projects[projects.length - 1];
 	<div class="max-w-[960px] mx-auto px-8">
 
 		<!-- Hero -->
-		<section class="py-24 border-b border-line">
+		<section class="relative py-24 border-b border-line overflow-hidden">
+			<HeroLogo />
 			<div class="inline-flex items-center gap-2 text-xs text-accent tracking-widest mb-6">
 				<span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
 				{t.hero.eyebrow}
 			</div>
 
-			<h1 class="font-serif text-5xl md:text-6xl font-medium leading-tight tracking-tight text-ink max-w-[580px] mb-5">
+			<h1 class="font-heading text-5xl md:text-6xl font-medium leading-tight tracking-tight text-ink max-w-[580px] mb-5">
 				{t.hero.title}
 			</h1>
 
@@ -43,13 +45,13 @@ const latestProject = projects[projects.length - 1];
 			<div class="flex items-center gap-5 mb-16">
 				<a
 					href={`/${lang}/projects`}
-					class="bg-ink text-surface text-sm px-5 py-2.5 rounded hover:opacity-80 transition-opacity"
+					class="bg-ink text-surface text-sm px-5 py-2.5 rounded hover:bg-accent transition-colors"
 				>
 					{t.hero.ctaProjects}
 				</a>
 				<a
 					href={`/${lang}/about`}
-					class="text-sm text-muted hover:text-ink transition-colors"
+					class="text-sm text-muted hover:text-accent transition-colors"
 				>
 					{t.hero.ctaContact} &rarr;
 				</a>
@@ -58,71 +60,71 @@ const latestProject = projects[projects.length - 1];
 			<div class="flex flex-wrap gap-8 md:gap-14">
 				<div>
 					<div class="text-[0.68rem] text-faint tracking-widest mb-1">{t.hero.statProjects}</div>
-					<span class="font-serif text-xl text-ink">5+</span>
+					<span class="font-heading text-xl text-ink">5+</span>
 				</div>
 				<div>
 					<div class="text-[0.68rem] text-faint tracking-widest mb-1">{t.hero.statStack}</div>
-					<span class="font-serif text-xl text-ink">{t.hero.statStackValue}</span>
+					<span class="font-heading text-xl text-ink">{t.hero.statStackValue}</span>
 				</div>
 				<div>
 					<div class="text-[0.68rem] text-faint tracking-widest mb-1">{t.hero.statBased}</div>
-					<span class="font-serif text-xl text-ink">{t.hero.statBasedValue}</span>
+					<span class="font-heading text-xl text-ink">{t.hero.statBasedValue}</span>
 				</div>
 			</div>
 		</section>
 
 		<!-- Section header -->
 		<div class="flex items-baseline justify-between py-8 border-b border-line mb-8">
-			<h2 class="font-serif text-3xl font-medium text-ink tracking-tight">
+			<h2 class="font-heading text-3xl font-medium text-ink tracking-tight">
 				{t.section.title}
 			</h2>
 			<a
 				href={`/${lang}/projects`}
-				class="text-xs text-muted hover:text-ink transition-colors"
+				class="text-xs text-muted hover:text-accent transition-colors"
 			>
 				{t.section.viewAll} &rarr;
 			</a>
 		</div>
 
 		<!-- Featured project -->
-		<div class="border border-line rounded-xl overflow-hidden grid grid-cols-1 md:grid-cols-2 mb-16">
-			<div class="bg-card flex items-center justify-center min-h-[280px] md:min-h-[320px] md:border-r border-b md:border-b-0 border-line">
-				<Image
-					src={latestProject.image}
-					alt={latestProject.title}
-					width={600}
-					height={400}
-					class="w-full h-full object-cover"
-					format="webp"
-					quality={95}
-				/>
-			</div>
-			<div class="p-8 md:p-10 flex flex-col justify-between">
+		<div class="mb-16">
+			<div class="flex items-start gap-4 mb-3">
+				<div class="w-12 h-12 rounded-lg border border-line overflow-hidden flex-shrink-0 bg-card">
+					<Image
+						src={latestProject.image}
+						alt={latestProject.title}
+						width={96}
+						height={96}
+						class="w-full h-full object-cover"
+						format="webp"
+						quality={95}
+					/>
+				</div>
 				<div>
-					<div class="text-[0.68rem] tracking-widest text-faint mb-3">
+					<div class="text-[0.68rem] tracking-widest text-faint mb-1">
 						{t.featured.label}
 					</div>
-					<div class="font-serif text-2xl font-medium text-ink tracking-tight mb-3">
+					<div class="font-heading text-xl font-medium text-ink tracking-tight">
 						{latestProject.title}
 					</div>
-					<p class="text-sm text-muted font-light leading-relaxed mb-6">
-						{t.projects[latestProject.descriptionKey]}
-					</p>
-					<div class="flex flex-wrap gap-1.5 mb-8">
-						{latestProject.tags.map((tag) => (
-							<span class="text-[0.7rem] px-2.5 py-1 rounded bg-card text-muted">
-								{tag}
-							</span>
-						))}
-					</div>
 				</div>
-				<a
-					href={`/${lang}/projects`}
-					class="text-sm text-ink inline-flex items-center gap-1.5 border-b border-ink pb-0.5 self-start hover:opacity-60 transition-opacity"
-				>
-					{t.featured.viewProject} &rarr;
-				</a>
 			</div>
+			<p class="text-sm text-muted font-light leading-relaxed mb-4">
+				{t.projects[latestProject.descriptionKey]}
+			</p>
+			<div class="flex flex-wrap gap-1.5 mb-4">
+				{latestProject.tags.map((tag) => (
+					<span class="text-[0.68rem] px-2 py-0.5 rounded bg-card text-muted">
+						{tag}
+					</span>
+				))}
+			</div>
+			<a
+				href={`/${lang}/projects`}
+				class="text-sm text-ink inline-flex items-center gap-1.5 border-b border-ink pb-0.5 hover:text-accent hover:border-accent transition-colors"
+			>
+				{t.featured.viewProject} &rarr;
+			</a>
 		</div>
 
 	</div>

@@ -15,7 +15,7 @@ const jp: Translation = {
     ctaContact: 'お問い合わせ',
     statProjects: 'プロジェクト',
     statStack: 'スタック',
-    statStackValue: 'SvelteKit · Go · React',
+    statStackValue: 'Go · Python · TypeScript',
     statBased: '拠点',
     statBasedValue: '東京',
   },
@@ -71,7 +71,6 @@ const jp: Translation = {
     modal: {
       about: 'プロジェクトについて',
       technical: '技術概要',
-      gallery: 'ギャラリー',
       visitbtn: 'サイトを見る',
     },
   },
@@ -140,9 +139,9 @@ const jp: Translation = {
     ],
     facts: [
       { label: '拠点', value: '東京' },
-      { label: '専門', value: 'Web · モバイル · ブロックチェーン' },
+      { label: '専門', value: 'モバイル · バックエンド · AI · ブロックチェーン' },
       { label: '言語', value: 'FR · EN · JP' },
-      { label: '趣味', value: '車 · 日本 · オープンソース' },
+      { label: '趣味', value: 'モータースポーツ · テック · ワイン' },
     ],
     contact: {
       eyebrow: 'お問い合わせ',

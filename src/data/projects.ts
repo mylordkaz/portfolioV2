@@ -7,42 +7,6 @@ import moneySwap from '../assets/moneySwap/moneySwap.webp';
 import sirius from '../assets/siriusGarage/sirius.webp';
 import kakurega from '../assets/kakurega/kakurega.webp';
 
-const napsGalleryImages = import.meta.glob<ImageMetadata>(
-  '../assets/naps/gallery/*.{png,jpg,jpeg,webp}',
-  {
-    import: 'default',
-    eager: true,
-  }
-);
-const cryptGalleryImages = import.meta.glob<ImageMetadata>(
-  '../assets/cryptrack/gallery/*.{png,jpg,jpeg,webp}',
-  {
-    import: 'default',
-    eager: true,
-  }
-);
-const moneySwapGalleryImages = import.meta.glob<ImageMetadata>(
-  '../assets/moneySwap/gallery/*.{png,jpg,jpeg,webp}',
-  {
-    import: 'default',
-    eager: true,
-  }
-);
-const siriusGarageGalleryImages = import.meta.glob<ImageMetadata>(
-  '../assets/siriusGarage/gallery/*.{png,jpg,jpeg,webp}',
-  {
-    import: 'default',
-    eager: true,
-  }
-);
-const kakuregaGalleryImages = import.meta.glob<ImageMetadata>(
-  '../assets/kakurega/gallery/*.{png,jpg,jpeg,webp}',
-  {
-    import: 'default',
-    eager: true,
-  }
-);
-
 export interface Project {
   id: string;
   title: string;
@@ -50,7 +14,6 @@ export interface Project {
   detailedDescription: ProjectDescriptionKey;
   technicalDescription: ProjectDescriptionKey;
   image: ImageMetadata;
-  galleryImages?: ImageMetadata[];
   tags: string[];
   link?: string;
 }
@@ -63,7 +26,7 @@ export const projects: Project[] = [
     detailedDescription: 'detailedNapsDescription',
     technicalDescription: 'technicalNapsDescription',
     image: naps,
-    galleryImages: Object.values(napsGalleryImages),
+
     tags: ['SvelteKit', 'TypeScript', 'MicroCMS'],
     link: 'https://napsv.com/',
   },
@@ -74,7 +37,7 @@ export const projects: Project[] = [
     detailedDescription: 'detailedCryptDescription',
     technicalDescription: 'technicalCryptDescription',
     image: cryptrack,
-    galleryImages: Object.values(cryptGalleryImages),
+
     tags: ['Golang', 'Wails', 'React'],
     link: '',
   },
@@ -85,7 +48,7 @@ export const projects: Project[] = [
     detailedDescription: 'detailedMoneySwapDescription',
     technicalDescription: 'technicalMoneySwapDescription',
     image: moneySwap,
-    galleryImages: Object.values(moneySwapGalleryImages),
+
     tags: ['React-native', 'TypeScript', 'Golang'],
     link: '',
   },
@@ -96,7 +59,7 @@ export const projects: Project[] = [
     detailedDescription: 'detailedSiriusGarageDescription',
     technicalDescription: 'technicalSiriusGarageDescription',
     image: sirius,
-    galleryImages: Object.values(siriusGarageGalleryImages),
+
     tags: ['SvelteKit', 'TypeScript', 'Cloudflare'],
     link: 'https://siriusgarage.fr',
   },
@@ -107,7 +70,7 @@ export const projects: Project[] = [
     detailedDescription: 'detailedKakuregaDescription',
     technicalDescription: 'technicalKakuregaDescription',
     image: kakurega,
-    galleryImages: Object.values(kakuregaGalleryImages),
+
     tags: ['SvelteKit', 'MicroCMS', 'TailwindCSS'],
     link: 'https://kakurega-men.com',
   },

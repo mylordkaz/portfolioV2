@@ -15,7 +15,7 @@ const fr: Translation = {
     ctaContact: 'Me contacter',
     statProjects: 'PROJETS',
     statStack: 'STACK',
-    statStackValue: 'SvelteKit · Go · React',
+    statStackValue: 'Go · Python · TypeScript',
     statBased: 'BASÉ À',
     statBasedValue: 'Tokyo',
   },
@@ -71,7 +71,6 @@ const fr: Translation = {
     modal: {
       about: 'À propos du projet',
       technical: 'Aperçu technique',
-      gallery: 'Galerie',
       visitbtn: 'Visiter le site',
     },
   },
@@ -140,9 +139,9 @@ const fr: Translation = {
     ],
     facts: [
       { label: 'Localisation', value: 'Tokyo, Japon' },
-      { label: 'Spécialité', value: 'Web · Mobile · Blockchain' },
+      { label: 'Spécialité', value: 'Mobile · Backend · IA · Blockchain' },
       { label: 'Langues', value: 'FR · EN · JP' },
-      { label: 'Intérêts', value: 'Voitures · Japon · Open Source' },
+      { label: 'Intérêts', value: 'Sport auto · Tech · Vin' },
     ],
     contact: {
       eyebrow: 'Contact',

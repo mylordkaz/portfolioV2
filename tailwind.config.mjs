@@ -5,8 +5,8 @@ export default {
     extend: {
       fontFamily: {
         japanese: ['"Klee One"', "sans-serif"],
-        sans: ['"DM Sans"', "system-ui", "sans-serif"],
-        serif: ['"Cormorant"', '"Klee One"', "Georgia", "serif"],
+        sans: ['"Inter"', "system-ui", "sans-serif"],
+        heading: ['"Space Grotesk"', "system-ui", "sans-serif"],
       },
       colors: {
         accent: "var(--accent)",

@@ -55,7 +55,6 @@ export interface Translation {
     modal: {
       about: string;
       technical: string;
-      gallery: string;
       visitbtn: string;
     };
   };

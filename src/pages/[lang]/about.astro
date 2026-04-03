@@ -5,6 +5,7 @@ import Header from "../../components/layout/Header.astro";
 import Footer from "../../components/layout/Footer.astro";
 import translations from "../../i18n";
 import aboutImg from "../../assets/aboutMe.webp";
+import HeroLogo from "../../components/common/HeroLogo.astro";
 
 export function getStaticPaths() {
 	return [
@@ -25,13 +26,16 @@ const t = translations[lang as keyof typeof translations];
 	<div class="max-w-[960px] mx-auto px-8">
 		<!-- About section -->
 		<section class="py-12 md:py-16 border-b border-line">
-			<div class="inline-flex items-center gap-2 text-xs text-accent tracking-widest mb-5">
-				<span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-				{t.about.eyebrow}
+			<div class="relative overflow-hidden pb-12">
+				<HeroLogo />
+				<div class="inline-flex items-center gap-2 text-xs text-accent tracking-widest mb-5">
+					<span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+					{t.about.eyebrow}
+				</div>
+				<h1 class="font-heading text-4xl md:text-5xl font-medium tracking-tight text-ink leading-tight whitespace-pre-line">
+					{t.about.heading}
+				</h1>
 			</div>
-			<h1 class="font-serif text-4xl md:text-5xl font-medium tracking-tight text-ink leading-tight mb-12 whitespace-pre-line">
-				{t.about.heading}
-			</h1>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
 				<!-- Photo -->
@@ -75,7 +79,7 @@ const t = translations[lang as keyof typeof translations];
 				<span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
 				{t.about.contact.eyebrow}
 			</div>
-			<h2 class="font-serif text-3xl md:text-4xl font-medium tracking-tight text-ink leading-tight mb-2">
+			<h2 class="font-heading text-3xl md:text-4xl font-medium tracking-tight text-ink leading-tight mb-2">
 				{t.about.contact.title}
 			</h2>
 			<p class="text-sm text-muted font-light leading-relaxed mb-12">
@@ -93,7 +97,7 @@ const t = translations[lang as keyof typeof translations];
 							href="https://github.com/mylordkaz"
 							target="_blank"
 							rel="noopener noreferrer"
-							class="flex justify-between items-center py-3 border-b border-line text-sm text-ink hover:opacity-60 transition-opacity"
+							class="flex justify-between items-center py-3 border-b border-line text-sm text-ink hover:text-accent transition-colors"
 						>
 							<span>GitHub</span>
 							<span class="text-xs text-faint">&rarr;</span>
@@ -102,21 +106,21 @@ const t = translations[lang as keyof typeof translations];
 							href="https://linkedin.com/in/kevin-timsiline"
 							target="_blank"
 							rel="noopener noreferrer"
-							class="flex justify-between items-center py-3 border-b border-line text-sm text-ink hover:opacity-60 transition-opacity"
+							class="flex justify-between items-center py-3 border-b border-line text-sm text-ink hover:text-accent transition-colors"
 						>
 							<span>LinkedIn</span>
 							<span class="text-xs text-faint">&rarr;</span>
 						</a>
 						<a
 							href="https://line.me/ti/p/mylordkaz"
-							class="flex justify-between items-center py-3 border-b border-line text-sm text-ink hover:opacity-60 transition-opacity"
+							class="flex justify-between items-center py-3 border-b border-line text-sm text-ink hover:text-accent transition-colors"
 						>
 							<span>LINE</span>
 							<span class="text-xs text-faint">&rarr;</span>
 						</a>
 						<a
 							href="mailto:timsiline.kevin@gmail.com"
-							class="flex justify-between items-center py-3 border-b border-line text-sm text-ink hover:opacity-60 transition-opacity"
+							class="flex justify-between items-center py-3 border-b border-line text-sm text-ink hover:text-accent transition-colors"
 						>
 							<span>Email</span>
 							<span class="text-xs text-faint">&rarr;</span>
@@ -185,7 +189,7 @@ const t = translations[lang as keyof typeof translations];
 						<button
 							type="submit"
 							id="submit-button"
-							class="self-start bg-ink text-surface text-sm px-5 py-2.5 rounded-md hover:opacity-75 transition-opacity cursor-pointer"
+							class="self-start bg-ink text-surface text-sm px-5 py-2.5 rounded-md hover:bg-accent transition-colors cursor-pointer"
 						>
 							{t.about.contact.form.submit}
 						</button>

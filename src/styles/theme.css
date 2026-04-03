@@ -1,5 +1,5 @@
 :root {
-  --accent: #C4622D;
+  --accent: #FF0054;
   --bg: #FAFAF8;
   --ink: #111111;
   --muted: #888880;
@@ -9,7 +9,7 @@
 }
 
 .dark {
-  --accent: #D4784A;
+  --accent: #FF3377;
   --bg: #161614;
   --ink: #EAEAE6;
   --muted: #908F88;

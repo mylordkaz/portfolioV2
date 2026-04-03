@@ -6,6 +6,7 @@ import Footer from "../../components/layout/Footer.astro";
 import translations from "../../i18n";
 import { projects } from "../../data/projects";
 import ProjectModal from "../../components/sections/ProjectModal.astro";
+import HeroLogo from "../../components/common/HeroLogo.astro";
 
 export function getStaticPaths() {
 	return [
@@ -27,12 +28,13 @@ const sortedProjects = [...projects].reverse();
 
 	<div class="max-w-[960px] mx-auto px-8">
 		<!-- Page hero -->
-		<div class="py-12 md:py-16 border-b border-line">
+		<div class="relative py-12 md:py-16 border-b border-line overflow-hidden">
+			<HeroLogo />
 			<div class="inline-flex items-center gap-2 text-xs text-accent tracking-widest mb-5">
 				<span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
 				{t.projects.eyebrow}
 			</div>
-			<h1 class="font-serif text-4xl md:text-5xl font-medium tracking-tight text-ink leading-tight mb-2">
+			<h1 class="font-heading text-4xl md:text-5xl font-medium tracking-tight text-ink leading-tight mb-2">
 				{t.projects.title}
 			</h1>
 			<p class="text-sm text-muted font-light leading-relaxed">
@@ -76,7 +78,7 @@ const sortedProjects = [...projects].reverse();
 								))}
 							</div>
 						</div>
-						<span class="hidden md:inline text-xs text-muted hover:text-ink transition-colors whitespace-nowrap">
+						<span class="hidden md:inline text-xs text-muted hover:text-accent transition-colors whitespace-nowrap">
 							{t.projects.viewCta} &rarr;
 						</span>
 					</button>
@@ -88,7 +90,6 @@ const sortedProjects = [...projects].reverse();
 						detailedDescription={project.detailedDescription}
 						technicalDescription={project.technicalDescription}
 						image={project.image}
-						galleryImages={project.galleryImages}
 						tags={project.tags}
 						link={project.link}
 					/>

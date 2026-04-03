@@ -12,7 +12,7 @@ const t = translations[lang as keyof typeof translations];
 	<div class="max-w-[960px] mx-auto px-8">
 		<nav class="flex items-center justify-between py-6">
 			<!-- Logo -->
-			<a href={`/${lang}`} class="font-serif text-xl font-medium text-ink tracking-tight">
+			<a href={`/${lang}`} class="font-heading text-xl font-medium text-ink tracking-tight">
 				Kevin Tim<span class="text-accent">.</span>
 			</a>
 
@@ -20,19 +20,19 @@ const t = translations[lang as keyof typeof translations];
 			<div class="hidden md:flex items-center gap-8">
 				<a
 					href={`/${lang}/projects`}
-					class="text-sm text-muted hover:text-ink transition-colors duration-150"
+					class="text-sm text-muted hover:text-accent transition-colors duration-150"
 				>
 					{t.nav.projects}
 				</a>
 				<a
 					href={`/${lang}/expertise`}
-					class="text-sm text-muted hover:text-ink transition-colors duration-150"
+					class="text-sm text-muted hover:text-accent transition-colors duration-150"
 				>
 					{t.nav.expertise}
 				</a>
 				<a
 					href={`/${lang}/about`}
-					class="text-sm text-muted hover:text-ink transition-colors duration-150"
+					class="text-sm text-muted hover:text-accent transition-colors duration-150"
 				>
 					{t.nav.about}
 				</a>
@@ -82,19 +82,19 @@ const t = translations[lang as keyof typeof translations];
 		<div class="max-w-[960px] mx-auto px-8 py-6 flex flex-col gap-4">
 			<a
 				href={`/${lang}/projects`}
-				class="text-sm text-muted hover:text-ink transition-colors"
+				class="text-sm text-muted hover:text-accent transition-colors"
 			>
 				{t.nav.projects}
 			</a>
 			<a
 				href={`/${lang}/expertise`}
-				class="text-sm text-muted hover:text-ink transition-colors"
+				class="text-sm text-muted hover:text-accent transition-colors"
 			>
 				{t.nav.expertise}
 			</a>
 			<a
 				href={`/${lang}/about`}
-				class="text-sm text-muted hover:text-ink transition-colors"
+				class="text-sm text-muted hover:text-accent transition-colors"
 			>
 				{t.nav.about}
 			</a>
