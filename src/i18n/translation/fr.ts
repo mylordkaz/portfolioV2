@@ -98,33 +98,33 @@ const fr: Translation = {
     },
     offers: [
       {
-        title: "Développement d'applications Web",
+        title: 'Systemes Backend & Outils Internes',
         description:
-          'Solutions full-stack pour des applications web réactives et sécurisées avec un design intuitif et esthétique.',
+          "Les systemes sur lesquels reposent les entreprises — gestion des stocks, outils employes et automatisation des processus.",
         bullets: [
-          'Frontend avec SvelteKit & React',
-          'Intégration CMS & architecture headless',
-          'Déploiement Cloudflare & optimisation edge',
+          'Systemes de gestion de distribution & inventaire',
+          'Gestion des employes & tableaux de bord internes',
+          "Conception d'API, pipelines de donnees & logique metier",
         ],
       },
       {
-        title: 'Applications mobiles & desktop',
+        title: 'Applications Mobiles',
         description:
-          "Applications multiplateformes sur mesure, axées sur la performance et l'expérience utilisateur.",
+          "Applications multiplateformes qui resolvent de vrais problemes — assistants IA, outils financiers ou utilitaires terrain.",
         bullets: [
-          'React Native pour iOS & Android',
-          'Applications desktop via Wails (Go + Web)',
-          "Données en temps réel & intégration d'API",
+          'Applications assistant personnel avec IA',
+          'Suivi de portefeuille crypto & taux de change',
+          'Suivi GPS & outils de geolocalisation',
         ],
       },
       {
-        title: 'Performance & optimisation',
+        title: 'Solutions Web & Frontend',
         description:
-          'Systèmes côté serveur fiables construits avec Go, axés sur la vitesse et la maintenabilité à long terme.',
+          "Sites web et applications web responsives — propres, rapides, concus pour de vrais utilisateurs sur tout appareil.",
         bullets: [
-          'APIs backend en Golang',
-          'Audit de performance & améliorations',
-          'Infrastructure évolutive & mise en cache',
+          'Sites vitrine & plateformes client',
+          "Tableaux de bord d'administration & gestion de contenu",
+          'Optimisation des performances & deploiement',
         ],
       },
     ],
@@ -133,15 +133,15 @@ const fr: Translation = {
     eyebrow: 'À propos',
     heading: 'Ingénieur français,\npassionné basé à Tokyo.',
     bio: [
-      "Passionné par la Blockchain et les technologies émergentes. Qu'il s'agisse d'une interface utilisateur élégante ou d'un système backend puissant, je me concentre sur des solutions qui fonctionnent vraiment.",
-      "Né en France, vivant au Japon — j'ai toujours été curieux et motivé par les défis, constamment immergé dans le monde de la technologie.",
-      'Quand je ne code pas, vous me trouverez à bricoler sur mes voitures ou à explorer les magnifiques paysages du Japon.',
+      "Mon travail tourne autour des systemes backend, des applications mobiles et des outils internes — des plateformes de gestion de distribution aux assistants IA en passant par les trackers crypto. Je tiens a construire du logiciel qui fonctionne bien et qui dure.",
+      "Originaire de France, base au Japon. J'aime apprendre de nouveaux outils et m'adapter aux besoins de chaque projet. S'il y a quelque chose a construire, je m'en charge.",
+      "En dehors du travail, je profite du sport automobile ou je voyage a travers le Japon, a la decouverte de ses magnifiques paysages.",
     ],
     facts: [
       { label: 'Localisation', value: 'Tokyo, Japon' },
-      { label: 'Spécialité', value: 'Mobile · Backend · IA · Blockchain' },
+      { label: 'Spécialité', value: 'Backend · Mobile · IA' },
       { label: 'Langues', value: 'FR · EN · JP' },
-      { label: 'Intérêts', value: 'Sport auto · Tech · Vin' },
+      { label: 'Intérêts', value: 'Sport auto · Tech · Voyage' },
     ],
     contact: {
       eyebrow: 'Contact',

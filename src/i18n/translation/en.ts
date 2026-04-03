@@ -99,33 +99,33 @@ const en: Translation = {
     },
     offers: [
       {
-        title: 'Web Application Development',
+        title: 'Backend Systems & Internal Tools',
         description:
-          'Full-stack solutions for responsive, secure web applications with intuitive and beautiful design.',
+          'Building the core systems that businesses run on — from inventory management to employee tools and workflow automation.',
         bullets: [
-          'Frontend with SvelteKit & React',
-          'CMS integration & headless architecture',
-          'Cloudflare deployment & edge optimization',
+          'Distribution & inventory management systems',
+          'Employee management & internal dashboards',
+          'API design, data pipelines & business logic',
         ],
       },
       {
-        title: 'Mobile & Desktop Apps',
+        title: 'Mobile Applications',
         description:
-          'Custom cross-platform applications built for performance and seamless user experience.',
+          'Cross-platform apps that solve real problems — whether it is AI-powered assistants, financial tools, or field utilities.',
         bullets: [
-          'React Native for iOS & Android',
-          'Desktop apps via Wails (Go + Web)',
-          'Real-time data and API integration',
+          'AI-integrated personal assistant apps',
+          'Crypto portfolio & exchange rate tracking',
+          'GPS tracking & location-based tools',
         ],
       },
       {
-        title: 'Performance & Optimization',
+        title: 'Web Solutions & Frontend',
         description:
-          'Reliable server-side systems built with Go, focused on speed and long-term maintainability.',
+          'Responsive websites and web apps — clean, fast, and built to serve real users on any device.',
         bullets: [
-          'Backend APIs in Golang',
-          'Performance auditing & improvements',
-          'Scalable infrastructure & caching',
+          'Business websites & client-facing platforms',
+          'Admin dashboards & content management',
+          'Performance optimization & deployment',
         ],
       },
     ],
@@ -134,15 +134,15 @@ const en: Translation = {
     eyebrow: 'About Me',
     heading: 'French engineer,\nTokyo-based craftsman.',
     bio: [
-      "Passionate about Blockchain & emerging technology. Whether it's a sleek user interface or a powerful backend system, I focus on delivering solutions that truly work.",
-      "Born in France, living in Japan - I've always been curious and driven by challenges, constantly immersing myself in the world of technology.",
-      "When I'm not coding, you'll find me working on my cars or exploring the beautiful landscapes of Japan.",
+      "My work revolves around backend systems, mobile apps, and internal tools — from distribution management platforms to AI-powered assistants and crypto trackers. I care about building software that works well and lasts.",
+      "Originally from France, now based in Japan. I enjoy learning new tools and adapting to whatever a project demands. If something needs to be built, I'll make it happen.",
+      "When I'm not working, I'm enjoying motorsport or traveling around, discovering Japan's beautiful landscapes.",
     ],
     facts: [
       { label: 'Location', value: 'Tokyo, Japan' },
-      { label: 'Focus', value: 'Mobile · Backend · AI · Blockchain' },
+      { label: 'Focus', value: 'Backend · Mobile · AI' },
       { label: 'Languages', value: 'FR · EN · JP' },
-      { label: 'Interests', value: 'Motorsport · Tech · Wine' },
+      { label: 'Interests', value: 'Motorsport · Tech · Travel' },
     ],
     contact: {
       eyebrow: 'Get in Touch',
