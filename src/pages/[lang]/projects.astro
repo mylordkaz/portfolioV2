@@ -51,13 +51,13 @@ const sortedProjects = [...projects].reverse();
 						type="button"
 						class="proj-row grid grid-cols-[72px_1fr] md:grid-cols-[100px_1fr_auto] gap-5 md:gap-7 items-center py-6 border-b border-line w-full text-left transition-colors duration-150 hover:bg-card hover:-mx-4 hover:px-4 hover:rounded-md cursor-pointer"
 					>
-						<div class="w-[72px] h-[48px] md:w-[100px] md:h-[68px] rounded-md border border-line overflow-hidden flex-shrink-0">
+						<div class="w-[72px] h-[48px] md:w-[100px] md:h-[68px] rounded-md border border-line overflow-hidden flex-shrink-0" style={project.imageContain ? 'background: #fdfdfd' : ''}>
 							<Image
 								src={project.image}
 								alt={project.title}
 								width={200}
 								height={136}
-								class="w-full h-full object-cover"
+								class={`w-full h-full ${project.imageContain ? 'object-contain rounded-md' : 'object-cover'}`}
 								format="webp"
 								quality={90}
 								loading="lazy"

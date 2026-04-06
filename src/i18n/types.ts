@@ -51,6 +51,12 @@ export interface Translation {
     technicalSiriusGarageDescription: string;
     detailedKakuregaDescription: string;
     technicalKakuregaDescription: string;
+    voyDescription: string;
+    detailedVoyDescription: string;
+    technicalVoyDescription: string;
+    trakioDescription: string;
+    detailedTrakioDescription: string;
+    technicalTrakioDescription: string;
     viewBtn: string;
     modal: {
       about: string;

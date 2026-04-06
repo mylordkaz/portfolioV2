@@ -6,6 +6,8 @@ import cryptrack from '../assets/cryptrack/cryptrack.webp';
 import moneySwap from '../assets/moneySwap/moneySwap.webp';
 import sirius from '../assets/siriusGarage/sirius.webp';
 import kakurega from '../assets/kakurega/kakurega.webp';
+import voyTravel from '../assets/voyTravel/voyTravel.webp';
+import trakio from '../assets/trakio/trakio.webp';
 
 export interface Project {
   id: string;
@@ -16,33 +18,12 @@ export interface Project {
   image: ImageMetadata;
   tags: string[];
   link?: string;
+  imageContain?: boolean;
 }
 
 export const projects: Project[] = [
   {
     id: '1',
-    title: 'Naps shaving',
-    descriptionKey: 'napsDescription',
-    detailedDescription: 'detailedNapsDescription',
-    technicalDescription: 'technicalNapsDescription',
-    image: naps,
-
-    tags: ['SvelteKit', 'TypeScript', 'MicroCMS'],
-    link: 'https://napsv.com/',
-  },
-  {
-    id: '2',
-    title: 'Cryptrack',
-    descriptionKey: 'cryptrackDescription',
-    detailedDescription: 'detailedCryptDescription',
-    technicalDescription: 'technicalCryptDescription',
-    image: cryptrack,
-
-    tags: ['Golang', 'Wails', 'React'],
-    link: '',
-  },
-  {
-    id: '3',
     title: 'MoneySwap',
     descriptionKey: 'moneySwapDescription',
     detailedDescription: 'detailedMoneySwapDescription',
@@ -53,7 +34,7 @@ export const projects: Project[] = [
     link: '',
   },
   {
-    id: '4',
+    id: '2',
     title: 'siriusGarage',
     descriptionKey: 'siriusGarageDescription',
     detailedDescription: 'detailedSiriusGarageDescription',
@@ -61,10 +42,10 @@ export const projects: Project[] = [
     image: sirius,
 
     tags: ['SvelteKit', 'TypeScript', 'Cloudflare'],
-    link: 'https://siriusgarage.fr',
+    link: '',
   },
   {
-    id: '5',
+    id: '3',
     title: 'Kakurega',
     descriptionKey: 'kakuregaDescription',
     detailedDescription: 'detailedKakuregaDescription',
@@ -73,5 +54,47 @@ export const projects: Project[] = [
 
     tags: ['SvelteKit', 'MicroCMS', 'TailwindCSS'],
     link: 'https://kakurega-men.com',
+  },
+  {
+    id: '4',
+    title: 'Naps shaving',
+    descriptionKey: 'napsDescription',
+    detailedDescription: 'detailedNapsDescription',
+    technicalDescription: 'technicalNapsDescription',
+    image: naps,
+
+    tags: ['SvelteKit', 'TypeScript', 'MicroCMS'],
+    link: 'https://napsv.com/',
+  },
+  {
+    id: '5',
+    title: 'Cryptrack',
+    descriptionKey: 'cryptrackDescription',
+    detailedDescription: 'detailedCryptDescription',
+    technicalDescription: 'technicalCryptDescription',
+    image: cryptrack,
+    tags: ['React Native', 'Expo', 'Go'],
+    link: 'https://apps.apple.com/jp/app/cryptrack-tracker/id6759000890',
+    imageContain: true,
+  },
+  {
+    id: '6',
+    title: 'Voy Travel',
+    descriptionKey: 'voyDescription',
+    detailedDescription: 'detailedVoyDescription',
+    technicalDescription: 'technicalVoyDescription',
+    image: voyTravel,
+    tags: ['React Native', 'Next.js', 'Python'],
+    link: '',
+  },
+  {
+    id: '7',
+    title: 'Trakio',
+    descriptionKey: 'trakioDescription',
+    detailedDescription: 'detailedTrakioDescription',
+    technicalDescription: 'technicalTrakioDescription',
+    image: trakio,
+    tags: ['React Native', 'Expo', 'Cloudflare'],
+    link: '',
   },
 ];

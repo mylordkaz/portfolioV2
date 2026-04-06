@@ -38,35 +38,47 @@ const en: Translation = {
       'Each project represents a unique challenge and an innovative solution.',
     viewCta: 'View',
     napsDescription:
-      'A full-featured Beauty salon website, with integrated blog.',
+      'Bilingual beauty salon website with integrated blog and booking.',
     cryptrackDescription:
-      'A MacOs desktop app, Cryptocurrencies portfolio tracker.',
+      'A mobile app to track your cryptocurrency portfolio — real-time PnL, charts, and full offline support.',
     moneySwapDescription:
-      'Cross-platform mobile app, giving the money exchange rate in real-time of Fiat and Cryptocurrency.',
+      'Cross-platform mobile app for real-time fiat and crypto exchange rates.',
     siriusGarageDescription:
-      'A modern website renewal for a French car mechanic garage, showcasing services and contact information.',
+      'Website redesign for a French automotive repair shop.',
     kakuregaDescription:
-      'A mobile-first designed website with integrated blog for a newly opened barber salon for men in Tokyo.',
+      'Mobile-first website with integrated blog for a men\'s barber salon in Tokyo.',
     detailedNapsDescription:
-      'Naps is a modern, multilingual beauty salon website thoughtfully designed for an English and Japanese audience. The site seamlessly presents salon services, treatment details, and a curated blog section to guide visitors through their beauty journey. With integrated booking functionality, customers can easily explore services and make appointments in their preferred language.',
+      'Naps is a modern multilingual beauty salon website presenting services, treatments, and a curated blog. Integrated booking lets customers make appointments in their preferred language.',
     technicalNapsDescription:
-      'Built on SvelteKit with TypeScript and styled using TailwindCSS, the site features robust internationalization through Paraglide supporting English and Japanese content. The architecture includes client-side routing and dynamic content loading, with MicroCMS integration handling blog content management. Deployed on Netlify, the site implements comprehensive SEO optimization for both languages, ensuring strong search visibility in both markets. The responsive design and performance optimization create a smooth user experience across all devices.',
+      'Built with SvelteKit, TypeScript, and TailwindCSS, with internationalization handled by Paraglide for English and Japanese content. MicroCMS manages the blog, and the site is deployed on Cloudflare with SEO optimization for both markets.',
     detailedCryptDescription:
-      'Cryptrack is a native macOS desktop application that helps users track their cryptocurrency investments. It features real-time price updates, portfolio management with buy/sell transaction tracking, performance analytics, and a clean, modern interface with dark/light mode support. Users can securely manage multiple cryptocurrencies, and analyze their investment gains and losses over time.',
+      'Cryptrack is a mobile app to track your cryptocurrency portfolio across multiple wallets and exchanges. Manually log buy/sell transactions, monitor real-time PnL, and visualize performance through charts — all in your preferred currency. Secured with biometric authentication, the app works fully offline and supports multiple portfolios with per-asset cost basis tracking.',
     technicalCryptDescription:
-      "Built with Wails v2.9 (Go/React), this desktop application combines a Go backend for business logic and data management with a React TypeScript frontend using Tailwind CSS for styling. The app integrates with CoinMarketCap's API for real-time crypto data, uses SQLite with GORM for persistent storage, implements secure user authentication with bcrypt hashing, and leverages the macOS keychain for session management. The architecture follows a service-based pattern with clean separation between the UI, business logic, and data layers.",
+      'An offline-first React Native (Expo) mobile app backed by a Go microservice. The app stores all portfolio data locally in SQLite and computes metrics via FIFO lot tracking in TypeScript. A lightweight Go API aggregates live prices from CoinGecko/CoinMarketCap and FX rates, serving them with multi-tier in-memory caching and singleflight deduplication. State is managed through React Context providers for portfolio, currency, theme, and biometric auth.',
     detailedMoneySwapDescription:
-      'MoneySwap is a comprehensive currency conversion application that bridges the gap between traditional fiat currencies and cryptocurrencies. The app provides real-time exchange rates for major fiat currencies and a wide range of cryptocurrencies, enabling users to make informed decisions about their currency exchanges. With an intuitive interface, users can easily track multiple currency pairs simultaneously. The app focuses on delivering accurate, up-to-the-minute conversion rates while maintaining a smooth, responsive user experience across both iOS and Android platforms.',
+      'MoneySwap is a currency conversion app bridging fiat and crypto. It delivers real-time exchange rates for major currencies and a wide range of cryptocurrencies, letting users track multiple pairs simultaneously across iOS and Android.',
     technicalMoneySwapDescription:
-      'Built with React Native for cross-platform compatibility, the app features a clean, component-based architecture with TypeScript for enhanced type safety. The backend is powered by a robust Golang API service, utilizing goroutines for efficient concurrent processing of multiple exchange rate feeds. The system integrates with various financial APIs for fiat currency rates and cryptocurrency data, implementing WebSocket connections for real-time price updates. The backend implements a caching layer, while the mobile app uses local storage for offline functionality and user preferences. The application follows clean architecture principles, with clear separation of concerns between the UI, business logic, and data layers, ensuring maintainability and scalability. A webapp version is also under development.',
+      'Built with React Native and TypeScript, backed by a Golang API using goroutines for concurrent processing of multiple exchange rate feeds. Integrates financial APIs for fiat and crypto data with WebSocket-based real-time updates and a backend caching layer.',
     detailedSiriusGarageDescription:
-      'SiriusGarage is a comprehensive website redesign for a professional automotive repair shop in France. The site serves as a digital storefront, elegantly showcasing their specialized mechanical services, repair capabilities, and automotive expertise. With a streamlined interface, potential customers can easily explore service offerings, and access contact information. The design emphasizes trust and professionalism while maintaining visual elements that reflect the hands-on nature of automotive work.',
+      'SiriusGarage is a website redesign for a professional automotive repair shop in France. The site showcases their mechanical services and expertise, with a design that emphasizes trust and professionalism.',
     technicalSiriusGarageDescription:
-      'Built with SvelteKit and TypeScript, the SiriusGarage website delivers great performance and user experience. The architecture implements advanced SEO optimization, including semantic HTML structure, structured data for local business, and optimized metadata for search engine visibility. The responsive design was crafted using a mobile-first approach with custom breakpoints for perfect display across all device sizes. Deployed on Cloudflare, the site benefits from global CDN distribution, ensuring fast loading times and high availability for visitors from any location.',
+      'Built with SvelteKit and TypeScript, with a mobile-first responsive design and local business SEO optimization including structured data and optimized metadata. Deployed on Cloudflare.',
     detailedKakuregaDescription:
-      "Kakurega is a modern, mobile-first website designed for a newly opened barber salon in Tokyo that specializes in traditional and contemporary men's grooming services. The site showcases the salon's unique atmosphere, service offerings, and skilled barbers while featuring an integrated blog to share grooming tips, style trends, and salon updates. With a focus on the Tokyo market, the website emphasizes the salon's commitment to quality craftsmanship and creating a comfortable space for men to relax and enjoy professional grooming services.",
+      "Kakurega is a mobile-first website for a men's barber salon in Tokyo. The site presents the salon's atmosphere, services, and an integrated blog for grooming tips and style updates — designed with a clean aesthetic that blends traditional Japanese sensibility with contemporary styling.",
     technicalKakuregaDescription:
-      "Built with SvelteKit and TypeScript for optimal performance and maintainability, the website utilizes TailwindCSS for responsive, mobile-first design that ensures perfect display across all devices. The architecture integrates MicroCMS as a headless content management system, enabling easy blog content creation and management while maintaining fast loading speeds. The site implements comprehensive SEO optimization with structured data for local business visibility and optimized metadata for Tokyo-based search queries. The mobile-first approach prioritizes smartphone users, which constitute the majority of the target audience, while the clean, modern design reflects the salon's blend of traditional Japanese aesthetics with contemporary styling.",
+      "Built with SvelteKit and TypeScript, styled with TailwindCSS for a responsive mobile-first experience. MicroCMS powers the headless blog, keeping content updates simple without sacrificing performance. The site includes structured data and optimized metadata for local SEO visibility in Tokyo.",
+    voyDescription:
+      'An AI-powered travel assistant that turns social media inspiration into complete, bookable trip plans.',
+    detailedVoyDescription:
+      'Voy bridges the gap between casual travel discovery and actual bookings. Users share inspiration — Instagram posts, TikTok videos, screenshots — and an AI assistant handles the rest: understanding context through natural conversation, searching hotels, checking availability, and guiding users through booking confirmation. Conversations are persistent and resumable, designed to feel less like a search engine and more like a knowledgeable travel companion.',
+    technicalVoyDescription:
+      'A production polyglot monorepo (Turborepo/pnpm) with a React Native/Expo mobile app, a Next.js backend API, a Python AI assistant runtime, and background workers — all sharing a common PostgreSQL database and Redis layer. The AI assistant runs on a stateful graph architecture with persistent conversation state and a dual-LLM strategy for different query types. End-to-end type safety is enforced via tRPC. Infrastructure includes distributed tracing, LLM observability, error tracking, and automated iOS CI/CD.',
+    trakioDescription:
+      'A mobile lap-timing app for track days that records GPS sessions, detects laps and sectors automatically, and helps drivers review their performance.',
+    detailedTrakioDescription:
+      'Trakio is an iOS app built for track-day drivers who want a simple way to record and analyze their sessions. It uses GPS to track runs, automatically detects laps and sectors, stores session history locally, and presents post-session insights like best lap, sector performance, and session maps. It also includes social features such as Instagram Story sharing and an early leaderboard system.',
+    technicalTrakioDescription:
+      'A React Native/Expo iOS app combining GPS-based telemetry, local SQLite storage, seeded circuit metadata with timing lines, automatic lap and sector detection, and post-session analytics. Incoming GPS points go through a filter — low accuracy readings are dropped and speed is re-derived from distance between points as a sanity check against GPS jumps. Sessions are managed as a state machine so the UI always reflects the latest state without waiting on database writes. A Cloudflare Worker with D1 powers the leaderboard backend.',
     viewBtn: 'View Details',
     modal: {
       about: 'About the Project',
