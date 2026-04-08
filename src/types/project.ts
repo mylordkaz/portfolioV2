@@ -8,7 +8,6 @@ export interface ProjectModalProps {
   detailedDescription: ProjectDescriptionKey;
   technicalDescription: ProjectDescriptionKey;
   image: ImageMetadata;
-  galleryImages?: ImageMetadata[];
   tags: string[];
   link?: string;
 }

@@ -1,46 +1,11 @@
-<script>
-	const handleToggleClick = () => {
-		const element = document.documentElement;
-		element.classList.toggle("dark");
-
-		const isDark = element.classList.contains("dark");
-		localStorage.setItem("theme", isDark ? "dark" : "light");
-	};
-
-	// Add event listeners once the document is loaded
-	document.addEventListener("astro:page-load", () => {
-		const toggleButtons = document.querySelectorAll("#theme-toggle");
-		toggleButtons.forEach((btn) => {
-			btn.addEventListener("click", handleToggleClick);
-		});
-	});
-</script>
-
 <button
 	id="theme-toggle"
-	class="p-2 text-light-text-primary dark:text-dark-text-primary hover:bg-light-hover-light dark:hover:bg-dark-hover-light rounded-lg transition-colors flex items-center justify-center"
+	class="text-muted hover:text-accent transition-colors duration-150"
+	aria-label="Toggle theme"
 >
 	<svg
-		id="moon-icon"
-		class="hidden dark:block w-5 h-5"
+		class="hidden dark:block w-4 h-4"
 		xmlns="http://www.w3.org/2000/svg"
-		width="24"
-		height="24"
-		viewBox="0 0 24 24"
-		fill="none"
-		stroke="currentColor"
-		stroke-width="2"
-		stroke-linecap="round"
-		stroke-linejoin="round"
-	>
-		<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-	</svg>
-	<svg
-		id="sun-icon"
-		class="block dark:hidden"
-		xmlns="http://www.w3.org/2000/svg"
-		width="24"
-		height="24"
 		viewBox="0 0 24 24"
 		fill="none"
 		stroke="currentColor"
@@ -58,20 +23,35 @@
 		<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
 		<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
 	</svg>
+	<svg
+		class="block dark:hidden w-4 h-4"
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+	>
+		<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+	</svg>
 </button>
 
 <script>
-	// Initialize theme on page load
-	document.addEventListener("DOMContentLoaded", () => {
-		const theme =
-			localStorage.getItem("theme") ||
-			(window.matchMedia("(prefers-color-scheme: dark)").matches
-				? "dark"
-				: "light");
-		document.documentElement.classList.toggle("dark", theme === "dark");
+	const handleToggleClick = () => {
+		const element = document.documentElement;
+		element.classList.toggle("dark");
+		const isDark = element.classList.contains("dark");
+		localStorage.setItem("theme", isDark ? "dark" : "light");
+	};
+
+	document.addEventListener("astro:page-load", () => {
+		const toggleButtons = document.querySelectorAll("#theme-toggle");
+		toggleButtons.forEach((btn) => {
+			btn.addEventListener("click", handleToggleClick);
+		});
 	});
 
-	// Theme toggle functionality
 	const toggleButtons = document.querySelectorAll("#theme-toggle");
 	toggleButtons.forEach((toggle) => {
 		toggle.addEventListener("click", () => {

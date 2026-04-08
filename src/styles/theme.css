@@ -1,3 +1,23 @@
+:root {
+  --accent: #FF0054;
+  --bg: #FAFAF8;
+  --ink: #111111;
+  --muted: #888880;
+  --faint: #BBBBB5;
+  --border-color: #E5E3DF;
+  --card: #F3F1ED;
+}
+
+.dark {
+  --accent: #FF3377;
+  --bg: #161614;
+  --ink: #EAEAE6;
+  --muted: #908F88;
+  --faint: #585854;
+  --border-color: #2E2E2A;
+  --card: #222220;
+}
+
 html {
   transition: background-color 0.3s ease;
 }

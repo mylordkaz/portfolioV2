@@ -10,6 +10,9 @@ export default defineConfig({
   integrations: [tailwind(), react(), sitemap()],
   redirects: {
     "/": "/en",
+    "/en/contact": "/en/about",
+    "/ja/contact": "/ja/about",
+    "/fr/contact": "/fr/about",
   },
   i18n: {
     defaultLocale: "en",

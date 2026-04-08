@@ -1,7 +1,7 @@
-html.font-outfit {
-  font-family: "Outfit", sans-serif;
+html.font-sans {
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
 html.font-japanese {
-  font-family: "Klee One", sans-serif;
+  font-family: 'Klee One', sans-serif;
 }

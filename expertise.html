@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expertise — Kevin Tim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent:  #C4622D;
+      --bg:      #FAFAF8;
+      --text:    #111111;
+      --muted:   #888880;
+      --faint:   #BBBBB5;
+      --border:  #E5E3DF;
+      --card-bg: #F3F1ED;
+      --serif:   'Cormorant', Georgia, serif;
+      --sans:    'DM Sans', system-ui, sans-serif;
+    }
+
+    html { background: var(--bg); color: var(--text); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .site { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
+
+    /* ── NAV ── */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.5rem 0; border-bottom: 1px solid var(--border);
+    }
+    .logo { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; color: var(--text); }
+    .logo em { color: var(--accent); font-style: normal; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { font-size: 0.8rem; color: var(--muted); transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--text); font-weight: 500; }
+    .nav-right { font-size: 0.75rem; color: var(--faint); }
+
+    /* ── PAGE HERO ── */
+    .page-hero { padding: 4rem 0 3rem; border-bottom: 1px solid var(--border); }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 0.72rem; color: var(--accent); letter-spacing: 0.07em; margin-bottom: 1.25rem;
+    }
+    .eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+    .page-hero h1 {
+      font-family: var(--serif);
+      font-size: 3rem; font-weight: 500;
+      letter-spacing: -1px; line-height: 1.12;
+      color: var(--text); margin-bottom: 0.6rem;
+    }
+    .page-hero p { font-size: 0.88rem; color: var(--muted); font-weight: 300; line-height: 1.6; max-width: 420px; }
+
+    /* ── OFFER LIST ── */
+    .offer-list { margin-bottom: 5rem; }
+
+    .offer-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .offer-item:first-child { border-top: 1px solid var(--border); margin-top: 2.5rem; }
+
+    .offer-num {
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      color: var(--faint);
+      margin-bottom: 0.6rem;
+    }
+    .offer-name {
+      font-family: var(--serif);
+      font-size: 1.75rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.2;
+      letter-spacing: -0.3px;
+    }
+
+    .offer-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      font-weight: 300;
+    }
+    .offer-bullets { display: flex; flex-direction: column; gap: 6px; }
+    .offer-bullet {
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 300;
+    }
+    .offer-bullet::before {
+      content: '';
+      width: 3px; height: 3px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-name { font-family: var(--serif); font-size: 0.95rem; color: var(--text); }
+    .footer-sub { font-size: 0.7rem; color: var(--muted); margin-top: 3px; }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: 0.75rem; color: var(--muted); transition: color 0.15s; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy { text-align: center; font-size: 0.68rem; color: var(--faint); padding: 1.25rem 0 2rem; border-top: 1px solid var(--border); }
+
+    @media (max-width: 640px) {
+      .page-hero h1 { font-size: 2.2rem; }
+      .offer-item { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+
+    <nav>
+      <div class="logo">Kevin Tim<em>.</em></div>
+      <div class="nav-links">
+        <a href="projects.html">Projects</a>
+        <a href="expertise.html" class="active">Expertise</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="nav-right">EN / JP</div>
+    </nav>
+
+    <div class="page-hero">
+      <div class="eyebrow"><div class="eyebrow-dot"></div> Services</div>
+      <h1>What I Build</h1>
+      <p>End-to-end digital solutions — from concept to deployment.</p>
+    </div>
+
+    <div class="offer-list">
+
+      <div class="offer-item">
+        <div>
+          <div class="offer-num">01</div>
+          <div class="offer-name">Web Application Development</div>
+        </div>
+        <div>
+          <div class="offer-desc">Full-stack solutions for responsive, secure web applications with intuitive and beautiful design.</div>
+          <div class="offer-bullets">
+            <span class="offer-bullet">Frontend with SvelteKit &amp; React</span>
+            <span class="offer-bullet">CMS integration &amp; headless architecture</span>
+            <span class="offer-bullet">Cloudflare deployment &amp; edge optimization</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="offer-item">
+        <div>
+          <div class="offer-num">02</div>
+          <div class="offer-name">Mobile &amp; Desktop Apps</div>
+        </div>
+        <div>
+          <div class="offer-desc">Custom cross-platform applications built for performance and seamless user experience.</div>
+          <div class="offer-bullets">
+            <span class="offer-bullet">React Native for iOS &amp; Android</span>
+            <span class="offer-bullet">Desktop apps via Wails (Go + Web)</span>
+            <span class="offer-bullet">Real-time data and API integration</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="offer-item">
+        <div>
+          <div class="offer-num">03</div>
+          <div class="offer-name">Performance &amp; Optimization</div>
+        </div>
+        <div>
+          <div class="offer-desc">Reliable server-side systems built with Go, focused on speed and long-term maintainability.</div>
+          <div class="offer-bullets">
+            <span class="offer-bullet">Backend APIs in Golang</span>
+            <span class="offer-bullet">Performance auditing &amp; improvements</span>
+            <span class="offer-bullet">Scalable infrastructure &amp; caching</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      <div>
+        <div class="footer-name">Kevin Tim</div>
+        <div class="footer-sub">Software Engineer · Tokyo</div>
+      </div>
+      <div class="footer-links">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="about.html">Email</a>
+      </div>
+    </footer>
+    <div class="footer-copy">© 2025 Kevin Tim. All rights reserved.</div>
+
+  </div>
+</body>
+</html>

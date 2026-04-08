@@ -1,0 +1,17 @@
+---
+import logoLight from "../../assets/logo-light.svg";
+import logoDark from "../../assets/logo-dark.svg";
+---
+
+<img
+	src={logoLight.src}
+	alt=""
+	aria-hidden="true"
+	class="absolute -left-10 top-1/2 -translate-y-1/2 w-[420px] h-[420px] opacity-[0.08] pointer-events-none select-none block dark:hidden"
+/>
+<img
+	src={logoDark.src}
+	alt=""
+	aria-hidden="true"
+	class="absolute -left-10 top-1/2 -translate-y-1/2 w-[420px] h-[420px] opacity-[0.08] pointer-events-none select-none hidden dark:block"
+/>

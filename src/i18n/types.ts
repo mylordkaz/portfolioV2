@@ -1,5 +1,3 @@
-import { string } from 'astro:schema';
-
 export type ExpertiseKey = 'frontend' | 'backend' | 'devops';
 export type ProjectDescriptionKey = keyof Translation['projects'];
 
@@ -8,14 +6,26 @@ export interface Translation {
     projects: string;
     expertise: string;
     about: string;
-    contact: string;
   };
   hero: {
     title: string;
     description: string;
+    eyebrow: string;
+    ctaProjects: string;
+    ctaContact: string;
+    statProjects: string;
+    statStack: string;
+    statStackValue: string;
+    statBased: string;
+    statBasedValue: string;
   };
   section: {
     title: string;
+    viewAll: string;
+  };
+  featured: {
+    label: string;
+    viewProject: string;
   };
   footer: {
     softwareEngineer: string;
@@ -23,7 +33,9 @@ export interface Translation {
   projects: {
     title: string;
     subtitle: string;
+    eyebrow: string;
     description: string;
+    viewCta: string;
     napsDescription: string;
     cryptrackDescription: string;
     moneySwapDescription: string;
@@ -39,16 +51,22 @@ export interface Translation {
     technicalSiriusGarageDescription: string;
     detailedKakuregaDescription: string;
     technicalKakuregaDescription: string;
+    voyDescription: string;
+    detailedVoyDescription: string;
+    technicalVoyDescription: string;
+    trakioDescription: string;
+    detailedTrakioDescription: string;
+    technicalTrakioDescription: string;
     viewBtn: string;
     modal: {
       about: string;
       technical: string;
-      gallery: string;
       visitbtn: string;
     };
   };
   expertise: {
     title: string;
+    eyebrow: string;
     description: string;
     categories: Record<
       ExpertiseKey,
@@ -57,48 +75,32 @@ export interface Translation {
         description: string;
       }
     >;
-  };
-  about: {
-    title: string;
-    description: string;
-    intro: {
-      title: string;
-      content: string;
-    };
-    services: {
-      title: string;
-      items: [
-        {
-          title: string;
-          description: string;
-        },
-        {
-          title: string;
-          description: string;
-        },
-        {
-          title: string;
-          description: string;
-        },
-      ];
-    };
-    button: string;
-  };
-  contact: {
-    title: string;
-    description: string;
-    form: {
-      name: string;
-      email: string;
-      message: string;
-      submit: string;
-      success: string;
-      error: string;
-      sending: string;
-    };
-    socials: {
+    offers: {
       title: string;
       description: string;
+      bullets: string[];
+    }[];
+  };
+  about: {
+    eyebrow: string;
+    heading: string;
+    bio: string[];
+    facts: { label: string; value: string }[];
+    contact: {
+      eyebrow: string;
+      title: string;
+      description: string;
+      socialLabel: string;
+      formLabel: string;
+      form: {
+        name: string;
+        email: string;
+        message: string;
+        submit: string;
+        success: string;
+        error: string;
+        sending: string;
+      };
     };
   };
 }

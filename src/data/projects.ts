@@ -1,47 +1,13 @@
-import type { ImageMetadata } from 'astro';
-import type { ProjectDescriptionKey } from '../i18n/types';
+import type { ImageMetadata } from "astro";
+import type { ProjectDescriptionKey } from "../i18n/types";
 
-import naps from '../assets/naps/naps.webp';
-import cryptrack from '../assets/cryptrack/cryptrack.webp';
-import moneySwap from '../assets/moneySwap/moneySwap.webp';
-import sirius from '../assets/siriusGarage/sirius.webp';
-import kakurega from '../assets/kakurega/kakurega.webp';
-
-const napsGalleryImages = import.meta.glob<ImageMetadata>(
-  '../assets/naps/gallery/*.{png,jpg,jpeg,webp}',
-  {
-    import: 'default',
-    eager: true,
-  }
-);
-const cryptGalleryImages = import.meta.glob<ImageMetadata>(
-  '../assets/cryptrack/gallery/*.{png,jpg,jpeg,webp}',
-  {
-    import: 'default',
-    eager: true,
-  }
-);
-const moneySwapGalleryImages = import.meta.glob<ImageMetadata>(
-  '../assets/moneySwap/gallery/*.{png,jpg,jpeg,webp}',
-  {
-    import: 'default',
-    eager: true,
-  }
-);
-const siriusGarageGalleryImages = import.meta.glob<ImageMetadata>(
-  '../assets/siriusGarage/gallery/*.{png,jpg,jpeg,webp}',
-  {
-    import: 'default',
-    eager: true,
-  }
-);
-const kakuregaGalleryImages = import.meta.glob<ImageMetadata>(
-  '../assets/kakurega/gallery/*.{png,jpg,jpeg,webp}',
-  {
-    import: 'default',
-    eager: true,
-  }
-);
+import naps from "../assets/naps/naps.webp";
+import cryptrack from "../assets/cryptrack/cryptrack.webp";
+import moneySwap from "../assets/moneySwap/moneySwap.webp";
+import sirius from "../assets/siriusGarage/sirius.webp";
+import kakurega from "../assets/kakurega/kakurega.webp";
+import voyTravel from "../assets/voyTravel/voyTravel.webp";
+import trakio from "../assets/trakio/trakio.webp";
 
 export interface Project {
   id: string;
@@ -50,65 +16,85 @@ export interface Project {
   detailedDescription: ProjectDescriptionKey;
   technicalDescription: ProjectDescriptionKey;
   image: ImageMetadata;
-  galleryImages?: ImageMetadata[];
   tags: string[];
   link?: string;
+  imageContain?: boolean;
 }
 
 export const projects: Project[] = [
   {
-    id: '1',
-    title: 'Naps shaving',
-    descriptionKey: 'napsDescription',
-    detailedDescription: 'detailedNapsDescription',
-    technicalDescription: 'technicalNapsDescription',
-    image: naps,
-    galleryImages: Object.values(napsGalleryImages),
-    tags: ['SvelteKit', 'TypeScript', 'MicroCMS'],
-    link: 'https://napsv.com/',
-  },
-  {
-    id: '2',
-    title: 'Cryptrack',
-    descriptionKey: 'cryptrackDescription',
-    detailedDescription: 'detailedCryptDescription',
-    technicalDescription: 'technicalCryptDescription',
-    image: cryptrack,
-    galleryImages: Object.values(cryptGalleryImages),
-    tags: ['Golang', 'Wails', 'React'],
-    link: '',
-  },
-  {
-    id: '3',
-    title: 'MoneySwap',
-    descriptionKey: 'moneySwapDescription',
-    detailedDescription: 'detailedMoneySwapDescription',
-    technicalDescription: 'technicalMoneySwapDescription',
+    id: "1",
+    title: "MoneySwap",
+    descriptionKey: "moneySwapDescription",
+    detailedDescription: "detailedMoneySwapDescription",
+    technicalDescription: "technicalMoneySwapDescription",
     image: moneySwap,
-    galleryImages: Object.values(moneySwapGalleryImages),
-    tags: ['React-native', 'TypeScript', 'Golang'],
-    link: '',
+
+    tags: ["React-native", "TypeScript", "Golang"],
+    link: "",
   },
   {
-    id: '4',
-    title: 'siriusGarage',
-    descriptionKey: 'siriusGarageDescription',
-    detailedDescription: 'detailedSiriusGarageDescription',
-    technicalDescription: 'technicalSiriusGarageDescription',
+    id: "2",
+    title: "siriusGarage",
+    descriptionKey: "siriusGarageDescription",
+    detailedDescription: "detailedSiriusGarageDescription",
+    technicalDescription: "technicalSiriusGarageDescription",
     image: sirius,
-    galleryImages: Object.values(siriusGarageGalleryImages),
-    tags: ['SvelteKit', 'TypeScript', 'Cloudflare'],
-    link: 'https://siriusgarage.fr',
+
+    tags: ["SvelteKit", "TypeScript", "Cloudflare"],
+    link: "",
   },
   {
-    id: '5',
-    title: 'Kakurega',
-    descriptionKey: 'kakuregaDescription',
-    detailedDescription: 'detailedKakuregaDescription',
-    technicalDescription: 'technicalKakuregaDescription',
+    id: "3",
+    title: "Kakurega",
+    descriptionKey: "kakuregaDescription",
+    detailedDescription: "detailedKakuregaDescription",
+    technicalDescription: "technicalKakuregaDescription",
     image: kakurega,
-    galleryImages: Object.values(kakuregaGalleryImages),
-    tags: ['SvelteKit', 'MicroCMS', 'TailwindCSS'],
-    link: 'https://kakurega-men.com',
+
+    tags: ["SvelteKit", "MicroCMS", "TailwindCSS"],
+    link: "https://kakurega-men.com",
+  },
+  {
+    id: "4",
+    title: "Naps shaving",
+    descriptionKey: "napsDescription",
+    detailedDescription: "detailedNapsDescription",
+    technicalDescription: "technicalNapsDescription",
+    image: naps,
+
+    tags: ["SvelteKit", "TypeScript", "MicroCMS"],
+    link: "https://napsv.com/",
+  },
+  {
+    id: "5",
+    title: "Cryptrack",
+    descriptionKey: "cryptrackDescription",
+    detailedDescription: "detailedCryptDescription",
+    technicalDescription: "technicalCryptDescription",
+    image: cryptrack,
+    tags: ["React Native", "Expo", "Go"],
+    link: "https://apps.apple.com/app/cryptrack-tracker/id6759000890",
+    imageContain: true,
+  },
+  {
+    id: "6",
+    title: "Voy Travel",
+    descriptionKey: "voyDescription",
+    detailedDescription: "detailedVoyDescription",
+    technicalDescription: "technicalVoyDescription",
+    image: voyTravel,
+    tags: ["React Native", "Next.js", "Python"],
+    link: "",
+  },
+  {
+    id: "7",
+    title: "Trakio",
+    descriptionKey: "trakioDescription",
+    detailedDescription: "detailedTrakioDescription",
+    technicalDescription: "technicalTrakioDescription",
+    image: trakio,
+    tags: ["React Native", "Expo", "Cloudflare"],
+    link: "https://apps.apple.com/app/trakio/id6760278416",
   },
 ];
