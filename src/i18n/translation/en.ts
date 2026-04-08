@@ -22,6 +22,7 @@ const en: Translation = {
   section: {
     title: 'Latest Project',
     viewAll: 'All projects',
+    coopCta: 'Building something big?',
   },
   featured: {
     label: 'FEATURED · WEB DESIGN',
@@ -149,6 +150,7 @@ const en: Translation = {
       "My work revolves around backend systems, mobile apps, and internal tools — from distribution management platforms to AI-powered assistants and crypto trackers. I care about building software that works well and lasts.",
       "Originally from France, now based in Japan. I enjoy learning new tools and adapting to whatever a project demands. If something needs to be built, I'll make it happen.",
       "When I'm not working, I'm enjoying motorsport or traveling around, discovering Japan's beautiful landscapes.",
+      "I'm also actively building 508.dev — a software co-op delivering digital products for clients worldwide.",
     ],
     facts: [
       { label: 'Location', value: 'Tokyo, Japan' },

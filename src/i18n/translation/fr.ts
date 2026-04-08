@@ -22,6 +22,7 @@ const fr: Translation = {
   section: {
     title: 'Dernier Projet',
     viewAll: 'Tous les projets',
+    coopCta: 'Vous avez un grand projet ?',
   },
   featured: {
     label: 'EN VEDETTE · WEB DESIGN',
@@ -148,6 +149,7 @@ const fr: Translation = {
       "Mon travail tourne autour des systemes backend, des applications mobiles et des outils internes — des plateformes de gestion de distribution aux assistants IA en passant par les trackers crypto. Je tiens a construire du logiciel qui fonctionne bien et qui dure.",
       "Originaire de France, base au Japon. J'aime apprendre de nouveaux outils et m'adapter aux besoins de chaque projet. S'il y a quelque chose a construire, je m'en charge.",
       "En dehors du travail, je profite du sport automobile ou je voyage a travers le Japon, a la decouverte de ses magnifiques paysages.",
+      "Je co-construis activement 508.dev — une coopérative de développeurs qui livre des produits digitaux pour des clients à travers le monde.",
     ],
     facts: [
       { label: 'Localisation', value: 'Tokyo, Japon' },

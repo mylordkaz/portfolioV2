@@ -22,6 +22,7 @@ export interface Translation {
   section: {
     title: string;
     viewAll: string;
+    coopCta: string;
   };
   featured: {
     label: string;
