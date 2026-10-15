@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Page not found — Kevin Tim</title>
+    <style>
+      :root {
+        font-family: Inter, system-ui, sans-serif;
+        color: #111111;
+        background: #fafaf8;
+      }
+      body {
+        display: grid;
+        min-height: 100svh;
+        margin: 0;
+        place-items: center;
+      }
+      main {
+        width: min(32rem, calc(100% - 4rem));
+        padding-block: 3rem;
+      }
+      .code { color: #ff0054; font-size: 0.875rem; }
+      h1 { font-size: clamp(2rem, 6vw, 3rem); font-weight: 500; }
+      p { line-height: 1.6; }
+      nav { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem; }
+      a { color: inherit; text-underline-offset: 0.3em; }
+      a:hover { color: #ff0054; }
+      a:focus-visible { outline: 2px solid #ff0054; outline-offset: 6px; }
+      @media (prefers-color-scheme: dark) {
+        :root { color: #eaeae6; background: #161614; }
+        .code, a:hover { color: #ff3377; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="code">404</p>
+      <h1>Page not found</h1>
+      <p>The page you’re looking for doesn’t exist. Visit the portfolio below.</p>
+      <nav aria-label="Portfolio home pages">
+        <a href="/en/" lang="en">English</a>
+        <a href="/ja/" lang="ja">日本語</a>
+        <a href="/fr/" lang="fr">Français</a>
+      </nav>
+    </main>
+  </body>
+</html>
