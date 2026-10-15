@@ -42,7 +42,7 @@ const jp: Translation = {
     cryptrackDescription:
       '暗号資産ポートフォリオを追跡するモバイルアプリ — リアルタイムPnL、チャート、完全オフライン対応。',
     tsuukaDescription:
-      '法定通貨と暗号通貨のリアルタイム為替レートを提供するクロスプラットフォームアプリ。',
+      '日次更新のレートで法定通貨と暗号資産を換算できるモバイル・ウェブアプリ。通貨リストをカスタマイズして保存できます。',
     siriusGarageDescription:
       'フランスの自動車修理工場向けウェブサイトリニューアル。',
     kakuregaDescription:
@@ -56,9 +56,9 @@ const jp: Translation = {
     technicalCryptDescription:
       'GoマイクロサービスをバックエンドとするオフラインファーストのReact Native（Expo）モバイルアプリです。ポートフォリオデータはSQLiteにローカル保存され、TypeScriptのFIFOロット追跡でメトリクスを計算します。軽量なGo APIがCoinGecko/CoinMarketCapからリアルタイム価格と為替レートを集約し、多段インメモリキャッシュとsingleflight重複排除で配信します。状態管理はポートフォリオ、通貨、テーマ、生体認証用のReact Contextプロバイダーで行っています。',
     detailedTsuukaDescription:
-      'Tsuukaは法定通貨と暗号通貨の橋渡しをする通貨変換アプリです。主要通貨と幅広い暗号通貨のリアルタイムレートを提供し、複数の通貨ペアをiOS・Android両対応で追跡できます。',
+      'Tsuukaは日次更新の為替レートを使い、一つの金額を複数の法定通貨や暗号資産に換算して比較できるアプリです。ExpoのモバイルアプリとReactのウェブアプリを備え、通貨検索、基準通貨の選択、ドラッグによる通貨リストの並べ替えに対応。モバイルではスワイプで通貨を削除できます。基準通貨とリストの順序は端末内に保存され、次回起動時にも引き継がれます。',
     technicalTsuukaDescription:
-      'React NativeとTypeScriptで構築し、Golang APIをバックエンドに採用。goroutineで複数の為替レートフィードを並行処理し、WebSocketでリアルタイム更新を実現。金融APIと連携しバックエンドにキャッシュレイヤーを実装しています。',
+      'React Native・Expo・TypeScriptのモバイルアプリと、React/Viteのウェブアプリで構成。ステートレスなTypeScript製Cloudflare Workerがcurrency-apiの日次更新の法定通貨・暗号資産レートを配信し、6時間のエッジキャッシュとフォールバック用ミラーを利用します。換算は米ドル基準のレートを使ってクライアント側で計算。設定はモバイルではAsyncStorage、ウェブではlocalStorageに保存します。',
     detailedSiriusGarageDescription:
       'SiriusGarageはフランスのプロフェッショナルな自動車修理工場のウェブサイトリニューアルです。整備サービスと専門知識を紹介し、信頼感とプロフェッショナリズムを重視したデザインです。',
     technicalSiriusGarageDescription:

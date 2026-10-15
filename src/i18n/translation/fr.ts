@@ -43,7 +43,7 @@ const fr: Translation = {
     cryptrackDescription:
       'Une application mobile pour suivre votre portefeuille de cryptomonnaies — PnL en temps réel, graphiques et support hors ligne complet.',
     tsuukaDescription:
-      'Application mobile multiplateforme pour les taux de change en temps réel entre devises et cryptomonnaies.',
+      'Un convertisseur de devises et de cryptomonnaies sur mobile et sur le web, avec des taux quotidiens et une liste personnalisable sauvegardée.',
     siriusGarageDescription:
       'Refonte de site web pour un garage automobile professionnel en France.',
     kakuregaDescription:
@@ -57,9 +57,9 @@ const fr: Translation = {
     technicalCryptDescription:
       "Une application mobile React Native (Expo) offline-first, adossée à un microservice Go. L'application stocke toutes les données de portefeuille localement dans SQLite et calcule les métriques via un suivi FIFO des lots en TypeScript. Une API Go légère agrège les prix en direct depuis CoinGecko/CoinMarketCap et les taux de change, en les servant avec un cache multi-niveaux en mémoire et une déduplication singleflight. L'état est géré via des React Context providers pour le portefeuille, la devise, le thème et l'authentification biométrique.",
     detailedTsuukaDescription:
-      "Tsuuka est une application de conversion de devises qui fait le lien entre monnaies fiduciaires et cryptomonnaies. Elle fournit des taux en temps réel pour les principales devises et un large éventail de cryptos, permettant de suivre plusieurs paires simultanément sur iOS et Android.",
+      "Tsuuka permet de comparer un même montant dans plusieurs devises et cryptomonnaies à partir de taux de change mis à jour quotidiennement. Disponible sous forme d’application mobile Expo et d’application web React, elle propose la recherche de devises, le choix de la devise de référence et une liste personnalisable par glisser-déposer. Sur mobile, un balayage permet aussi de retirer une devise. La devise de référence et l’ordre de la liste sont conservés localement entre les sessions.",
     technicalTsuukaDescription:
-      "Développée avec React Native et TypeScript, adossée à une API Golang utilisant des goroutines pour le traitement concurrent de plusieurs flux de taux de change. Intègre des API financières pour les données fiat et crypto, avec des mises à jour en temps réel via WebSocket et une couche de cache backend.",
+      "Développée avec React Native, Expo et TypeScript, avec une version web React/Vite. Un Cloudflare Worker TypeScript sans état fournit les taux quotidiens de devises et de cryptomonnaies issus de currency-api, avec un cache en périphérie de six heures et un miroir de secours. Les conversions sont calculées côté client à partir de taux basés sur le dollar américain. Les préférences sont stockées dans AsyncStorage sur mobile et dans localStorage sur le web.",
     detailedSiriusGarageDescription:
       "SiriusGarage est la refonte du site web d'un atelier de réparation automobile professionnel en France. Le site met en valeur leurs services mécaniques et leur expertise, avec un design axé sur la confiance et le professionnalisme.",
     technicalSiriusGarageDescription:

@@ -43,7 +43,7 @@ const en: Translation = {
     cryptrackDescription:
       'A mobile app to track your cryptocurrency portfolio — real-time PnL, charts, and full offline support.',
     tsuukaDescription:
-      'Cross-platform mobile app for real-time fiat and crypto exchange rates.',
+      'A mobile and web currency converter for fiat and crypto, with daily rates and a saved, customizable currency list.',
     siriusGarageDescription:
       'Website redesign for a French automotive repair shop.',
     kakuregaDescription:
@@ -57,9 +57,9 @@ const en: Translation = {
     technicalCryptDescription:
       'An offline-first React Native (Expo) mobile app backed by a Go microservice. The app stores all portfolio data locally in SQLite and computes metrics via FIFO lot tracking in TypeScript. A lightweight Go API aggregates live prices from CoinGecko/CoinMarketCap and FX rates, serving them with multi-tier in-memory caching and singleflight deduplication. State is managed through React Context providers for portfolio, currency, theme, and biometric auth.',
     detailedTsuukaDescription:
-      'Tsuuka is a currency conversion app bridging fiat and crypto. It delivers real-time exchange rates for major currencies and a wide range of cryptocurrencies, letting users track multiple pairs simultaneously across iOS and Android.',
+      'Tsuuka lets users compare one amount across multiple fiat currencies and cryptocurrencies using daily exchange rates. Available as an Expo mobile app and a React web app, it includes currency search, a selectable base currency, and a customizable list with drag-to-reorder controls. On mobile, users can also swipe to remove a currency. The base currency and list order are saved locally between sessions.',
     technicalTsuukaDescription:
-      'Built with React Native and TypeScript, backed by a Golang API using goroutines for concurrent processing of multiple exchange rate feeds. Integrates financial APIs for fiat and crypto data with WebSocket-based real-time updates and a backend caching layer.',
+      'Built with React Native, Expo and TypeScript, alongside a React/Vite web app. A stateless TypeScript Cloudflare Worker serves daily fiat and crypto rates from currency-api, with six-hour edge caching and a fallback mirror. Cross-currency conversion runs on the client using USD-based rates. Mobile preferences are stored in AsyncStorage; the web app uses localStorage.',
     detailedSiriusGarageDescription:
       'SiriusGarage is a website redesign for a professional automotive repair shop in France. The site showcases their mechanical services and expertise, with a design that emphasizes trust and professionalism.',
     technicalSiriusGarageDescription:

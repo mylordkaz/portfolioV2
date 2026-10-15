@@ -34,7 +34,7 @@ export const projects: Project[] = [
     technicalDescription: "technicalTsuukaDescription",
     image: tsuuka,
 
-    tags: ["React-native", "TypeScript", "Golang"],
+    tags: ["React Native", "Expo", "TypeScript", "Cloudflare Workers"],
     link: "https://apps.apple.com/app/tsuuka/id6794003933",
   },
   {
