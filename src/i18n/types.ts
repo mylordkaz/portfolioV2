@@ -41,15 +41,15 @@ export interface Translation {
     viewCta: string;
     napsDescription: string;
     cryptrackDescription: string;
-    moneySwapDescription: string;
+    tsuukaDescription: string;
     siriusGarageDescription: string;
     kakuregaDescription: string;
     detailedNapsDescription: string;
     technicalNapsDescription: string;
     detailedCryptDescription: string;
     technicalCryptDescription: string;
-    detailedMoneySwapDescription: string;
-    technicalMoneySwapDescription: string;
+    detailedTsuukaDescription: string;
+    technicalTsuukaDescription: string;
     detailedSiriusGarageDescription: string;
     technicalSiriusGarageDescription: string;
     detailedKakuregaDescription: string;

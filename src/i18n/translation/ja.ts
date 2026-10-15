@@ -41,7 +41,7 @@ const jp: Translation = {
     napsDescription: '予約・ブログ機能を統合した日英バイリンガル美容室サイト。',
     cryptrackDescription:
       '暗号資産ポートフォリオを追跡するモバイルアプリ — リアルタイムPnL、チャート、完全オフライン対応。',
-    moneySwapDescription:
+    tsuukaDescription:
       '法定通貨と暗号通貨のリアルタイム為替レートを提供するクロスプラットフォームアプリ。',
     siriusGarageDescription:
       'フランスの自動車修理工場向けウェブサイトリニューアル。',
@@ -55,9 +55,9 @@ const jp: Translation = {
       'Cryptrackは、複数のウォレットやexchangeにまたがる暗号資産ポートフォリオを追跡するモバイルアプリです。売買取引を手動で記録し、リアルタイムのPnLを監視、チャートでパフォーマンスを可視化できます。生体認証で保護され、完全オフラインで動作。複数のポートフォリオと資産ごとのコスト基準追跡に対応しています。',
     technicalCryptDescription:
       'GoマイクロサービスをバックエンドとするオフラインファーストのReact Native（Expo）モバイルアプリです。ポートフォリオデータはSQLiteにローカル保存され、TypeScriptのFIFOロット追跡でメトリクスを計算します。軽量なGo APIがCoinGecko/CoinMarketCapからリアルタイム価格と為替レートを集約し、多段インメモリキャッシュとsingleflight重複排除で配信します。状態管理はポートフォリオ、通貨、テーマ、生体認証用のReact Contextプロバイダーで行っています。',
-    detailedMoneySwapDescription:
-      'MoneySwapは法定通貨と暗号通貨の橋渡しをする通貨変換アプリです。主要通貨と幅広い暗号通貨のリアルタイムレートを提供し、複数の通貨ペアをiOS・Android両対応で追跡できます。',
-    technicalMoneySwapDescription:
+    detailedTsuukaDescription:
+      'Tsuukaは法定通貨と暗号通貨の橋渡しをする通貨変換アプリです。主要通貨と幅広い暗号通貨のリアルタイムレートを提供し、複数の通貨ペアをiOS・Android両対応で追跡できます。',
+    technicalTsuukaDescription:
       'React NativeとTypeScriptで構築し、Golang APIをバックエンドに採用。goroutineで複数の為替レートフィードを並行処理し、WebSocketでリアルタイム更新を実現。金融APIと連携しバックエンドにキャッシュレイヤーを実装しています。',
     detailedSiriusGarageDescription:
       'SiriusGarageはフランスのプロフェッショナルな自動車修理工場のウェブサイトリニューアルです。整備サービスと専門知識を紹介し、信頼感とプロフェッショナリズムを重視したデザインです。',

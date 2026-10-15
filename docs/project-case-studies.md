@@ -12,7 +12,7 @@ versions, for 21 case-study pages and 33 content pages in the sitemap.
 | Naps shaving | `naps-shaving` |
 | Kakurega | `kakurega` |
 | siriusGarage | `sirius-garage` |
-| MoneySwap | `moneyswap` |
+| Tsuuka | `tsuuka` |
 
 Each page includes the existing translated overview and technical details,
 responsive project artwork, technology tags, an external project link when one
@@ -34,3 +34,6 @@ all seven social images, both color themes on all 21 case studies, and navigatio
 through the mobile language switcher. The case studies also rendered with
 JavaScript disabled. Automated accessibility checks reported no violations, and
 representative mobile/desktop screenshots had no horizontal overflow.
+
+Tsuuka was previously named MoneySwap. Its former `/{lang}/projects/moneyswap/`
+URLs redirect permanently to `/{lang}/projects/tsuuka/` in each language.

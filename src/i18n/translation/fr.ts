@@ -42,7 +42,7 @@ const fr: Translation = {
       'Site web bilingue pour salon de beauté avec blog et réservation intégrés.',
     cryptrackDescription:
       'Une application mobile pour suivre votre portefeuille de cryptomonnaies — PnL en temps réel, graphiques et support hors ligne complet.',
-    moneySwapDescription:
+    tsuukaDescription:
       'Application mobile multiplateforme pour les taux de change en temps réel entre devises et cryptomonnaies.',
     siriusGarageDescription:
       'Refonte de site web pour un garage automobile professionnel en France.',
@@ -56,9 +56,9 @@ const fr: Translation = {
       "Cryptrack est une application mobile pour suivre votre portefeuille de cryptomonnaies sur plusieurs wallets et exchanges. Enregistrez manuellement vos transactions d'achat/vente, suivez votre PnL en temps réel et visualisez vos performances via des graphiques — dans la devise de votre choix. Sécurisée par authentification biométrique, l'application fonctionne entièrement hors ligne et prend en charge plusieurs portefeuilles avec un suivi du prix de revient par actif.",
     technicalCryptDescription:
       "Une application mobile React Native (Expo) offline-first, adossée à un microservice Go. L'application stocke toutes les données de portefeuille localement dans SQLite et calcule les métriques via un suivi FIFO des lots en TypeScript. Une API Go légère agrège les prix en direct depuis CoinGecko/CoinMarketCap et les taux de change, en les servant avec un cache multi-niveaux en mémoire et une déduplication singleflight. L'état est géré via des React Context providers pour le portefeuille, la devise, le thème et l'authentification biométrique.",
-    detailedMoneySwapDescription:
-      "MoneySwap est une application de conversion de devises qui fait le lien entre monnaies fiduciaires et cryptomonnaies. Elle fournit des taux en temps réel pour les principales devises et un large éventail de cryptos, permettant de suivre plusieurs paires simultanément sur iOS et Android.",
-    technicalMoneySwapDescription:
+    detailedTsuukaDescription:
+      "Tsuuka est une application de conversion de devises qui fait le lien entre monnaies fiduciaires et cryptomonnaies. Elle fournit des taux en temps réel pour les principales devises et un large éventail de cryptos, permettant de suivre plusieurs paires simultanément sur iOS et Android.",
+    technicalTsuukaDescription:
       "Développée avec React Native et TypeScript, adossée à une API Golang utilisant des goroutines pour le traitement concurrent de plusieurs flux de taux de change. Intègre des API financières pour les données fiat et crypto, avec des mises à jour en temps réel via WebSocket et une couche de cache backend.",
     detailedSiriusGarageDescription:
       "SiriusGarage est la refonte du site web d'un atelier de réparation automobile professionnel en France. Le site met en valeur leurs services mécaniques et leur expertise, avec un design axé sur la confiance et le professionnalisme.",

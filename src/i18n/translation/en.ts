@@ -42,7 +42,7 @@ const en: Translation = {
       'Bilingual beauty salon website with integrated blog and booking.',
     cryptrackDescription:
       'A mobile app to track your cryptocurrency portfolio — real-time PnL, charts, and full offline support.',
-    moneySwapDescription:
+    tsuukaDescription:
       'Cross-platform mobile app for real-time fiat and crypto exchange rates.',
     siriusGarageDescription:
       'Website redesign for a French automotive repair shop.',
@@ -56,9 +56,9 @@ const en: Translation = {
       'Cryptrack is a mobile app to track your cryptocurrency portfolio across multiple wallets and exchanges. Manually log buy/sell transactions, monitor real-time PnL, and visualize performance through charts — all in your preferred currency. Secured with biometric authentication, the app works fully offline and supports multiple portfolios with per-asset cost basis tracking.',
     technicalCryptDescription:
       'An offline-first React Native (Expo) mobile app backed by a Go microservice. The app stores all portfolio data locally in SQLite and computes metrics via FIFO lot tracking in TypeScript. A lightweight Go API aggregates live prices from CoinGecko/CoinMarketCap and FX rates, serving them with multi-tier in-memory caching and singleflight deduplication. State is managed through React Context providers for portfolio, currency, theme, and biometric auth.',
-    detailedMoneySwapDescription:
-      'MoneySwap is a currency conversion app bridging fiat and crypto. It delivers real-time exchange rates for major currencies and a wide range of cryptocurrencies, letting users track multiple pairs simultaneously across iOS and Android.',
-    technicalMoneySwapDescription:
+    detailedTsuukaDescription:
+      'Tsuuka is a currency conversion app bridging fiat and crypto. It delivers real-time exchange rates for major currencies and a wide range of cryptocurrencies, letting users track multiple pairs simultaneously across iOS and Android.',
+    technicalTsuukaDescription:
       'Built with React Native and TypeScript, backed by a Golang API using goroutines for concurrent processing of multiple exchange rate feeds. Integrates financial APIs for fiat and crypto data with WebSocket-based real-time updates and a backend caching layer.',
     detailedSiriusGarageDescription:
       'SiriusGarage is a website redesign for a professional automotive repair shop in France. The site showcases their mechanical services and expertise, with a design that emphasizes trust and professionalism.',

@@ -3,7 +3,7 @@ import type { ProjectDescriptionKey } from "../i18n/types";
 
 import naps from "../assets/naps/naps.webp";
 import cryptrack from "../assets/cryptrack/cryptrack.webp";
-import moneySwap from "../assets/moneySwap/moneySwap.webp";
+import tsuuka from "../assets/tsuuka/tsuuka.png";
 import sirius from "../assets/siriusGarage/sirius.webp";
 import kakurega from "../assets/kakurega/kakurega.webp";
 import voyTravel from "../assets/voyTravel/voyTravel.webp";
@@ -26,16 +26,16 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "1",
-    slug: "moneyswap",
+    slug: "tsuuka",
     category: "mobile",
-    title: "MoneySwap",
-    descriptionKey: "moneySwapDescription",
-    detailedDescription: "detailedMoneySwapDescription",
-    technicalDescription: "technicalMoneySwapDescription",
-    image: moneySwap,
+    title: "Tsuuka",
+    descriptionKey: "tsuukaDescription",
+    detailedDescription: "detailedTsuukaDescription",
+    technicalDescription: "technicalTsuukaDescription",
+    image: tsuuka,
 
     tags: ["React-native", "TypeScript", "Golang"],
-    link: "",
+    link: "https://apps.apple.com/app/tsuuka/id6794003933",
   },
   {
     id: "2",
