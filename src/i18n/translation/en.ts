@@ -25,7 +25,7 @@ const en: Translation = {
     coopCta: 'Building something big?',
   },
   featured: {
-    label: 'FEATURED · WEB DESIGN',
+    label: 'FEATURED · MOBILE APP',
     viewProject: 'View project',
   },
   footer: {

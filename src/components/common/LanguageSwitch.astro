@@ -1,14 +1,18 @@
 ---
+import { ui, type Locale } from "../../data/seo";
 const currentLang = Astro.url.pathname.split("/")[1] || "en";
 const currentPath = Astro.url.pathname.split("/").slice(2).join("/");
 const languages = ["en", "ja", "fr"] as const;
 ---
 
-<div class="flex items-center gap-1 text-xs tracking-wide">
+<div role="group" aria-label={ui[currentLang as Locale].languages} class="flex items-center gap-1 text-xs tracking-wide">
 	{languages.map((code, i) => (
 		<>
 			<a
-				href={`/${code}${currentPath ? `/${currentPath}` : ""}`}
+				href={`/${code}/${currentPath}`}
+				hreflang={code}
+				lang={code}
+				aria-current={currentLang === code ? "true" : undefined}
 				class:list={[
 					"uppercase transition-colors duration-150",
 					currentLang === code

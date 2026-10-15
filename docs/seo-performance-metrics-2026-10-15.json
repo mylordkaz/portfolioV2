@@ -1,0 +1,205 @@
+{
+  "revision": "588e076",
+  "methodology": "Single live Lighthouse run per URL; mobile simulation; 4x CPU slowdown; not field percentile data.",
+  "runs": [
+    {
+      "url": "https://kevintim.com/en/",
+      "measuredAt": "2026-10-15T03:36:11.041Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 86,
+        "accessibility": 93,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 3233.9815000000003,
+          "unit": "millisecond",
+          "display": "3.2 s"
+        },
+        "largest-contentful-paint": {
+          "value": 3233.9815000000003,
+          "unit": "millisecond",
+          "display": "3.2 s"
+        },
+        "total-blocking-time": {
+          "value": 0,
+          "unit": "millisecond",
+          "display": "0 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0.0007841189329239508,
+          "unit": "unitless",
+          "display": "0.001"
+        }
+      },
+      "network": {
+        "transferBytes": 185051,
+        "fontTransferBytes": 71429,
+        "fontRequestCount": 2,
+        "googleFontsStylesheetTransferBytes": 31717
+      },
+      "rawReportPath": "/tmp/portfolioV2-lighthouse-mobile.json"
+    },
+    {
+      "url": "https://kevintim.com/en/projects/",
+      "measuredAt": "2026-10-15T03:46:58.356Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 86,
+        "accessibility": 93,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 3208.4265000000005,
+          "unit": "millisecond",
+          "display": "3.2 s"
+        },
+        "largest-contentful-paint": {
+          "value": 3208.4265000000005,
+          "unit": "millisecond",
+          "display": "3.2 s"
+        },
+        "total-blocking-time": {
+          "value": 0,
+          "unit": "millisecond",
+          "display": "0 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "unit": "unitless",
+          "display": "0"
+        }
+      },
+      "network": {
+        "transferBytes": 222280,
+        "fontTransferBytes": 71429,
+        "fontRequestCount": 2,
+        "googleFontsStylesheetTransferBytes": 31717
+      },
+      "rawReportPath": "/tmp/portfolioV2-lighthouse-projects.json"
+    },
+    {
+      "url": "https://kevintim.com/en/about/",
+      "measuredAt": "2026-10-15T03:47:42.648Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 88,
+        "accessibility": 93,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 3059.4234,
+          "unit": "millisecond",
+          "display": "3.1 s"
+        },
+        "largest-contentful-paint": {
+          "value": 3059.4234000000006,
+          "unit": "millisecond",
+          "display": "3.1 s"
+        },
+        "total-blocking-time": {
+          "value": 0,
+          "unit": "millisecond",
+          "display": "0 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "unit": "unitless",
+          "display": "0"
+        }
+      },
+      "network": {
+        "transferBytes": 277871,
+        "fontTransferBytes": 71429,
+        "fontRequestCount": 2,
+        "googleFontsStylesheetTransferBytes": 31717
+      },
+      "rawReportPath": "/tmp/portfolioV2-lighthouse-about.json"
+    },
+    {
+      "url": "https://kevintim.com/ja/",
+      "measuredAt": "2026-10-15T03:50:58.156Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 71,
+        "accessibility": 93,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 4596.1921,
+          "unit": "millisecond",
+          "display": "4.6 s"
+        },
+        "largest-contentful-paint": {
+          "value": 4596.1921,
+          "unit": "millisecond",
+          "display": "4.6 s"
+        },
+        "total-blocking-time": {
+          "value": 0,
+          "unit": "millisecond",
+          "display": "0 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "unit": "unitless",
+          "display": "0"
+        }
+      },
+      "network": {
+        "transferBytes": 436887,
+        "fontTransferBytes": 322907,
+        "fontRequestCount": 17,
+        "googleFontsStylesheetTransferBytes": 31717
+      },
+      "rawReportPath": "/tmp/portfolioV2-lighthouse-ja.json"
+    }
+  ],
+  "browserChecks": [
+    {
+      "mode": "normal",
+      "errors": [],
+      "visibility": "visible",
+      "initialized": true,
+      "title": "Kevin Tim — Software Engineer",
+      "headingVisible": true,
+      "mainCount": 0
+    },
+    {
+      "mode": "javascript-disabled",
+      "errors": [],
+      "visibility": "hidden",
+      "initialized": false,
+      "title": "Kevin Tim — Software Engineer",
+      "headingVisible": false,
+      "mainCount": 0
+    },
+    {
+      "mode": "storage-blocked",
+      "errors": [
+        "Storage access blocked for audit"
+      ],
+      "visibility": "hidden",
+      "initialized": false,
+      "title": "Kevin Tim — Software Engineer",
+      "headingVisible": false,
+      "mainCount": 0
+    },
+    {
+      "mode": "project-modal",
+      "url": "https://kevintim.com/en/projects/",
+      "labelId": "modal-title-7",
+      "labelExists": false,
+      "activeElement": "modal-open-7",
+      "open": true
+    }
+  ]
+}

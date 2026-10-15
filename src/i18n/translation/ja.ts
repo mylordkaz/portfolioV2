@@ -25,7 +25,7 @@ const jp: Translation = {
     coopCta: '大きなプロジェクトをお持ちですか？',
   },
   featured: {
-    label: '注目 · ウェブデザイン',
+    label: '注目のモバイルアプリ',
     viewProject: 'プロジェクトを見る',
   },
   footer: {

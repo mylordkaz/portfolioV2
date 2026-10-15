@@ -23,10 +23,10 @@ const t = translations[lang as keyof typeof translations];
 const sortedProjects = [...projects].reverse();
 ---
 
-<Layout title={`${t.projects.title} — Kevin Tim`}>
+<Layout page="projects">
 	<Header />
 
-	<div class="max-w-[960px] mx-auto px-8">
+	<main id="main-content" tabindex="-1" class="max-w-[960px] mx-auto px-8">
 		<!-- Page hero -->
 		<div class="relative py-12 md:py-16 border-b border-line overflow-hidden">
 			<HeroLogo />
@@ -49,6 +49,8 @@ const sortedProjects = [...projects].reverse();
 					<button
 						id={`modal-open-${project.id}`}
 						type="button"
+						aria-haspopup="dialog"
+						aria-controls={`modal-${project.id}`}
 						class="proj-row grid grid-cols-[72px_1fr] md:grid-cols-[100px_1fr_auto] gap-5 md:gap-7 items-center py-6 border-b border-line w-full text-left transition-colors duration-150 hover:bg-card hover:-mx-4 hover:px-4 hover:rounded-md cursor-pointer"
 					>
 						<div class="w-[72px] h-[48px] md:w-[100px] md:h-[68px] rounded-md border border-line overflow-hidden flex-shrink-0" style={project.imageContain ? 'background: #fdfdfd' : ''}>
@@ -96,7 +98,7 @@ const sortedProjects = [...projects].reverse();
 				</>
 			))}
 		</div>
-	</div>
+	</main>
 
 	<Footer />
 </Layout>

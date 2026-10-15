@@ -25,7 +25,7 @@ const fr: Translation = {
     coopCta: 'Vous avez un grand projet ?',
   },
   featured: {
-    label: 'EN VEDETTE · WEB DESIGN',
+    label: 'À LA UNE · APPLICATION MOBILE',
     viewProject: 'Voir le projet',
   },
   footer: {

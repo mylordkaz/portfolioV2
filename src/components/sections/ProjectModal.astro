@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import translations from "../../i18n";
 import type { ProjectModalProps } from "../../types/project";
+import { ui, type Locale } from "../../data/seo";
 
 const {
 	id,
@@ -24,6 +25,7 @@ const t = translations[lang as keyof typeof translations];
 	role="dialog"
 	aria-labelledby={`modal-title-${id}`}
 	aria-modal="true"
+	tabindex="-1"
 >
 	<div class="fixed inset-0 bg-black/50 transition-opacity"></div>
 
@@ -36,7 +38,7 @@ const t = translations[lang as keyof typeof translations];
 				<button
 					type="button"
 					class="modal-close fixed sm:absolute right-4 top-4 z-20 rounded-full bg-card p-2.5 transition-colors hover:opacity-70 shadow-lg"
-					aria-label="Close modal"
+						aria-label={ui[lang as Locale].close}
 				>
 					<svg
 						class="h-5 w-5 text-muted"
@@ -50,11 +52,11 @@ const t = translations[lang as keyof typeof translations];
 				</button>
 
 				<!-- Content wrapper -->
-				<div class="max-h-[100vh] sm:max-h-[90vh] overflow-y-auto">
+				<div class="max-h-[100vh] sm:max-h-[90vh] overflow-y-auto" tabindex="0" role="region" aria-labelledby={`modal-title-${id}`}>
 					<div class="sticky top-0 bg-surface z-10 p-6 border-b border-line">
-						<h3 class="font-heading text-2xl font-medium text-ink tracking-tight">
+						<h2 id={`modal-title-${id}`} class="font-heading text-2xl font-medium text-ink tracking-tight">
 							{title}
-						</h3>
+						</h2>
 					</div>
 
 					<div class="space-y-6 p-6">
@@ -71,14 +73,14 @@ const t = translations[lang as keyof typeof translations];
 						</div>
 
 						<div class="space-y-3">
-							<h4 class="text-sm font-medium text-ink tracking-wide">{t.projects.modal.about}</h4>
+							<h3 class="text-sm font-medium text-ink tracking-wide">{t.projects.modal.about}</h3>
 							<p class="text-sm text-muted font-light leading-relaxed">
 								{t.projects[detailedDescription]}
 							</p>
 						</div>
 
 						<div class="space-y-3">
-							<h4 class="text-sm font-medium text-ink tracking-wide">{t.projects.modal.technical}</h4>
+							<h3 class="text-sm font-medium text-ink tracking-wide">{t.projects.modal.technical}</h3>
 							<p class="text-sm text-muted font-light leading-relaxed">
 								{t.projects[technicalDescription]}
 							</p>

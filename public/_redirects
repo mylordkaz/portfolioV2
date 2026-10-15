@@ -1,2 +1,8 @@
-/  /en  302
+/  /en/  302
 /sitemap.xml  /sitemap-index.xml  301
+/en/contact  /en/about/#contact  301
+/en/contact/  /en/about/#contact  301
+/ja/contact  /ja/about/#contact  301
+/ja/contact/  /ja/about/#contact  301
+/fr/contact  /fr/about/#contact  301
+/fr/contact/  /fr/about/#contact  301

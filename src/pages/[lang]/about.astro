@@ -20,10 +20,10 @@ const lang = currentPath.split("/")[1] || "en";
 const t = translations[lang as keyof typeof translations];
 ---
 
-<Layout title={`About — Kevin Tim`}>
+<Layout page="about">
 	<Header />
 
-	<div class="max-w-[960px] mx-auto px-8">
+	<main id="main-content" tabindex="-1" class="max-w-[960px] mx-auto px-8">
 		<!-- About section -->
 		<section class="py-12 md:py-16 border-b border-line">
 			<div class="relative overflow-hidden pb-12">
@@ -47,8 +47,11 @@ const t = translations[lang as keyof typeof translations];
 						height={640}
 						class="w-full h-full object-cover"
 						format="webp"
-						quality={95}
+						quality={75}
 						loading="eager"
+						fetchpriority="high"
+						widths={[360, 480, 720]}
+						sizes="(min-width: 768px) 416px, calc(100vw - 64px)"
 					/>
 				</div>
 
@@ -208,7 +211,7 @@ const t = translations[lang as keyof typeof translations];
 				</div>
 			</div>
 		</section>
-	</div>
+	</main>
 
 	<Footer />
 </Layout>

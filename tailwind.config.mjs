@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        japanese: ['"Klee One"', "sans-serif"],
+        japanese: ['"Inter"', '"Hiragino Sans"', '"Yu Gothic"', "sans-serif"],
         sans: ['"Inter"', "system-ui", "sans-serif"],
         heading: ['"Space Grotesk"', "system-ui", "sans-serif"],
       },

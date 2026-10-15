@@ -22,9 +22,9 @@ const t = translations[lang as keyof typeof translations];
 const latestProject = projects[projects.length - 1];
 ---
 
-<Layout title="Kevin Tim — Software Engineer">
+<Layout page="home">
 	<Header />
-	<div class="max-w-[960px] mx-auto px-8">
+	<main id="main-content" tabindex="-1" class="max-w-[960px] mx-auto px-8">
 
 		<!-- Hero -->
 		<section class="relative py-12 border-b border-line overflow-hidden">
@@ -44,13 +44,13 @@ const latestProject = projects[projects.length - 1];
 
 			<div class="flex items-center gap-5 mb-16">
 				<a
-					href={`/${lang}/projects`}
+					href={`/${lang}/projects/`}
 					class="bg-ink text-surface text-sm px-5 py-2.5 rounded hover:bg-accent transition-colors"
 				>
 					{t.hero.ctaProjects}
 				</a>
 				<a
-					href={`/${lang}/about`}
+					href={`/${lang}/about/`}
 					class="text-sm text-muted hover:text-accent transition-colors"
 				>
 					{t.hero.ctaContact} &rarr;
@@ -91,7 +91,7 @@ const latestProject = projects[projects.length - 1];
 				{t.section.title}
 			</h2>
 			<a
-				href={`/${lang}/projects`}
+				href={`/${lang}/projects/`}
 				class="text-xs text-muted hover:text-accent transition-colors"
 			>
 				{t.section.viewAll} &rarr;
@@ -132,13 +132,13 @@ const latestProject = projects[projects.length - 1];
 				))}
 			</div>
 			<a
-				href={`/${lang}/projects`}
+				href={`/${lang}/projects/`}
 				class="text-sm text-ink inline-flex items-center gap-1.5 border-b border-ink pb-0.5 hover:text-accent hover:border-accent transition-colors"
 			>
 				{t.featured.viewProject} &rarr;
 			</a>
 		</div>
 
-	</div>
+	</main>
 	<Footer />
 </Layout>

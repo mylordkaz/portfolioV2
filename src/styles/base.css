@@ -15,3 +15,42 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--bg);
+  color: var(--ink);
+  border: 2px solid var(--accent);
+  transform: translateY(calc(-100% - 2rem));
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Keep navigation available when scripts are disabled. */
+html:not([data-theme]) [data-theme-toggle] {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  html:not([data-theme]) #mobile-menu { display: block; }
+  html:not([data-theme]) #mobile-menu-button { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

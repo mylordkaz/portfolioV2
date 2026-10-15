@@ -1,19 +1,21 @@
 :root {
-  --accent: #FF0054;
+  color-scheme: light;
+  --accent: #d60046;
   --bg: #FAFAF8;
   --ink: #111111;
-  --muted: #888880;
-  --faint: #BBBBB5;
+  --muted: #64645d;
+  --faint: #6f6f68;
   --border-color: #E5E3DF;
   --card: #F3F1ED;
 }
 
 .dark {
-  --accent: #FF3377;
+  color-scheme: dark;
+  --accent: #ff568e;
   --bg: #161614;
   --ink: #EAEAE6;
-  --muted: #908F88;
-  --faint: #585854;
+  --muted: #aaaaa2;
+  --faint: #9a9a92;
   --border-color: #2E2E2A;
   --card: #222220;
 }
@@ -22,6 +24,15 @@ html {
   transition: background-color 0.3s ease;
 }
 
-html:not([data-theme-initialized]) {
-  visibility: hidden;
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --accent: #ff568e;
+    --bg: #161614;
+    --ink: #eaeae6;
+    --muted: #aaaaa2;
+    --faint: #9a9a92;
+    --border-color: #2e2e2a;
+    --card: #222220;
+  }
 }
