@@ -1,22 +1,27 @@
 ---
 import translations from "../i18n";
-import { projects } from "../data/projects";
+import { projects, type Project } from "../data/projects";
+import { caseStudyCopy } from "../i18n/case-study";
 import { seo, ui, type Locale, type Page } from "../data/seo";
 import "../styles/base.css";
 import "../styles/fonts.css";
 import "../styles/theme.css";
 
-interface Props { page: Page; }
-const { page } = Astro.props;
+interface Props { page: Page; project?: Project; }
+const { page, project } = Astro.props;
 const lang = Astro.url.pathname.split("/")[1] as Locale;
 const t = translations[lang];
-const metadata = seo[lang][page];
+const metadata = project ? {
+  title: `${project.title} — ${caseStudyCopy[lang].caseStudy} | Kevin Tim`,
+  description: t.projects[project.descriptionKey],
+  imageAlt: `${project.title} — ${caseStudyCopy[lang].category[project.category]} · Kevin Tim`,
+} : seo[lang][page];
 const baseUrl = Astro.site!;
-const suffix = page === "home" ? "" : `${page}/`;
+const suffix = project ? `projects/${project.slug}/` : page === "home" ? "" : `${page}/`;
 const canonical = new URL(`/${lang}/${suffix}`, baseUrl).href;
 const personId = new URL("/#person", baseUrl).href;
 const websiteId = new URL("/#website", baseUrl).href;
-const image = new URL(`/social/${page}.png`, baseUrl).href;
+const image = new URL(project ? `/social/projects/${project.slug}.png` : `/social/${page}.png`, baseUrl).href;
 const graph: Record<string, unknown>[] = [
   {
     "@type": "Person", "@id": personId, name: "Kevin Tim",
@@ -26,14 +31,32 @@ const graph: Record<string, unknown>[] = [
   },
   { "@type": "WebSite", "@id": websiteId, url: baseUrl.href, name: "Kevin Tim", inLanguage: ["en", "ja", "fr"], publisher: { "@id": personId } },
   {
-    "@type": page === "about" ? "AboutPage" : page === "projects" ? "CollectionPage" : "WebPage",
+    "@type": project ? "WebPage" : page === "about" ? "AboutPage" : page === "projects" ? "CollectionPage" : "WebPage",
     "@id": `${canonical}#webpage`, url: canonical, name: metadata.title,
     description: metadata.description, inLanguage: lang,
     isPartOf: { "@id": websiteId }, about: { "@id": personId },
     ...(page === "about" ? { mainEntity: { "@id": personId } } : {}),
+    ...(project ? { mainEntity: { "@id": `${canonical}#project` } } : {}),
   },
 ];
-if (page === "projects") {
+if (project) {
+  graph.push({
+    "@type": "CreativeWork", "@id": `${canonical}#project`, url: canonical,
+    name: project.title, description: t.projects[project.detailedDescription],
+    abstract: t.projects[project.descriptionKey], inLanguage: lang,
+    keywords: project.tags.join(", "), image,
+    creator: { "@id": personId },
+    ...(project.link ? { sameAs: project.link } : {}),
+  }, {
+    "@type": "BreadcrumbList", "@id": `${canonical}#breadcrumbs`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Kevin Tim", item: new URL(`/${lang}/`, baseUrl).href },
+      { "@type": "ListItem", position: 2, name: t.projects.title, item: new URL(`/${lang}/projects/`, baseUrl).href },
+      { "@type": "ListItem", position: 3, name: project.title, item: canonical },
+    ],
+  });
+}
+if (page === "projects" && !project) {
   graph.push({
     "@type": "ItemList", "@id": `${canonical}#projects`,
     name: t.projects.title, numberOfItems: projects.length,
@@ -43,7 +66,8 @@ if (page === "projects") {
         "@type": "CreativeWork", name: project.title,
         description: t.projects[project.descriptionKey],
         keywords: project.tags.join(", "), creator: { "@id": personId },
-        ...(project.link ? { url: project.link } : {}),
+        url: new URL(`/${lang}/projects/${project.slug}/`, baseUrl).href,
+        ...(project.link ? { sameAs: project.link } : {}),
       },
     })),
   });

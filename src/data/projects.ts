@@ -11,6 +11,8 @@ import trakio from "../assets/trakio/trakio.webp";
 
 export interface Project {
   id: string;
+  slug: string;
+  category: "mobile" | "website" | "ai";
   title: string;
   descriptionKey: ProjectDescriptionKey;
   detailedDescription: ProjectDescriptionKey;
@@ -24,6 +26,8 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "1",
+    slug: "moneyswap",
+    category: "mobile",
     title: "MoneySwap",
     descriptionKey: "moneySwapDescription",
     detailedDescription: "detailedMoneySwapDescription",
@@ -35,6 +39,8 @@ export const projects: Project[] = [
   },
   {
     id: "2",
+    slug: "sirius-garage",
+    category: "website",
     title: "siriusGarage",
     descriptionKey: "siriusGarageDescription",
     detailedDescription: "detailedSiriusGarageDescription",
@@ -46,6 +52,8 @@ export const projects: Project[] = [
   },
   {
     id: "3",
+    slug: "kakurega",
+    category: "website",
     title: "Kakurega",
     descriptionKey: "kakuregaDescription",
     detailedDescription: "detailedKakuregaDescription",
@@ -57,6 +65,8 @@ export const projects: Project[] = [
   },
   {
     id: "4",
+    slug: "naps-shaving",
+    category: "website",
     title: "Naps shaving",
     descriptionKey: "napsDescription",
     detailedDescription: "detailedNapsDescription",
@@ -68,6 +78,8 @@ export const projects: Project[] = [
   },
   {
     id: "5",
+    slug: "cryptrack",
+    category: "mobile",
     title: "Cryptrack",
     descriptionKey: "cryptrackDescription",
     detailedDescription: "detailedCryptDescription",
@@ -79,6 +91,8 @@ export const projects: Project[] = [
   },
   {
     id: "6",
+    slug: "voy-travel",
+    category: "ai",
     title: "Voy Travel",
     descriptionKey: "voyDescription",
     detailedDescription: "detailedVoyDescription",
@@ -89,6 +103,8 @@ export const projects: Project[] = [
   },
   {
     id: "7",
+    slug: "trakio",
+    category: "mobile",
     title: "Trakio",
     descriptionKey: "trakioDescription",
     detailedDescription: "detailedTrakioDescription",

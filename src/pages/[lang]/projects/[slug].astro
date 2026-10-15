@@ -1,0 +1,118 @@
+---
+import { Image } from "astro:assets";
+import type { GetStaticPaths } from "astro";
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/layout/Header.astro";
+import Footer from "../../../components/layout/Footer.astro";
+import { projects, type Project } from "../../../data/projects";
+import type { Locale } from "../../../data/seo";
+import translations from "../../../i18n";
+import { caseStudyCopy } from "../../../i18n/case-study";
+
+export const getStaticPaths = (() =>
+  (["en", "ja", "fr"] as const).flatMap((lang) =>
+    projects.map((project) => ({ params: { lang, slug: project.slug }, props: { project } })),
+  )) satisfies GetStaticPaths;
+
+interface Props { project: Project; }
+const { project } = Astro.props;
+const lang = Astro.params.lang as Locale;
+const t = translations[lang];
+const copy = caseStudyCopy[lang];
+const orderedProjects = [...projects].reverse();
+const nextProject = orderedProjects[(orderedProjects.findIndex((item) => item.slug === project.slug) + 1) % orderedProjects.length];
+const isAppStore = project.link?.startsWith("https://apps.apple.com/");
+const imageDisplayWidth = Math.round(Math.min(820, 420 * project.image.width / project.image.height));
+const imageWidth = Math.min(960, project.image.width);
+const imageWidths = [...new Set([320, 640, imageWidth])].filter((width) => width <= imageWidth).sort((a, b) => a - b);
+---
+
+<Layout page="projects" project={project}>
+  <Header />
+  <main id="main-content" tabindex="-1" class="max-w-[960px] mx-auto px-6 md:px-8">
+    <div class="pt-6 md:pt-8 text-xs text-muted">
+      <a href={`/${lang}/projects/`} class="hover:text-accent">
+        <span aria-hidden="true">← </span>{copy.allProjects}
+      </a>
+    </div>
+
+    <article>
+      <header class="pt-8 md:pt-11 pb-7 md:pb-8 border-b border-line">
+        <div class="inline-flex items-center gap-2 text-[0.68rem] text-accent uppercase tracking-[0.18em]">
+          <span aria-hidden="true" class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+          {copy.category[project.category]}
+        </div>
+        <h1 class="font-heading text-[2.625rem] md:text-[4.125rem] font-medium leading-[1.1] tracking-tight text-ink mt-5 mb-5">
+          {project.title}
+        </h1>
+        <p class="max-w-[610px] text-sm md:text-base text-muted font-light leading-[1.8]">
+          {t.projects[project.descriptionKey]}
+        </p>
+        <div class="flex flex-wrap items-center gap-5 md:gap-6 mt-6">
+          <div class="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span class="text-[0.68rem] px-2.5 py-1 rounded bg-card text-muted">{tag}</span>
+            ))}
+          </div>
+          {project.link && (
+            <a href={project.link} target="_blank" rel="noopener noreferrer" class="md:ml-auto text-xs text-ink border-b border-ink pb-0.5 hover:text-accent hover:border-accent">
+              {isAppStore ? copy.appStore : copy.website}<span aria-hidden="true"> ↗</span>
+            </a>
+          )}
+        </div>
+      </header>
+
+      <div class="bg-card border border-line rounded-lg mt-6 md:mt-8 mb-2 p-6 md:p-9 min-h-[250px] md:min-h-[300px] flex items-center justify-center">
+        <Image
+          src={project.image}
+          alt={project.title}
+          width={imageWidth}
+          widths={imageWidths}
+          sizes={`(min-width: 768px) ${imageDisplayWidth}px, calc(100vw - 96px)`}
+          format="webp"
+          quality={75}
+          loading="eager"
+          fetchpriority="high"
+          class="block max-w-full w-auto max-h-[360px] md:max-h-[420px] object-contain rounded-md"
+        />
+      </div>
+
+      <section aria-labelledby="project-overview" class="grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-5 md:gap-[60px] py-8 md:py-11 border-b border-line">
+        <div>
+          <p class="text-[0.625rem] text-faint uppercase tracking-[0.18em] mb-2"><span aria-hidden="true">01 / </span>{copy.overview}</p>
+          <h2 id="project-overview" class="font-heading text-2xl md:text-[1.625rem] font-medium leading-tight tracking-tight text-ink">{copy.project}</h2>
+        </div>
+        <p class="text-sm text-muted font-light leading-[1.9]">{t.projects[project.detailedDescription]}</p>
+      </section>
+
+      <section aria-labelledby="project-engineering" class="grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-5 md:gap-[60px] py-8 md:py-11 border-b border-line">
+        <div>
+          <p class="text-[0.625rem] text-faint uppercase tracking-[0.18em] mb-2"><span aria-hidden="true">02 / </span>{copy.engineering}</p>
+          <h2 id="project-engineering" class="font-heading text-2xl md:text-[1.625rem] font-medium leading-tight tracking-tight text-ink">{copy.howItWorks}</h2>
+        </div>
+        <p class="text-sm text-muted font-light leading-[1.9]">{t.projects[project.technicalDescription]}</p>
+      </section>
+    </article>
+
+    <nav aria-label={copy.nextProject}>
+      <a href={`/${lang}/projects/${nextProject.slug}/`} class="flex items-center justify-between gap-6 py-7 md:py-9 group">
+        <div>
+          <span class="block text-[0.625rem] text-faint uppercase tracking-[0.18em] mb-1">{copy.nextProject}</span>
+          <span class="font-heading text-xl md:text-2xl font-medium text-ink group-hover:text-accent">{nextProject.title}</span>
+        </div>
+        <span aria-hidden="true" class="text-ink">→</span>
+      </a>
+    </nav>
+
+    <section aria-labelledby="project-contact" class="border-t border-line py-8 md:py-10 md:flex md:items-center md:justify-between gap-6">
+      <div>
+        <h2 id="project-contact" class="font-heading text-2xl md:text-[1.625rem] font-medium tracking-tight text-ink">{t.about.contact.title}</h2>
+        <p class="text-sm text-muted mt-2">{copy.contactDescription}</p>
+      </div>
+      <a href={`/${lang}/about/#contact`} class="inline-block mt-6 md:mt-0 bg-ink text-surface text-xs px-5 py-3 rounded hover:bg-accent whitespace-nowrap">
+        {copy.contact}<span aria-hidden="true"> →</span>
+      </a>
+    </section>
+  </main>
+  <Footer />
+</Layout>

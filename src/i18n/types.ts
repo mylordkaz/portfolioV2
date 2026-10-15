@@ -1,5 +1,7 @@
 export type ExpertiseKey = 'frontend' | 'backend' | 'devops';
-export type ProjectDescriptionKey = keyof Translation['projects'];
+export type ProjectDescriptionKey = {
+  [Key in keyof Translation['projects']]: Translation['projects'][Key] extends string ? Key : never;
+}[keyof Translation['projects']];
 
 export interface Translation {
   nav: {
